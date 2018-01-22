@@ -60,7 +60,7 @@
                         <nav class="navbar navbar-expand-lg font-14">
                             <a class="navbar-brand hidden-lg-up" href="#">Top Menu</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header14a" aria-controls="header14a" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="sl-icon-options"></span>
+                                <span class="fa fa-chevron"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="header14a">
                                 <ul class="navbar-nav">
@@ -82,7 +82,7 @@
                         <nav class="navbar navbar-expand-lg h14-info-bar">
                             <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="sl-icon-options-vertical"></span>
+                                <span class="fa fa-chevron-down"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="h14-info">
                                 <ul class="navbar-nav ml-auto text-uppercase">
@@ -112,7 +112,7 @@
                         <nav class="navbar navbar-expand-lg h14-nav">
                             <a class="hidden-lg-up">Navigation</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="ti-menu"></span>
+                                <span class="fa fa-bars"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="header14">
                                 <div class="hover-dropdown">
