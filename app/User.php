@@ -2,10 +2,11 @@
 
 namespace App;
 
+use App\Models\Booking;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
@@ -26,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

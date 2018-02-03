@@ -100,7 +100,7 @@
                                                 <h6 class="font-bold">703 (123) 4567</h6></div>
                                         </a>
                                     </li>
-                                    <li class="nav-item donate-btn"><a href="#" class="btn btn-outline-info">Book Now</a></li>
+                                    <li class="nav-item donate-btn"><a href="/home" class="btn btn-outline-info">Book Now</a></li>
                                 </ul>
                             </div>
                         </nav>
