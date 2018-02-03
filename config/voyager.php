@@ -167,7 +167,7 @@ return [
 
         'widgets' => [
             'TCG\\Voyager\\Widgets\\UserDimmer',
-            'App\\Widgets\\Bookings',
+           // 'App\\Widgets\\Bookings',
         ],
 
     ],
