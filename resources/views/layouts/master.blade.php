@@ -185,6 +185,8 @@
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
+
+                                  @auth
                                     <li class="nav-item "> 
                                               <a class="nav-link" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -196,6 +198,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                         </li>
+                                      @endauth  
 
                                     <li class="nav-item search dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" id="h14-sdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
                                         <div class="dropdown-menu b-none dropdown-menu-right animated fadeInDown" aria-labelledby="h14-sdropdown">

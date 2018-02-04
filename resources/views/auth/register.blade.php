@@ -11,6 +11,8 @@
                         Create Account
                     </span>
 
+                    @include('partials.errors')
+
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
                         <input class="input100" type="text" name="name" placeholder="Full Name">
                         <span class="focus-input100"></span>

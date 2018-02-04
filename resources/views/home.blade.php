@@ -4,7 +4,7 @@
 <div class="bg-light mini-spacer" style="min-height: 1000px;">
     <div class="container">
 
-        <div class="row">
+        <div class="row hidden-md-down">
             <div class="col-md-4 wrap-feature5-box">
                 <div class="card card-shadow aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
                     <div class="card-body d-flex">
@@ -45,7 +45,7 @@
 
         <div class="row">
             <div class="col-md-12 ">
-                <form class="registration-form text-dark" method="POST" action="/bookings">
+                <form class="registration-form text-dark font-medium" method="POST" action="/bookings">
                     {{ csrf_field() }}
                     <fieldset style="display: block;">
                         <div class="card card-shadow">

@@ -78,8 +78,13 @@
 
                   
                       <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
-                
-                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right">Pay &amp; Confirm Booking</a>
+                       
+                      <br class="hidden-md-up"> <br class="hidden-md-up">  
+
+
+                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success hidden-md-up">Pay &amp; Confirm Booking</a>
+
+                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right hidden-md-down">Pay &amp; Confirm Booking</a>
                    
 
 
