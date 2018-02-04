@@ -4,57 +4,70 @@
 
 @section('content')
 
-    <div class="wrap-login100">
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src="/auth/images/img-01.png" alt="IMG">
-                </div>
-
+    <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
-                    
                     {{ csrf_field() }}
-                    <span class="login100-form-title">
-                        Member Login
+                    <span class="login100-form-title p-b-55">
+                        Login
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span class="fa fa-envelope"></span>
                         </span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
                         <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <span class="fa fa-lock"></span>
                         </span>
                     </div>
 
-                    <div class="container-login100-form-btn">
+                    <div class="contact100-form-checkbox m-l-4">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember_me">
+                        <label class="label-checkbox100" for="ckb1">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="container-login100-form-btn p-t-25">
                         <button class="login100-form-btn">
                             Login
                         </button>
                     </div>
 
-                    <div class="text-center p-t-12">
+                    <div class="text-center w-full p-t-42 p-b-22">
                         <span class="txt1">
-                            Forgot
+                            Or login with
                         </span>
-                        <a class="txt2" href="{{ route('password.request') }}">
-                            Password?
-                        </a>
                     </div>
 
-                    <div class="text-center p-t-136">
-                        <a class="txt2" href="{{ route('register') }}">
-                            Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    <a href="#" class="btn-face m-b-10">
+                        <i class="fa fa-facebook-official"></i>
+                        Facebook
+                    </a>
+
+                    <a href="#" class="btn-google m-b-10">
+                        <img src="/auth/images/icons/icon-google.png" alt="GOOGLE">
+                        Google
+                    </a>
+
+                    <div class="text-center w-full p-t-115">
+                        <span class="txt1">
+                            Not a member?
+                        </span>
+
+                        <a class="txt1 bo1 hov1" href="{{ route('register') }}">
+                            Sign up now
                         </a>
                     </div>
                 </form>
             </div>
+
 
 
 

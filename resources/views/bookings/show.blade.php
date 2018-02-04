@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
+<div class="mini-spacer bg-light" style="min-height: 1000px;">
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Booking Details</div>
-
-                <div class="panel-body">
-                   
+        <div class="col-md-8">
+            <div class="card card-shadow">
+               
+                <div class="card-body text-dark">
+                     <h3 class="panel-heading">Booking Details</h3>
+                     <hr>
                     <p><b>No. of Bags :</b> {{ $booking->bags_count }}</p>
 
                     @if($booking->special != null)
@@ -65,6 +66,8 @@
 
                     @endif
 
+                    <p><b>Contact :</b> {{ $booking->phone }}</p> 
+
                     <hr>
 
                     <h2><b>&#8377 {{ $booking->price }}</b></h2>
@@ -73,22 +76,86 @@
 
                      @if($booking->status == 0)
 
-                    <div class="pull-right">
+                  
                       <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
                 
-                      <a href="/bookings/{{$booking->id}}/pay" class="btn btn-success">Pay &amp; Confirm Booking</a>
-                    </div>
+                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right">Pay &amp; Confirm Booking</a>
+                   
 
 
                     @else
 
-                      {!! getStatus($booking->status) !!}
+                      <a  href="/bookings/{{$booking->id}}/receipt" class="btn btn-success pull-right">Print Receipt</a>
 
                     @endif
 
                 </div>
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="card card-shadow">
+                <div class="card-body">
+                   <div class="streamline">
+                      <div class="sl-item b-success">
+                        @if($booking->status >= 0)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content">
+                          <p class="font-bold">Booking Created</p>
+                        </div>
+                      </div>
+
+                      <div class="sl-item {{ $booking->status >= 1 ? ' b-success' : '' }}">
+                       @if($booking->status >= 1)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content">
+                            <p class="font-bold">Pickup Scheduled</p>
+                        </div>
+                      </div>
+
+                      <div class="sl-item {{ $booking->status >= 2 ? ' b-success' : '' }}">
+                       @if($booking->status >= 2)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content ">
+                            <p class="font-bold">Luggage Picked</p>
+                        </div>
+                      </div>
+
+                      <div class="sl-item {{ $booking->status >= 3 ? ' b-success' : '' }}">
+                       @if($booking->status >= 3)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content">
+                            <p class="font-bold">In Warehouse</p>
+                        </div>
+                      </div>
+
+                      <div class="sl-item {{ $booking->status >= 4 ? ' b-success' : '' }}">
+                       @if($booking->status >= 4)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content">
+                            <p class="font-bold">In Transit</p>
+                        </div>
+                      </div>
+
+                      <div class="sl-item {{ $booking->status >= 5 ? ' b-success' : '' }}">
+                       @if($booking->status >= 5)
+                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
+                        @endif
+                        <div class="sl-content">
+                            <p class="font-bold">Luggage Dropped</p>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </div>
 @endsection

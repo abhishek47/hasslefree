@@ -18,6 +18,9 @@
     <link href="/css/aos.css" rel="stylesheet">
     <link href="/css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
     <link href="/css/magnific-popup.css" rel="stylesheet">
+
+<link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
+
     <!-- This css we made it from our predefine componenet 
     we just copy that css and paste here you can also do that -->
     <link href="/css/demo.css" rel="stylesheet">
@@ -30,6 +33,22 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
+
+    @auth
+        <style type="text/css">
+            @media (min-width: 1024px)
+            {
+            .page-wrapper {
+            padding-top: 55px;
+            }
+            }
+        </style>
+    @endauth
+
+
+    @yield('css')
 </head>
 
 <body class="">
@@ -55,6 +74,7 @@
             <!-- ============================================================== -->
             <div class="header14 po-relative">
                 <!-- Topbar  -->
+                @guest
                 <div class="h14-topbar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg font-14">
@@ -76,6 +96,7 @@
                         </nav>
                     </div>
                 </div>
+
                 <!-- Infobar  -->
                 <div class="h14-infobar">
                     <div class="container">
@@ -106,6 +127,7 @@
                         </nav>
                     </div>
                 </div>
+                @endguest
                 <!-- Navbar  -->
                 <div class="h14-navbar">
                     <div class="container">
@@ -117,6 +139,8 @@
                             <div class="collapse navbar-collapse" id="header14">
                                 <div class="hover-dropdown">
                                     <ul class="navbar-nav">
+
+                                    @guest
                                         
                                         <li class="nav-item active"> 
                                             <a class="nav-link" href="/"> Home</a>
@@ -137,10 +161,42 @@
                                         <li class="nav-item"> 
                                             <a class="nav-link" href="/home"> My Account</a>
                                         </li>
+
+                                     @else
+                                        
+                                         <li class="nav-item"> 
+                                            <a class="nav-link" style="font-weight: bold !important;" href="/"> HassleFree</a>
+                                        </li>
+
+                                         <li class="nav-item "> 
+                                            <a class="nav-link" href="/bookings"> My Bookings</a>
+                                        </li>
+
+                                         <li class="nav-item "> 
+                                            <a class="nav-link" href="/"> Profile</a>
+                                        </li>
+
+                                         <li class="nav-item "> 
+                                            <a class="nav-link" href="/"> Settings</a>
+                                        </li>
+
+                                     @endif   
                                       
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item "> 
+                                              <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-sign-out"></i> Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        </li>
+
                                     <li class="nav-item search dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" id="h14-sdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
                                         <div class="dropdown-menu b-none dropdown-menu-right animated fadeInDown" aria-labelledby="h14-sdropdown">
                                             <input class="form-control" type="text" placeholder="Type & hit enter" />
@@ -167,6 +223,9 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                
+                     @include('flash::message')
+              
                 @yield('content')
             </div>    
             <!-- End Container fluid  -->
@@ -174,12 +233,14 @@
             <!-- ============================================================== -->
             <!-- footer 3  -->
             <!-- ============================================================== -->
+            @guest
             <div class="footer3 bg-dark font-14">
+              
                 <div class="f3-topbar container">
                     <div class="d-flex">
                         <div class="d-flex no-block align-items-center">
-                            <span>Lorem ipsum dolor sit amet, <span class="text-white">consectetur adipiscing elit</span>, sed do eiusmod
-                            <br/>tempor incididunt ut labore et dolore magna ad minim.</span>
+                            <span>A team of trained &amp; experienced <span class="text-white">profesionals</span>, who are
+                            <br/>well versed with the customer requirement in the Indian market.</span>
                         </div>
                         <div class="ml-auto no-shrink align-self-center">
                             <form>
@@ -203,7 +264,7 @@
                                 <li><a href="#"><i class="fa fa-arrow-right"></i> Airport Transport</a></li>
                                 <li><a href="#"><i class="fa fa-arrow-right"></i> Station Transport</a></li>
                                 <li><a href="#"><i class="fa fa-arrow-right"></i> Luggage Storage</a></li>
-                                <li><a href="#"><i class="fa fa-arrow-right"></i> Events &amp; Conferences</a></li>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i> Doorstep Transport</a></li>
                             </ul>
                         </div>
                         <!-- cOLUMN -->
@@ -240,6 +301,8 @@
                     </div>
                     <!-- Row  -->
                 </div>
+
+               
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
@@ -255,6 +318,7 @@
                     </div>
                 </div>
             </div>
+             @endguest
             <!-- ============================================================== -->
             <!-- End footer 3  -->
             <!-- ============================================================== -->
@@ -281,6 +345,10 @@
     <script src="/js/aos.js"></script>
     <!--Custom JavaScript -->
     <script src="/js/custom.min.js"></script>
+
+     <script src="/js/parsley.min.js"></script>
+
+      <script src="/js/datedropper.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
@@ -307,6 +375,12 @@
         }
     });
     </script>
+
+     <script>
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
+
+    @yield('js')
 </body>
 
 </html>

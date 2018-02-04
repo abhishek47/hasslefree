@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top bg-primary-gradiant" >
+        <nav class="navbar navbar-inverse navbar-static-top bg-primary-gradiant" >
             <div class="container">
                 <div class="navbar-header">
 

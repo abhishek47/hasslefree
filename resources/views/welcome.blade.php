@@ -17,7 +17,7 @@
                         <!-- Wrapper For Slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <!-- Slide Background --><img src="/images/slider/slide1.jpg" alt="We are Digital Agency" class="slide-image" />
+                                <!-- Slide Background --><img src="/images/slider/banner.jpg"  alt="We are Digital Agency" class="slide-image" />
                                 <!-- Slide Text Layer -->
                                 <div class="slide-text slide_style_left">
                                     <div class="col-md-9 col-lg-6">
@@ -28,7 +28,7 @@
                                         <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Storage and Transfer services in India for Stations, Airports as well as door to door service.</p>
                                     </div>
                                     <div class="col-sm-12 btn-pad">
-                                        <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" data-toggle="collapse" href="#"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
+                                        <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/register"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
                                        
                                     </div>
                                 </div>
@@ -73,20 +73,20 @@
                         <h4 class="text-muted font-light">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h4>
                         <div class="row">
                             <div class="col-md-6 m-t-30">
-                                <h5 class="font-medium">Time Saving</h5>
-                                <p>You can relay on our amazing features list and also our customer services will.</p>
+                                <h5 class="font-medium">Smart Time Management</h5>
+                                <p>Carrying luggage along with you, makes you invest time in managing it.</p>
                             </div>
                             <div class="col-md-6 m-t-30">
                                 <h5 class="font-medium">Easy &amp; Flexible</h5>
-                                <p>You can relay on our amazing features list and also our customer services will.</p>
+                                <p>HassleFree is a easy online booking service with lots of flexibility.</p>
                             </div>
                             <div class="col-md-6 m-t-30">
-                                <h5 class="font-medium">Insurance &amp; Tracking</h5>
-                                <p>You can relay on our amazing features list and also our customer services will.</p>
+                                <h5 class="font-medium">Real-time Tracking</h5>
+                                <p>Easily track your luggage status with our seamless online service.</p>
                             </div>
                             <div class="col-md-6 m-t-30">
-                                <h5 class="font-medium">Satisfaction Guaranteed</h5>
-                                <p>You can relay on our amazing features list and also our customer services will.</p>
+                                <h5 class="font-medium">Damage Free &amp; Safe</h5>
+                                <p>Your luggage be safe with us and we even insure you about your luggage.</p>
                             </div>
                             
                         </div>
@@ -95,14 +95,14 @@
                         <div class="row wrap-feature-12">
                             <div class="col-md-6">
                                 <div class="row">
-                                    <div class="col-md-12"><img src="/images/slider/1.jpg" class="rounded img-shadow img-responsive" alt="wrapkit" /></div>
-                                    <div class="col-md-12"><img src="/images/slider/2.jpg" class="rounded img-shadow img-responsive" alt="wrapkit" /></div>
+                                    <div class="col-md-12"><img src="/images/features/time.jpg" class="rounded img-shadow img-responsive" alt="time managing" /></div>
+                                    <div class="col-md-12"><img src="/images/features/easy.jpg" class="rounded img-shadow img-responsive" alt="easy" /></div>
                                 </div>
                             </div>
                             <div class="col-md-6 uneven-box">
                                 <div class="row">
-                                    <div class="col-md-12"><img src="/images/slider/3.jpg" class="rounded img-shadow img-responsive" alt="wrapkit" /></div>
-                                    <div class="col-md-12"><img src="/images/slider/4.jpg" class="rounded img-shadow img-responsive" alt="wrapkit" /></div>
+                                    <div class="col-md-12"><img src="/images/features/track.jpg" class="rounded img-shadow img-responsive" alt="Real-time Tracking" /></div>
+                                    <div class="col-md-12"><img src="/images/features/safe.jpg" class="rounded img-shadow img-responsive" alt="safe" /></div>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             <img class="card-img-top" src="/images/features/5.jpg" alt="wrappixel kit" />
                             <div class="card-body text-center">
                                 <h5 class="font-medium">You Make a Booking</h5>
-                                <p class="m-t-20">Book your luggage storage and transfer online, in less than 5 minutes.</p>
+                                <p class="m-t-20">Book your luggage storage and transfer online, in less than 5 minutes with our easy service.</p>
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                             <img class="card-img-top" src="/images/features/7.jpg" alt="wrappixel kit" />
                             <div class="card-body text-center">
                                 <h5 class="font-medium">You Get Your Luggage</h5>
-                                <p class="m-t-20">Get your luggage back anywhere and anytime you want, stations and airports included.</p>
+                                <p class="m-t-20">Get your luggage back anywhere and anytime you want, stations and airports included with door to door.</p>
                             </div>
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                     <!-- Column -->
                     <div class="col-lg-6">
                         <div class="p-20">
-                            <img src="/images/features/8.jpg" alt="wrapkit" class="img-responsive img-shadow" data-aos="flip-right" data-aos-duration="1200" />
+                            <img src="/images/features/safe.jpg" alt="wrapkit" class="img-responsive img-shadow" data-aos="flip-right" data-aos-duration="1200" />
                         </div>
                     </div>
                     <!-- Column -->

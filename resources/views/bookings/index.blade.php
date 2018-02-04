@@ -1,31 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
+<div class="mini-spacer bg-light" style="min-height: 1000px;">
+
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">My Bookings</div>
+        <div class="col-md-12 ">
+            <div class="card card-shadow">
+                
 
-                <div class="panel-body">
-                    <table class="table table-hover"> 
+                <div class="card-body">
+                    <h3 class="panel-heading">My Bookings</h3>
+                    <br>
+                    <table class="table table-hover text-dark"> 
                         <thead> 
                             <tr> 
                                 <th>#</th> 
-                                <th>Booking Date</th> 
                                 <th>Pick up on</th> 
                                 <th>Drop on</th> 
-                                <th>Actions</th>
+                                <th>Status</th>
+                                <th></th>
                             </tr> 
                         </thead> 
 
                         <tbody> 
-                        @foreach(auth()->user()->bookings()->latest()->get() as $booking)
+                        @foreach(auth()->user()->bookings()->latest()->get() as $index => $booking)
                             <tr> 
-                                <th scope="row">{{ $booking->id }}</th> 
-                                <td>{{ $booking->created_at }}</td> 
+                                <th scope="row">{{ $index+1 }}</th> 
                                 <td>{{ $booking->pick_up_date }}</td> 
                                 <td>{{ $booking->drop_date }}</td> 
+                                <td>{!! getStatus($booking->status) !!}</td>
                                 <td>
                                     <a class="btn btn-primary btn-xs" href="/bookings/{{$booking->id}}">View</a>
                                 </td>
@@ -39,5 +43,7 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 @endsection
