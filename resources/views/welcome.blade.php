@@ -25,11 +25,11 @@
                                         <h2 data-animation="animated zoomInRight" class="title text-white">Hassle Free Luggage Transport Service</h2>
                                     </div>
                                     <div class="col-md-8 col-lg-5">
-                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Storage and Transfer services in India for Stations, Airports and others.</p>
+                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Storage and Transfer services in India for Stations, Airports as well as door to door service.</p>
                                     </div>
                                     <div class="col-sm-12 btn-pad">
-                                        <a class="btn btn-info-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" data-toggle="collapse" href="#"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
-                                        <a class="btn text-white" data-animation="animated fadeInRight" data-toggle="modal" data-target="#video" href="#"><i class="icon-Play-Music text-white vm m-r-10"></i> Watch Video</a>
+                                        <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" data-toggle="collapse" href="#"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -181,8 +181,9 @@
                             <li><i class="fa fa-check-circle-o text-info"></i> A secured and satisfiable trasfer and storage service.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> A perpeptual customer service.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> A rated and trusted team.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> An Easy door to door service.</li>
                         </ul>
-                        <a class="btn btn-info-gradiant btn-md btn-arrow" href="#"><span>Know About Us <i class="fa fa-arrow-right"></i></span></a>
+                       <!-- <a class="btn btn-danger-gradiant btn-md btn-arrow" href="#"><span>Know About Us <i class="fa fa-arrow-right"></i></span></a> -->
                     </div>
                     <!-- Column -->
                     <div class="col-lg-6">
@@ -202,15 +203,15 @@
         <!-- ============================================================== -->
         <!-- call to action -->
         <!-- ============================================================== -->
-        <div class="mini-spacer bg-yellow text-white">
+        <div class="mini-spacer bg-primary-gradiant text-white" >
             <div class="container">
                 <div class="d-flex">
                     <div class="display-7 align-self-center">
-                        <h3 class="">We are leading Luggage Storage and Transfer company</h3>
-                        <h6 class="font-16">You will feel great using our quality products and services</h6>
+                        <h3 class="text-white">We are leading Luggage Storage and Transfer company</h3>
+                        <h6 class="font-16 text-white">You will feel great using our quality products and services</h6>
                     </div>
                     <div class="ml-auto m-t-10 m-b-10">
-                        <button class="btn btn-info-gradiant btn-md">Contact Us</button>
+                        <button class="btn btn-danger-gradiant btn-md">Contact Us</button>
                     </div>
                 </div>
             </div>
@@ -218,78 +219,7 @@
         <!-- ============================================================== -->
         <!-- call to action -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Testimonial 6 -->
-        <!-- ============================================================== -->
-        <div class="testimonial6 spacer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-md-3" data-aos="fade-right">
-                        <div class="nav flex-column nav-pills testi6" id="v-pills-tab" role="tablist">
-                            <a class="nav-link" data-toggle="pill" href="#t6-1" role="tab" aria-controls="t6-1" aria-expanded="true">
-                                  <img src="/images/test/1.jpg" alt="wrapkit" class="circle" />
-                              </a>
-                            <a class="nav-link" data-toggle="pill" href="#t6-2" role="tab" aria-controls="t6-2" aria-expanded="true">
-                                 <img src="/images/test/2.jpg" alt="wrapkit" class="circle" />      
-                              </a>
-                            <a class="nav-link active" data-toggle="pill" href="#t6-3" role="tab" aria-controls="t6-3" aria-expanded="true">
-                                 <img src="/images/test/3.jpg" alt="wrapkit" class="circle" />      
-                              </a>
-                            <a class="nav-link" data-toggle="pill" href="#t6-4" role="tab" aria-controls="t6-4" aria-expanded="true">
-                                 <img src="/images/test/4.jpg" alt="wrapkit" class="circle" />  
-                              </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-8 ml-auto align-self-center" data-aos="fade-up">
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade" id="t6-1" role="tabpanel">
-                                <h2 class="font-bold">What our Customers says</h2>
-                                <h6 class="subtitle m-t-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do mode tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
-                                <div class="d-flex m-t-40">
-                                    <div>
-                                        <h5 class="m-b-0 text-uppercase">Jon Doe</h5>
-                                        <h6 class="subtitle">Miami</h6></div>
-                                    <button class="btn btn-circle btn-info btn-md ml-auto"><i class="fa fa-quote-left"></i></button>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="t6-2" role="tabpanel">
-                                <h2 class="font-bold">What our Customers says</h2>
-                                <h6 class="subtitle m-t-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do mode tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
-                                <div class="d-flex m-t-40">
-                                    <div>
-                                        <h5 class="m-b-0 text-uppercase">Arina Gover</h5>
-                                        <h6 class="subtitle">New York</h6></div>
-                                    <button class="btn btn-circle btn-info btn-md ml-auto"><i class="fa fa-quote-left"></i></button>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade show active" id="t6-3" role="tabpanel">
-                                <h2 class="font-bold">What our Customers says</h2>
-                                <h6 class="subtitle m-t-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do mode tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
-                                <div class="d-flex m-t-40">
-                                    <div>
-                                        <h5 class="m-b-0 text-uppercase">Hanna Gover</h5>
-                                        <h6 class="subtitle">Texas</h6></div>
-                                    <button class="btn btn-circle btn-info btn-md ml-auto"><i class="fa fa-quote-left"></i></button>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="t6-4" role="tabpanel">
-                                <h2 class="font-bold">What our Customers says</h2>
-                                <h6 class="subtitle m-t-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do mode tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
-                                <div class="d-flex m-t-40">
-                                    <div>
-                                        <h5 class="m-b-0 text-uppercase">Jane Martins</h5>
-                                        <h6 class="subtitle">Palo Alto</h6></div>
-                                    <button class="btn btn-circle btn-info btn-md ml-auto"><i class="fa fa-quote-left"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Testimonial 6 -->
-        <!-- ============================================================== -->
+        
        
         <!-- ============================================================== -->
 
