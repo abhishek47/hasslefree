@@ -164,20 +164,20 @@
 
                                      @else
                                         
-                                         <li class="nav-item"> 
+                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }}"> 
                                             <a class="nav-link" style="font-weight: bold !important;" href="/"> HassleFree</a>
                                         </li>
 
-                                         <li class="nav-item "> 
+                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
                                             <a class="nav-link" href="/bookings"> My Bookings</a>
                                         </li>
 
-                                         <li class="nav-item "> 
-                                            <a class="nav-link" href="/"> Profile</a>
+                                         <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}"> 
+                                            <a class="nav-link" href="/profile"> Profile</a>
                                         </li>
 
-                                         <li class="nav-item "> 
-                                            <a class="nav-link" href="/"> Settings</a>
+                                         <li class="nav-item {{ request()->is('settings') ? 'active' : '' }}"> 
+                                            <a class="nav-link" href="/settings"> Settings</a>
                                         </li>
 
                                      @endif   
@@ -218,13 +218,14 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="page-wrapper {{ auth()->check() ? 'bg-light' : ''}}">
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                
+                    <div class="container">
                      @include('flash::message')
+                    </div> 
               
                 @yield('content')
             </div>    

@@ -31,7 +31,7 @@
                                 <td>{{ $booking->drop_date }}</td> 
                                 <td>{!! getStatus($booking->status) !!}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-xs" href="/bookings/{{$booking->id}}">View</a>
+                                    <a class="btn btn-primary btn-sm" href="/bookings/{{$booking->id}}">View</a>
                                 </td>
                             </tr> 
                           @endforeach 

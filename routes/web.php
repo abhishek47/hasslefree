@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/profile', 'UserController@profile');
+Route::get('/settings', 'UserController@settings');
+
+Route::post('/profile', 'UserController@updateProfile');
+Route::post('/password', 'UserController@updatePassword');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/bookings', 'BookingsController@index');
