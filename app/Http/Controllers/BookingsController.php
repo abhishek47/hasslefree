@@ -69,7 +69,7 @@ class BookingsController extends Controller
           $location2 = $booking->drop_to;
         }
 
-        $distance = getDistance($location1, $location2, "K");
+        $distance = getDistance($location1, $location2);
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
