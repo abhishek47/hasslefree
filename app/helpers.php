@@ -50,7 +50,7 @@ function getDistance($addressFrom, $addressTo){
     //Send request and receive json data
     $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$formattedAddrFrom."&destinations=".$formattedAddrTo."&key=AIzaSyDul5sDHezP3kN2bCzJDgI2MYzMYqy4XIM");
             $data = json_decode($api);
-            dd($data);
+            
        return ($data->rows[0]->elements[0]->distance->value / 1000);
 }
 
