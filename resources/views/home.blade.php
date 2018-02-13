@@ -214,7 +214,7 @@
                                 <div id="drop_train" class="hidden">
                                     <div class="form-group">
                                         <label>Choose train station</label>
-                                        <select name="drop_train_station" class="form-control">
+                                        <select name="drop_train_station_id" class="form-control">
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\TrainStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
@@ -246,7 +246,7 @@
                                     
                                     <div class="form-group">
                                         <label>Choose Bus station</label>
-                                        <select name="drop_bus_station" class="form-control">
+                                        <select name="drop_bus_station_id" class="form-control">
                                              <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\BusStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
