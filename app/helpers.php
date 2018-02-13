@@ -47,7 +47,7 @@ function getDistance($addressFrom, $addressTo){
     $formattedAddrFrom = str_replace(' ','%20',$addressFrom);
     $formattedAddrTo = str_replace(' ','%20',$addressTo);
 
-    dd($formattedAddrFrom + ' TO ' + $formattedAddrTo );
+    dd($formattedAddrFrom . ' TO ' . $formattedAddrTo );
     
     //Send request and receive json data
     $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Terminal%201C%20Arrival%20Road,%20Indira%20Gandhi%20International%20Airport,%20Indira%20Gandhi%20International%20Airport,%20New%20Delhi,%20Delhi%20110037,%20India&destinations=Bhavbhuti%20Marg,%20Kamla%20Market,%20Ajmeri%20Gate,%20New%20Delhi,%20Delhi%20110006,%20India&key=AIzaSyDul5sDHezP3kN2bCzJDgI2MYzMYqy4XIM");
