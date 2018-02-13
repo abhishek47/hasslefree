@@ -99,11 +99,11 @@
                                 <div id="pickup_airport" class="hidden">
                                     <div class="form-group">
                                         <label>Choose your airport</label>
-                                        <select name="pick_up_airport_name" class="form-control">
+                                        <select name="pickup_airport_id" class="form-control">
                                             <option>-- Select your option --</option>
-                                            <option value="Pune Airport">Pune Airport</option>
-                                            <option value="Mumbai Airport 1">Mumbai Airport 1</option>
-                                            <option value="Mumbai Airport 2">Mumbai Airport 2</option>
+                                            @foreach(\App\Models\Airport::all() as $airport)
+                                             <option value="{{ $airport->id }}">{{ $airport->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -118,11 +118,11 @@
                                 <div id="pickup_train" class="hidden">
                                     <div class="form-group">
                                         <label>Choose train station</label>
-                                        <select name="pick_up_train_station" class="form-control">
+                                        <select name="pick_up_train_station_id" class="form-control">
                                             <option>-- Select your option --</option>
-                                            <option value="Train Station 1">Train Station 1</option>
-                                            <option value="Train Station 2">Train Station 2</option>
-                                            <option value="Train Station 3">Train Station 3</option>
+                                            @foreach(\App\Models\TrainStation::all() as $station)
+                                             <option value="{{ $station->id }}">{{ $station->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                     
@@ -130,15 +130,30 @@
                                         <label>Train Number (optional)</label>
                                         <input type="text" name="pick_up_train_no" class="form-control" placeholder="Enter train number">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Train Coach (optional)</label>
+                                        <input type="text" name="pick_up_train_coach" class="form-control" placeholder="Enter train coach number">
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label>Train Seat No. (optional)</label>
+                                        <input type="text" name="pick_up_train_seat" class="form-control" placeholder="Enter train seat number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Train Time (optional)</label>
+                                        <input type="time" name="pick_up_train_time" class="form-control" placeholder="Enter train arrival time">
+                                    </div>
                                 </div>
                                 <div id="pickup_bus" class="hidden">
                                     <div class="form-group">
                                         <label>Choose Bus station</label>
-                                        <select name="pick_up_bus_station" class="form-control">
-                                            <option>-- Select your option --</option>
-                                            <option value="Bus Station 1">Bus Station 1</option>
-                                            <option value="Bus Station 2">Bus Station 2</option>
-                                            <option value="Bus Station 3">Bus Station 3</option>
+                                        <select name="pick_up_bus_station_id" class="form-control">
+                                             <option>-- Select your option --</option>
+                                            @foreach(\App\Models\BusStation::all() as $station)
+                                             <option value="{{ $station->id }}">{{ $station->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                 </div>
@@ -180,11 +195,11 @@
                                 <div id="drop_airport" class="hidden">
                                     <div class="form-group">
                                         <label>Choose your drop airport</label>
-                                        <select name="drop_airport_name" class="form-control">
+                                        <select name="drop_airport_id" class="form-control">
                                             <option>-- Select your option --</option>
-                                            <option value="Pune Airport">Pune Airport</option>
-                                            <option value="Mumbai Airport 1">Mumbai Airport 1</option>
-                                            <option value="Mumbai Airport 2">Mumbai Airport 2</option>
+                                            @foreach(\App\Models\Airport::all() as $airport)
+                                             <option value="{{ $airport->id }}">{{ $airport->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -201,26 +216,41 @@
                                         <label>Choose train station</label>
                                         <select name="drop_train_station" class="form-control">
                                             <option>-- Select your option --</option>
-                                            <option value="Train Station 1">Train Station 1</option>
-                                            <option value="Train Station 2">Train Station 2</option>
-                                            <option value="Train Station 3">Train Station 3</option>
+                                            @foreach(\App\Models\TrainStation::all() as $station)
+                                             <option value="{{ $station->id }}">{{ $station->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Train Number</label>
+                                        <label>Train Number (optional)</label>
                                         <input type="text" name="drop_train_no" class="form-control" placeholder="Enter train number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Train Coach (optional)</label>
+                                        <input type="text" name="drop_train_coach" class="form-control" placeholder="Enter train coach number">
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label>Train Seat No. (optional)</label>
+                                        <input type="text" name="drop_train_seat" class="form-control" placeholder="Enter train seat number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Train Time (optional)</label>
+                                        <input type="time" name="drop_train_time" class="form-control" placeholder="Enter train departure time">
                                     </div>
                                 </div>
                                 <div id="drop_bus" class="hidden">
                                     
                                     <div class="form-group">
-                                        <label>Choose train station</label>
+                                        <label>Choose Bus station</label>
                                         <select name="drop_bus_station" class="form-control">
-                                            <option>-- Select your option --</option>
-                                            <option value="Bus Station 1">Bus Station 1</option>
-                                            <option value="Bus Station 2">Bus Station 2</option>
-                                            <option value="Bus Station 3">Bus Station 3</option>
+                                             <option>-- Select your option --</option>
+                                            @foreach(\App\Models\BusStation::all() as $station)
+                                             <option value="{{ $station->id }}">{{ $station->name }}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                 </div>
@@ -243,7 +273,20 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Pick up time</label>
-                                    <input type="time" name="pick_up_time" required class="form-control" >
+                                   
+                                    <select class="form-control" name="pick_up_time" id="pick_up_time">
+                                        <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                                        <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
+                                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                                        <option value="12:00 AM - 01:00 PM">12:00 AM - 01:00 PM</option>
+                                        <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
+                                        <option value="02:00 PM - 03:00 PM">02:00 AM - 03:00 PM</option>
+                                        <option value="03:00 PM - 04:00 PM">03:00 AM - 04:00 PM</option>
+                                        <option value="04:00 PM - 05:00 PM">04:00 AM - 05:00 PM</option>
+                                        <option value="05:00 PM - 06:00 PM">05:00 AM - 06:00 PM</option>
+                                        <option value="06:00 PM - 07:00 PM">06:00 AM - 07:00 PM</option>
+                                        <option value="07:00 PM - 08:00 PM">07:00 AM - 08:00 PM</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Drop date</label>
@@ -251,7 +294,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Drop time</label>
-                                    <input type="time" name="drop_time" required class="form-control" >
+                                    <select class="form-control" name="drop_time" id="drop_time">
+                                        <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                                        <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
+                                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                                        <option value="12:00 AM - 01:00 PM">12:00 AM - 01:00 PM</option>
+                                        <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
+                                        <option value="02:00 PM - 03:00 PM">02:00 AM - 03:00 PM</option>
+                                        <option value="03:00 PM - 04:00 PM">03:00 AM - 04:00 PM</option>
+                                        <option value="04:00 PM - 05:00 PM">04:00 AM - 05:00 PM</option>
+                                        <option value="05:00 PM - 06:00 PM">05:00 AM - 06:00 PM</option>
+                                        <option value="06:00 PM - 07:00 PM">06:00 AM - 07:00 PM</option>
+                                        <option value="07:00 PM - 08:00 PM">07:00 AM - 08:00 PM</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

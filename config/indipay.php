@@ -28,13 +28,13 @@ return [
     ],
 
     'payumoney' => [                         // PayUMoney Parameters
-        'merchantKey'  => env('INDIPAY_MERCHANT_KEY', ''),
-        'salt'  => env('INDIPAY_SALT', ''),
-        'workingKey' => env('INDIPAY_WORKING_KEY', ''),
+        'merchantKey'  => env('INDIPAY_MERCHANT_KEY', 'HZAKRUPG'),
+        'salt'  => env('INDIPAY_SALT', 'DcXAEDhnC9'),
+        'workingKey' => env('INDIPAY_WORKING_KEY', 'DcXAEDhnC9'),
 
         // Should be route address for url() function
-        'successUrl' => env('INDIPAY_SUCCESS_URL', 'indipay/response'),
-        'failureUrl' => env('INDIPAY_FAILURE_URL', 'indipay/response'),
+        'successUrl' => env('INDIPAY_SUCCESS_URL', 'payments/response'),
+        'failureUrl' => env('INDIPAY_FAILURE_URL', 'payments/response'),
     ],
 
     'ebs' => [                         // EBS Parameters

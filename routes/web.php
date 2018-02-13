@@ -28,12 +28,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/bookings', 'BookingsController@index');
 Route::get('/bookings/{booking}', 'BookingsController@show');
 Route::get('/bookings/{booking}/pay', 'PaymentsController@addMoney');
+Route::get('/bookings/{booking}/cod', 'BookingsController@confirmWithCOD');
 Route::get('/bookings/{booking}/delete', 'BookingsController@destroy');
 Route::post('/bookings', 'BookingsController@store');
 
 
 Route::get('/payments/response/', 'PaymentsController@response');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});

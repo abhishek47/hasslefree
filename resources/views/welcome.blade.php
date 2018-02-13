@@ -175,7 +175,7 @@
                     <div class="col-lg-6">
                         <small class="text-info">Exclusive Service</small>
                         <h3 class="font-bold">HassleFree is an Exclusive Service in India</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+                        <p>A team of trained & experienced profesionals, who are well versed with the customer requirement in the Indian market</p>
                         <ul class="list-block m-b-30">
                             <li><i class="fa fa-check-circle-o text-info"></i> Easy and seamless booking process.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> A secured and satisfiable trasfer and storage service.</li>

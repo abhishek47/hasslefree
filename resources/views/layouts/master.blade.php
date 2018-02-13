@@ -34,7 +34,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/image/favicon.png" type="image/x-icon">
 
     @auth
         <style type="text/css">
@@ -52,15 +53,7 @@
 </head>
 
 <body class="">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">HassleFree</p>
-        </div>
-    </div>
+    
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -132,8 +125,9 @@
                 <div class="h14-navbar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
-                            <a class="hidden-lg-up">Navigation</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
+                            
+                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
+                            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="header14">
@@ -164,8 +158,8 @@
 
                                      @else
                                         
-                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }}"> 
-                                            <a class="nav-link" style="font-weight: bold !important;" href="/"> HassleFree</a>
+                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
+                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
                                         </li>
 
                                          <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
@@ -284,7 +278,7 @@
                             <div class="d-flex no-block m-b-10 m-t-20">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
                                 <div class="info">
-                                    <p> Pune, Maharashtra,
+                                    <p> New Dehli, Maharashtra,
                                         <br/> India</p>
                                 </div>
                             </div>

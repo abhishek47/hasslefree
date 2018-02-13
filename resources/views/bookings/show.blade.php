@@ -82,9 +82,13 @@
                       <br class="hidden-md-up"> <br class="hidden-md-up">  
 
 
-                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success hidden-md-up">Pay &amp; Confirm Booking</a>
+                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success hidden-md-up">Pay Online</a>
 
-                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right hidden-md-down">Pay &amp; Confirm Booking</a>
+                      <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary hidden-md-up">Pay on Delivery</a>
+
+                      <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
+
+                       <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary pull-right hidden-md-down">Pay on Delivery</a>
                    
 
 
@@ -152,7 +156,7 @@
                           <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
                         @endif
                         <div class="sl-content">
-                            <p class="font-bold">Luggage Dropped</p>
+                            <p class="font-bold">Luggage Delivered</p>
                         </div>
                       </div>
 

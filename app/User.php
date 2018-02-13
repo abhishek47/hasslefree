@@ -5,10 +5,15 @@ namespace App;
 use App\Models\Booking;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\CrudTrait; // <------------------------------- this one
 
-class User extends \TCG\Voyager\Models\User
+use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+
+class User extends Authenticatable
 {
     use Notifiable;
+    use CrudTrait; // <----- this
 
     /**
      * The attributes that are mass assignable.
@@ -32,5 +37,16 @@ class User extends \TCG\Voyager\Models\User
     public function bookings()
     {
         return $this->hasMany(Booking::class);
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }

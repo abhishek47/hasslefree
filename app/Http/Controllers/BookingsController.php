@@ -47,7 +47,35 @@ class BookingsController extends Controller
     {
         $booking = auth()->user()->bookings()->create($request->all());
 
-        $booking->price = 120 * $booking->bags_count;
+        if($booking->pick_up_type == 0)
+        {
+            $location1 = $booking->pickupAirport->location;
+        } else if($booking->pick_up_type == 1){
+            $location1 = $booking->pickupTrain->location;
+        } else if($booking->pick_up_type == 2){
+            $location1 = $booking->pickupBus->location;
+        } else {
+            $location1 = $booking->pick_up_from;  
+        }
+
+        if($booking->drop_type == 0)
+        {
+            $location1 = $booking->dropAirport->location;
+        } else if($booking->drop_type == 1){
+            $location1 = $booking->dropTrain->location;
+        } else if($booking->drop_type == 2){
+            $location1 = $booking->dropBus->location;
+        } else {
+          $location1 = $booking->drop_to;
+        }
+
+        $distance = getDistance($location1, $location2, "K");
+
+        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
+
+        $basePrice = $basePrice + ($basePrice * (18/100)); // GST
+
+        $booking->price = $basePrice;
 
         $booking->save();
 
@@ -56,6 +84,18 @@ class BookingsController extends Controller
         return redirect('/bookings/' . $booking->id );
 
 
+    }
+
+
+    public function confirmWithCOD(Booking $booking)
+    {
+        $booking->status = 1;
+
+        $booking->save();
+
+        flash('Your booking was confirmed & scheduled!')->success();
+
+        return back();
     }
 
     /**
