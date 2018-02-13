@@ -60,7 +60,7 @@
                       <p><b>Drop to :</b> {{ $booking->dropBus->name }}
                       <br><b>Train No. :</b> {{ $booking->drop_train_no }}</p>
 
-                    @else
+                    @elseif($booking->drop_to_type > 2)
 
                       <p><b>Drop to :</b> {{ $booking->drop_to }}</p> 
 
