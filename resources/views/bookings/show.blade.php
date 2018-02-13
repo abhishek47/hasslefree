@@ -88,7 +88,7 @@
 
                       <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
 
-                       <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary pull-right hidden-md-down">Pay on Delivery</a>
+                       <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
                    
 
 
