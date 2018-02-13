@@ -45,7 +45,7 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+       
         
         $booking = auth()->user()->bookings()->create($request->all());
 
@@ -63,9 +63,9 @@ class BookingsController extends Controller
         if($booking->drop_to_type == 0)
         {
             $location2 = $booking->dropAirport->location;
-        } else if($booking->drop_type == 1){
+        } else if($booking->drop_to_type == 1){
             $location2 = $booking->dropTrain->location;
-        } else if($booking->drop_type == 2){
+        } else if($booking->drop_to_type == 2){
             $location2 = $booking->dropBus->location;
         } else {
           $location2 = $booking->drop_to;
