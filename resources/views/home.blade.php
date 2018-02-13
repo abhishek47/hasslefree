@@ -79,7 +79,7 @@
                                 <div class="form-group">
                                     <label>Pickup my bags from</label>
                                     <select name="pick_up_type" data-parsley-required  id="pick_up_type" class="form-control" >
-                                        <option value="0">-- Select your option --</option>
+                                        <option disabled selected value>-- Select your option --</option>
                                         <option value="0">Airport</option>
                                         <option value="1">Train Station</option>
                                         <option value="2">Bus Station</option>
@@ -99,7 +99,7 @@
                                 <div id="pickup_airport" class="hidden">
                                     <div class="form-group">
                                         <label>Choose your airport</label>
-                                        <select name="pickup_airport_id" class="form-control">
+                                        <select name="pick_up_airport_id" class="form-control">
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\Airport::all() as $airport)
                                              <option value="{{ $airport->id }}">{{ $airport->name }}</option>
@@ -175,7 +175,7 @@
                                 <div class="form-group">
                                     <label>Drop my bags to</label>
                                     <select name="drop_to_type" required id="drop_to_type" class="form-control">
-                                        <option value="0">-- Select your option --</option>
+                                        <option disabled selected value>-- Select your option --</option>
                                         <option value="0">Airport</option>
                                         <option value="1">Train Station</option>
                                         <option value="2">Bus Station</option>
