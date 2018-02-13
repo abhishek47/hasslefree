@@ -9,6 +9,8 @@ class BusStation extends Model
 {
     use CrudTrait;
 
+    public $guarded = [];
+
     public function city()
     {
     	return $this->belongsTo(City::class);
