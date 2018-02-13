@@ -48,7 +48,7 @@ function getDistance($addressFrom, $addressTo){
     $formattedAddrTo = str_replace(' ','%20',$addressTo);
     
     //Send request and receive json data
-    $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$formattedAddrFrom."&destinations=".$formattedAddrTo."&key=AIzaSyDul5sDHezP3kN2bCzJDgI2MYzMYqy4XIM");
+    $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Terminal%201C%20Arrival%20Road,%20Indira%20Gandhi%20International%20Airport,%20Indira%20Gandhi%20International%20Airport,%20New%20Delhi,%20Delhi%20110037,%20India&destinations=Bhavbhuti%20Marg,%20Kamla%20Market,%20Ajmeri%20Gate,%20New%20Delhi,%20Delhi%20110006,%20India&key=AIzaSyDul5sDHezP3kN2bCzJDgI2MYzMYqy4XIM");
             $data = json_decode($api);
             dd($data);
        return ($data->rows[0]->elements[0]->distance->value / 1000);
