@@ -22,18 +22,18 @@
 
                     @if($booking->pick_up_type == 0)
 
-                      <p><b>Pick up from :</b> {{ $booking->pick_up_airport_name }}
+                      <p><b>Pick up from :</b> {{ $booking->pickupAirport->name }}
                       <br><b>Terminal :</b> {{ $booking->pick_up_airport_terminal }}
                       <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} </p>
 
                     @elseif($booking->pick_up_type == 1)
 
-                      <p><b>Pick up from :</b> {{ $booking->pick_up_train_station }}
+                      <p><b>Pick up from :</b> {{ $booking->pickupTrain->name }}
                       <br><b>Terminal :</b> {{ $booking->pick_up_train_no }}</p>
 
                     @elseif($booking->pick_up_type == 2)
 
-                      <p><b>Pick up from :</b> {{ $booking->pick_up_bus_station }}
+                      <p><b>Pick up from :</b> {{ $booking->pickupBus->name }}
                       <br><b>Train No. :</b> {{ $booking->pick_up_train_no }}</p>
 
                     @else
@@ -46,18 +46,18 @@
 
                      @if($booking->drop_to_type == 0)
 
-                      <p><b>Drop to :</b> {{ $booking->drop_airport_name }}
+                      <p><b>Drop to :</b> {{ $booking->dropAirport->name }}
                       <br><b>Terminal :</b> {{ $booking->drop_airport_terminal }}
                       <br><b>Flight Number :</b> {{ $booking->drop_flight_number }} </p>
 
                     @elseif($booking->drop_to_type == 1)
 
-                      <p><b>Drop to :</b> {{ $booking->drop_train_station }}
+                      <p><b>Drop to :</b> {{ $booking->dropTrain->name }}
                       <br><b>Terminal :</b> {{ $booking->drop_train_no }}</p>
 
                     @elseif($booking->drop_to_type == 2)
 
-                      <p><b>Drop to :</b> {{ $booking->drop_bus_station }}
+                      <p><b>Drop to :</b> {{ $booking->dropBus->name }}
                       <br><b>Train No. :</b> {{ $booking->drop_train_no }}</p>
 
                     @else
