@@ -45,6 +45,8 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
+        dd($booking);
+        
         $booking = auth()->user()->bookings()->create($request->all());
 
         if($booking->pick_up_type == 0)
