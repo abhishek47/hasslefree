@@ -44,7 +44,7 @@ class Booking extends Model
 
      public function dropTrain()
     {
-        return $this->belongsTo(TrainStation::class, 'drop_trian_station_id');
+        return $this->belongsTo(TrainStation::class, 'drop_train_station_id');
     }
 
     public function pickupAirport()
