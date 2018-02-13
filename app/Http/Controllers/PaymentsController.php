@@ -24,27 +24,24 @@ class PaymentsController extends Controller
 
 		  $amount = $booking->price;
 
-	      $parameters = [
+	       $parameters = [
+      
+            'tid' => '1233221223322',
             
-
-	        'tid' => '1233221223322',
-	        
-	        'order_id' => '1232212',
-	        
-	        'amount' => $amount,
-	        'productinfo' => $bookingId,
-	        'firstname' => 'Abhi',
-	        'email' => \Auth::user()->email,
-	        'phone' => '9922367414',
-	        
-	      ];
+            'order_id' => '1232212',
+            
+            'amount' => $amount,
+            'purpose' => $bookingId,
+            'buyer_name' => \Auth::user()->name,
+            'email' => \Auth::user()->email,
+            'phone' => '9922367414',
+            
+          ];
  
-	      
-	      $order = Indipay::prepare($parameters);
+          
+          $order = Indipay::prepare($parameters);
 
-         
-
-	      return Indipay::process($order);
+          return Indipay::process($order);
 	}
 
     public function response(Request $request)
