@@ -45,7 +45,7 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($booking);
+        dd($request->all());
         
         $booking = auth()->user()->bookings()->create($request->all());
 
