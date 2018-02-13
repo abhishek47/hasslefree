@@ -58,15 +58,15 @@ class BookingsController extends Controller
             $location1 = $booking->pick_up_from;  
         }
 
-        if($booking->drop_type == 0)
+        if($booking->drop_to_type == 0)
         {
-            $location1 = $booking->dropAirport->location;
+            $location2 = $booking->dropAirport->location;
         } else if($booking->drop_type == 1){
-            $location1 = $booking->dropTrain->location;
+            $location2 = $booking->dropTrain->location;
         } else if($booking->drop_type == 2){
-            $location1 = $booking->dropBus->location;
+            $location2 = $booking->dropBus->location;
         } else {
-          $location1 = $booking->drop_to;
+          $location2 = $booking->drop_to;
         }
 
         $distance = getDistance($location1, $location2, "K");
