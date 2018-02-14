@@ -3,7 +3,13 @@
 
 function getStatus($status)
 {
-	if($status == 0)
+	if($status == -1)
+	{
+		return '<b class="text-danger"><i  class="fa fa-check text-danger"></i> Booking Cancelled.</b>
+				';
+	} 
+
+	else if($status == 0)
 	{
 		return '<b><i  class="fa fa-check text-success"></i> Booking Created.</b>
 				';

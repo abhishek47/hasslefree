@@ -150,4 +150,27 @@ class BookingsController extends Controller
 
         return redirect('/home');
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Booking  $booking
+     * @return \Illuminate\Http\Response
+     */
+    public function cancel(Booking $booking)
+    {
+        $booking->status = -1;
+
+        $booking->save();
+
+        if($booking->payment_made)
+        {
+           flash('Booking was cancelled successfully! Add your payment details to initiate refund!')->success();
+        } else {
+            flash('Booking was cancelled successfully!')->success();
+        }
+
+        return redirect('/bookings/' . $booking->id);
+    }
 }

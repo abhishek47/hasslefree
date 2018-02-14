@@ -31,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                       <img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span>
                     </a>
                 </div>
 

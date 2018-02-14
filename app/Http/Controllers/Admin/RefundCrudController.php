@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\BookingRequest as StoreRequest;
-use App\Http\Requests\BookingRequest as UpdateRequest;
+use App\Http\Requests\RefundRequest as StoreRequest;
+use App\Http\Requests\RefundRequest as UpdateRequest;
 
-class BookingCrudController extends CrudController
+class RefundCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class BookingCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Booking');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/bookings');
-        $this->crud->setEntityNameStrings('booking', 'bookings');
+        $this->crud->setModel('App\Models\Refund');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/refunds');
+        $this->crud->setEntityNameStrings('refund', 'refunds');
 
         /*
         |--------------------------------------------------------------------------
@@ -29,9 +29,11 @@ class BookingCrudController extends CrudController
         */
 
 
-        $this->crud->addColumns(['user', 'bags_count', 'price', 'payment_made', 'status']);
+
+        $this->crud->addColumns(['booking_id', 'account_name', 'amount', 'status']);
 
         $this->crud->addField(['name' => 'status', 'label' => 'Status']);
+
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

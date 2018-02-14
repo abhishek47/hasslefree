@@ -30,8 +30,15 @@ Route::get('/bookings/{booking}', 'BookingsController@show');
 Route::get('/bookings/{booking}/pay', 'PaymentsController@addMoney');
 Route::get('/bookings/{booking}/cod', 'BookingsController@confirmWithCOD');
 Route::get('/bookings/{booking}/delete', 'BookingsController@destroy');
+Route::get('/bookings/{booking}/cancel', 'BookingsController@cancel');
+
+Route::post('/booking/refund', 'RefundController@store');
 Route::post('/bookings', 'BookingsController@store');
 
 
 Route::get('/payments/response/', 'PaymentsController@response');
+
+Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
+Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
 

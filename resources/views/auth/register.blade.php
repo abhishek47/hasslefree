@@ -14,7 +14,7 @@
                     @include('partials.errors')
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
-                        <input class="input100" type="text" name="name" placeholder="Full Name">
+                        <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ isset(old('name')) ? old('name') : '' }}"> 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="fa fa-envelope"></span>
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Email">
+                        <input class="input100" type="text" name="email" placeholder="Email" value="{{ isset(old('email')) ? old('email') : '' }}">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="fa fa-envelope"></span>
@@ -58,12 +58,12 @@
                         </span>
                     </div>
 
-                    <a href="#" class="btn-face m-b-10">
+                    <a href="{{ url('login/facebook') }}" class="btn-face m-b-10">
                         <i class="fa fa-facebook-official"></i>
                         Facebook
                     </a>
 
-                    <a href="#" class="btn-google m-b-10">
+                    <a href="{{ url('login/google') }}" class="btn-google m-b-10">
                         <img src="/auth/images/icons/icon-google.png" alt="GOOGLE">
                         Google
                     </a>

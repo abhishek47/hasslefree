@@ -34,6 +34,11 @@
                         </label>
                     </div>
 
+                    <div class="contact100-form-checkbox m-l-4">
+                        <a class="txt1 bo1 hov1" href="{{ route('password.request') }}">
+                            forgot password?
+                        </a>
+                    </div>
                     <div class="container-login100-form-btn p-t-25">
                         <button class="login100-form-btn">
                             Login
@@ -46,12 +51,12 @@
                         </span>
                     </div>
 
-                    <a href="#" class="btn-face m-b-10">
+                    <a href="{{ url('login/facebook') }}" class="btn-face m-b-10">
                         <i class="fa fa-facebook-official"></i>
                         Facebook
                     </a>
 
-                    <a href="#" class="btn-google m-b-10">
+                    <a href="{{ url('login/google') }}" class="btn-google m-b-10">
                         <img src="/auth/images/icons/icon-google.png" alt="GOOGLE">
                         Google
                     </a>

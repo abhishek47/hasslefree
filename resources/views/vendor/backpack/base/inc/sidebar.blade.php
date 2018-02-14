@@ -16,6 +16,8 @@
 
           <li><a href="{{ backpack_url('bookings') }}"><i class="fa fa-file-text"></i> <span>Bookings</span></a></li>
 
+          <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li>
+
            <li><a href="{{ backpack_url('cities') }}"><i class="fa fa-map-marker"></i> <span>Cities</span></a></li>
 
            <li><a href="{{ backpack_url('airports') }}"><i class="fa fa-plane"></i> <span>Airports</span></a></li>

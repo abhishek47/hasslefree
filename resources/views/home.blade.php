@@ -94,6 +94,11 @@
                                         <label>Tell us your location</label>
                                         <input type="text" name="pick_up_from" id="pick_up_location" class="form-control" placeholder="Enter your location">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Complete Address ( optional )</label>
+                                        <input type="text" name="pick_up_address"  class="form-control" placeholder="Enter your address">
+                                    </div>
                                     
                                 </div>
                                 <div id="pickup_airport" class="hidden">
@@ -190,6 +195,11 @@
                                         <label>Tell us your location</label>
                                         <input type="text" name="drop_to" id="drop_location" class="form-control" placeholder="Enter your location">
                                     </div>
+
+                                     <div class="form-group">
+                                        <label>Complete Address ( optional )</label>
+                                        <input type="text" name="drop_address"  class="form-control" placeholder="Enter your address">
+                                    </div>
                                     
                                 </div>
                                 <div id="drop_airport" class="hidden">
@@ -278,14 +288,14 @@
                                         <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                                        <option value="12:00 AM - 01:00 PM">12:00 AM - 01:00 PM</option>
+                                        <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
                                         <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
-                                        <option value="02:00 PM - 03:00 PM">02:00 AM - 03:00 PM</option>
-                                        <option value="03:00 PM - 04:00 PM">03:00 AM - 04:00 PM</option>
-                                        <option value="04:00 PM - 05:00 PM">04:00 AM - 05:00 PM</option>
-                                        <option value="05:00 PM - 06:00 PM">05:00 AM - 06:00 PM</option>
-                                        <option value="06:00 PM - 07:00 PM">06:00 AM - 07:00 PM</option>
-                                        <option value="07:00 PM - 08:00 PM">07:00 AM - 08:00 PM</option>
+                                        <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                                        <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+                                        <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
+                                        <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
+                                        <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
+                                        <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -298,14 +308,14 @@
                                         <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                                        <option value="12:00 AM - 01:00 PM">12:00 AM - 01:00 PM</option>
+                                        <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
                                         <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
-                                        <option value="02:00 PM - 03:00 PM">02:00 AM - 03:00 PM</option>
-                                        <option value="03:00 PM - 04:00 PM">03:00 AM - 04:00 PM</option>
-                                        <option value="04:00 PM - 05:00 PM">04:00 AM - 05:00 PM</option>
-                                        <option value="05:00 PM - 06:00 PM">05:00 AM - 06:00 PM</option>
-                                        <option value="06:00 PM - 07:00 PM">06:00 AM - 07:00 PM</option>
-                                        <option value="07:00 PM - 08:00 PM">07:00 AM - 08:00 PM</option>
+                                        <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                                        <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+                                        <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
+                                        <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
+                                        <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
+                                        <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
                                     </select>
                                 </div>
                             </div>

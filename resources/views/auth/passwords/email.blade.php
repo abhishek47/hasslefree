@@ -1,47 +1,57 @@
-@extends('layouts.app')
+
+@extends('layouts.auth2')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+<div class="bg-light form4" id="register" style="margin-top: 0px;min-height: 1000px;">
+                <div class="container">
+                    <div class="row">
+                        <!-- Column -->
+                        
+                        <div class="col-lg-5 m-auto">
+                            <div class="text-box">
+                                 <div class="">
+                                         @if (session('status'))
+                                           <div class="alert alert-info">
+                                                <span style="margin-bottom: 0;padding-bottom: 0;">{{ session('status') }}</span>
+                                            </div>
+                                        
+                                        @endif
+                                        </div>
+                               <div class="card card-shadow">
+                                <div class="card-body">
+                                <form data-aos="fade-in" data-aos-duration="1200" method="POST" action="{{ route('password.email') }}">
+                                {{ csrf_field() }}
+                                     <div class="col-lg-12 m-l-10 m-b-20">
+                                        <p class="font-bold m-b-10">Forgot Your Password?</p> 
+                                        <p class="font-light">Worry not, tell us your email address, we'll send you the instructions to reset your Onyomark password.</p>
+                                     </div>
+                                    {{ csrf_field() }}
+                                   
+                                        <div class="col-lg-12">
+                                            <div class="form-group {{$errors->has('email') ? 'has-danger' : '' }}">
+                                                <input class="form-control {{$errors->has('email') ? 'form-control-danger' : '' }}" type="email" value="{{ old('email') }}" name="email" required placeholder="email address">
+                                                @if ($errors->has('email'))
+                                                    <div class="form-control-feedback">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-lg-12 d-flex">
+                                            <button type="submit" class="btn btn-md btn-block btn-danger-gradiant btn-arrow"><span> Send Password Reset Link <i class="fa fa-arrow-right"></i></span></button>
+                                        </div>
+                                        
+                                    </div>
+                                </form>
+                                </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+     
 @endsection
+
