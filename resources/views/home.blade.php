@@ -132,22 +132,22 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Train Number (optional)</label>
+                                        <label>Train Number </label>
                                         <input type="text" name="pick_up_train_no" class="form-control" placeholder="Enter train number">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Train Coach (optional)</label>
+                                        <label>Train Coach </label>
                                         <input type="text" name="pick_up_train_coach" class="form-control" placeholder="Enter train coach number">
                                     </div>
 
                                      <div class="form-group">
-                                        <label>Train Seat No. (optional)</label>
+                                        <label>Train Seat No. </label>
                                         <input type="text" name="pick_up_train_seat" class="form-control" placeholder="Enter train seat number">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Train Time (optional)</label>
+                                        <label>Train Time </label>
                                         <input type="time" name="pick_up_train_time" class="form-control" placeholder="Enter train arrival time">
                                     </div>
                                 </div>
@@ -233,22 +233,22 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Train Number (optional)</label>
+                                        <label>Train Number </label>
                                         <input type="text" name="drop_train_no" class="form-control" placeholder="Enter train number">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Train Coach (optional)</label>
+                                        <label>Train Coach </label>
                                         <input type="text" name="drop_train_coach" class="form-control" placeholder="Enter train coach number">
                                     </div>
 
                                      <div class="form-group">
-                                        <label>Train Seat No. (optional)</label>
+                                        <label>Train Seat No. </label>
                                         <input type="text" name="drop_train_seat" class="form-control" placeholder="Enter train seat number">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Train Time (optional)</label>
+                                        <label>Train Time </label>
                                         <input type="time" name="drop_train_time" class="form-control" placeholder="Enter train departure time">
                                     </div>
                                 </div>

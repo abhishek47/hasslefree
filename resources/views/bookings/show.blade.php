@@ -32,9 +32,9 @@
 
                       <p><b>Train Station</b></p>
                       <p><b>Pick up from :</b> {{ $booking->pickupTrain->name }}
-                      <br><b>Train No. :</b> {{ $booking->pick_up_train_no }}</p>
-                      <br><b>Coach No. :</b> {{ $booking->pick_up_train_coach_no }}</p>
-                      <br><b>Seat No. :</b> {{ $booking->pick_up_train_seat_no }}</p>
+                      <br><b>Train No. :</b> {{ $booking->pick_up_train }}</p>
+                      <br><b>Coach No. :</b> {{ $booking->pick_up_train_coach }}</p>
+                      <br><b>Seat No. :</b> {{ $booking->pick_up_train_seat }}</p>
                       <br><b>Train Time :</b> {{ $booking->pick_up_train_time }}</p>
 
                     @elseif($booking->pick_up_type == 2)
@@ -65,8 +65,8 @@
                        <p><b>Train Station</b></p>
                       <p><b>Drop to :</b> {{ $booking->dropTrain->name }}
                       <br><b>Train No. :</b> {{ $booking->drop_train_no }}</p>
-                       <br><b>Coach No. :</b> {{ $booking->drop_train_coach_no }}</p>
-                        <br><b>Seat No. :</b> {{ $booking->drop_train_seat_no }}</p>
+                       <br><b>Coach No. :</b> {{ $booking->drop_train_coach }}</p>
+                        <br><b>Seat No. :</b> {{ $booking->drop_train_seat }}</p>
                          <br><b>Train Time :</b> {{ $booking->drop_train_time }}</p>
 
                     @elseif($booking->drop_to_type == 2)
