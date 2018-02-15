@@ -35,4 +35,16 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+
+
+    'facebook' => [
+     
+       'client_id' => '2025392874396325', //Facebook API
+     
+       'client_secret' => '13543d9db88c3157478b86f47669c636', //Facebook Secret
+     
+       'redirect' => 'http://hasslefreeluggage.in/login/facebook/callback',
+         
+    ],
+
 ];
