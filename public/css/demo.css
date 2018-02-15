@@ -467,3 +467,14 @@ Feature 5
     margin: 0px; }
   .wrap-feature5-box .card-body p {
     margin-bottom: 0px; }
+
+
+
+
+    @media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

@@ -122,7 +122,7 @@
                 </div>
                 @endguest
                 <!-- Navbar  -->
-                <div class="h14-navbar">
+                <div class="h14-navbar no-print">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
                             
@@ -130,7 +130,7 @@
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="header14">
+                            <div class="collapse navbar-collapse collapse show" id="header14">
                                 <div class="hover-dropdown">
                                     <ul class="navbar-nav">
 

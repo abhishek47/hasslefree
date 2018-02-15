@@ -285,7 +285,6 @@
                                     <label>Pick up time</label>
                                    
                                     <select class="form-control" name="pick_up_time" id="pick_up_time">
-                                        <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
                                         <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
@@ -305,7 +304,6 @@
                                 <div class="form-group">
                                     <label>Drop time</label>
                                     <select class="form-control" name="drop_time" id="drop_time">
-                                        <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
                                         <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
                                         <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
