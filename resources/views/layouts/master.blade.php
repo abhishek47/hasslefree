@@ -334,7 +334,7 @@
     <!-- ============================================================== -->
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="./js/popper.min.js"></script>
+    <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <!-- This is for the animation -->
     <script src="/js/aos.js"></script>

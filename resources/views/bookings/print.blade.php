@@ -170,7 +170,7 @@
    
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="./js/popper.min.js"></script>
+    <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <!--Custom JavaScript -->
     <script src="/js/custom.min.js"></script>
