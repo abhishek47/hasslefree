@@ -74,7 +74,7 @@ class LoginController extends Controller
  
        if($user){
  
-           Auth::login($user);
+           \Auth::login($user);
  
            return redirect()->action('HomeController@index');
  
