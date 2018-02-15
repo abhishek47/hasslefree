@@ -47,4 +47,14 @@ return [
          
     ],
 
+    'google' => [
+     
+       'client_id' => '478637737516-12gop6qsaqe8cbn6lkt3ipnb7npm9jdo.apps.googleusercontent.com', //GOOGLE API
+     
+       'client_secret' => 'LpcBBv_KQV1Boa79R4PHNHJT', //GOOGLE Secret
+     
+       'redirect' => 'http://hasslefreeluggage.in/login/google/callback',
+         
+    ]
+
 ];
