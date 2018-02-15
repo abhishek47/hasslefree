@@ -14,7 +14,7 @@
                     @include('partials.errors')
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
-                        <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ old('name') != null ? old('name') : '' }}"> 
+                        <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ old('name') != null ? old('name') : $name }}"> 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="fa fa-envelope"></span>
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Email" value="{{ old('email') != null ? old('email') : '' }}">
+                        <input class="input100" type="text" name="email" placeholder="Email" value="{{ old('email') != null ? old('email') : $email }}">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="fa fa-envelope"></span>
