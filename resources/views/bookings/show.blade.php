@@ -251,11 +251,11 @@
 
                          <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Pay Online</a>
 
-                        <a  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
+                        <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
 
                         <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
 
-                         <a  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">Print Receipt</a>
+                         <a target="_blank"  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">Print Receipt</a>
 
                        
 

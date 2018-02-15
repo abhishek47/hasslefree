@@ -320,7 +320,7 @@
             <!-- ============================================================== -->
             <!-- Back to top -->
             <!-- ============================================================== -->
-            <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="fa fa-arrow-up"></i></a>
+            <a class="bt-top btn btn-circle btn-lg btn-info no-print" href="#top"><i class="fa fa-arrow-up"></i></a>
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
