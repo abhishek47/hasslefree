@@ -112,7 +112,7 @@
                              <td class="text-right">&#8377 {{ ($distance * 10) }}</td>
                            </tr>
                            <tr>
-                             <td class="font-medium">Insuarance</td>
+                             <td class="font-medium">Insurance</td>
                              <td class="text-right">&#8377 {{ ($booking->bags_count * 12) }}</td>
                            </tr>
                            <tr>
@@ -133,12 +133,12 @@
 
                            <tr>
                              <td class="font-medium">CGST 9%</td>
-                             <td class="text-right">&#8377 {{ $cgst  }}</td>
+                             <td class="text-right">&#8377 {{ round($cgst, 2)  }}</td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">SGST 9%</td>
-                             <td class="text-right">&#8377 {{ $sgst  }}</td>
+                             <td class="text-right">&#8377 {{ round($sgst, 2)  }}</td>
                            </tr>
 
                          </tbody>

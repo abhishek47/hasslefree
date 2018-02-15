@@ -147,9 +147,9 @@ class BookingsController extends Controller
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
-         $cgst = $basePrice + ($basePrice * (9/100)); // GST
+        $cgst = ($basePrice * (9/100)); // GST
 
-          $sgst = $basePrice + ($basePrice * (9/100)); // GST
+        $sgst = ($basePrice * (9/100)); // GST
 
         return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
     }
