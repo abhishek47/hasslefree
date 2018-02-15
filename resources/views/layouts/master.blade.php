@@ -166,13 +166,7 @@
                                             <a class="nav-link" href="/bookings"> My Bookings</a>
                                         </li>
 
-                                         <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}"> 
-                                            <a class="nav-link" href="/profile"> Profile</a>
-                                        </li>
-
-                                         <li class="nav-item {{ request()->is('settings') ? 'active' : '' }}"> 
-                                            <a class="nav-link" href="/settings"> Settings</a>
-                                        </li>
+                                         
 
                                      @endif   
                                       
@@ -181,24 +175,27 @@
                                 <ul class="navbar-nav ml-auto">
 
                                   @auth
-                                    <li class="nav-item "> 
-                                              <a class="nav-link" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i> Logout
-                                        </a>
 
+                                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  {{ auth()->user()->name }} <i class="fa fa-angle-down m-l-5"></i>
+                                </a>
+                                    <ul class="b-none dropdown-menu font-14 animated fadeInUp">
+                                        
+                                        <li><a class="dropdown-item" href="/profile"><i class="fa fa-user"></i> Profile</a></li>
+                                        <li><a class="dropdown-item" href="/settings"><i class="fa fa-cog"></i> Settings</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                                   
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        </li>
+                                        
                                       @endauth  
 
-                                    <li class="nav-item search dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" id="h14-sdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
-                                        <div class="dropdown-menu b-none dropdown-menu-right animated fadeInDown" aria-labelledby="h14-sdropdown">
-                                            <input class="form-control" type="text" placeholder="Type & hit enter" />
-                                        </div>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </nav>
