@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card card-shadow">
                
-                <div class="card-body text-dark font-18">
+                <div class="card-body text-dark font-16">
                      <h3 class="panel-heading">Booking Details</h3>
                      <hr>
                     
