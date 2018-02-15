@@ -279,46 +279,50 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Pick up date</label>
-                                    <input type="text" id="datedropper1" data-large-default="true" data-large-mode="true" data-init-set="false"  data-format="d-m-Y" name="pick_up_date" required class="form-control" >
+                                    <input type="text" id="datedropper1" data-large-default="true" data-large-mode="true" data-init-set="false"  data-format="d-m-Y" name="pick_up_date" data-lock="from" required class="form-control" onchange="checkTimeDifference();">
                                 </div>
                                 <div class="form-group">
                                     <label>Pick up time</label>
                                    
-                                    <select class="form-control" name="pick_up_time" id="pick_up_time">
-                                        <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
-                                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                                        <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
-                                        <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
-                                        <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
-                                        <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
-                                        <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
-                                        <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
-                                        <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
-                                        <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
+                                    <select class="form-control" name="pick_up_time" id="pick_up_time" onchange="checkTimeDifference();">
+                                        <option selected disabled>--- Choose Time ---</option>
+                                        <option value="1">09:00 AM - 10:00 AM</option>
+                                        <option value="2">10:00 AM - 11:00 AM</option>
+                                        <option value="3">11:00 AM - 12:00 PM</option>
+                                        <option value="4">12:00 PM - 01:00 PM</option>
+                                        <option value="5">01:00 PM - 02:00 PM</option>
+                                        <option value="6">02:00 PM - 03:00 PM</option>
+                                        <option value="7">03:00 PM - 04:00 PM</option>
+                                        <option value="8">04:00 PM - 05:00 PM</option>
+                                        <option value="9">05:00 PM - 06:00 PM</option>
+                                        <option value="10">06:00 PM - 07:00 PM</option>
+                                        <option value="11">07:00 PM - 08:00 PM</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Drop date</label>
-                                    <input type="date" id="datedropper2" data-large-default="true" data-large-mode="true" data-init-set="false"  data-format="d-m-Y" name="drop_date" required class="form-control" >
+                                    <input type="date" id="datedropper2" data-large-default="true" data-large-mode="true" data-init-set="false"  data-format="d-m-Y" name="drop_date" data-lock="from"  required class="form-control" onchange="checkTimeDifference();">
                                 </div>
                                 <div class="form-group">
                                     <label>Drop time</label>
-                                    <select class="form-control" name="drop_time" id="drop_time">
-                                        <option value="10:00 AM - 11:00 AM">09:00 AM - 10:00 AM</option>
-                                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                                        <option value="12:00 AM - 01:00 PM">12:00 PM - 01:00 PM</option>
-                                        <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
-                                        <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
-                                        <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
-                                        <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
-                                        <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
-                                        <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
-                                        <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
+                                    <select class="form-control" name="drop_time" id="drop_time" onchange="checkTimeDifference();">
+                                        <option selected disabled>--- Choose Time ---</option>
+                                        <option value="1">09:00 AM - 10:00 AM</option>
+                                        <option value="2">10:00 AM - 11:00 AM</option>
+                                        <option value="3">11:00 AM - 12:00 PM</option>
+                                        <option value="4">12:00 PM - 01:00 PM</option>
+                                        <option value="5">01:00 PM - 02:00 PM</option>
+                                        <option value="6">02:00 PM - 03:00 PM</option>
+                                        <option value="7">03:00 PM - 04:00 PM</option>
+                                        <option value="8">04:00 PM - 05:00 PM</option>
+                                        <option value="9">05:00 PM - 06:00 PM</option>
+                                        <option value="10">06:00 PM - 07:00 PM</option>
+                                        <option value="11">07:00 PM - 08:00 PM</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                        <button class="btn btn-danger-gradiant btn-next btn-arrow pull-right" id="timeContinue">
                         <span>Continue <i class="fa fa-arrow-right"></i></span>
                         </button>
 
@@ -490,5 +494,40 @@ google.maps.event.addDomListener(window, 'load', init);
         return true;
     }
 });
+
+
+  function checkTimeDifference()
+  {
+    console.log('validation'); 
+    var date1 = $('#datedropper1').val();   
+    var date2 = $('#datedropper2').val();    
+    var time1 = $('#pick_up_time option:selected').val();
+    var time2 = $('#drop_time option:selected').val();
+
+    var message = '';
+
+    if(date1 == date2 && (time2 - time1) < 6)
+    {
+        message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
+    }
+
+    if(message != '')
+    {
+        $('#drop_time').addClass('parsley-error');
+        $('#drop_time').parent().find('.parsley-errors-list').remove();
+
+        $('#drop_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+
+        $('#timeContinue').attr('disabled', true);
+
+    } else {
+        $('#drop_time').removeClass('parsley-error');
+         $('#drop_time').parent().find('.parsley-errors-list').remove();
+          $('#timeContinue').attr('disabled', false);
+    } 
+
+    
+            
+  }
 </script>
 @endsection

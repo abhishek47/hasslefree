@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
 
+Route::get('/faq', function () {
+    return view('pages.faq');
+})->middleware('guest');
+
 Auth::routes();
 
 Route::get('/profile', 'UserController@profile');

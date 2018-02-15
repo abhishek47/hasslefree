@@ -143,7 +143,7 @@
                             <img class="card-img-top" src="/images/features/6.jpg" alt="wrappixel kit" />
                             <div class="card-body text-center">
                                 <h5 class="font-medium">We Collect &amp; Store</h5>
-                                <p class="m-t-20">Luggage is sealed than transfered to a secured warehouse before delivery.</p>
+                                <p class="m-t-20">Luggage is sealed and transfered to a secured warehouse before delivery.</p>
                             </div>
                         </div>
                     </div>

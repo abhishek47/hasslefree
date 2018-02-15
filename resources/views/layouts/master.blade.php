@@ -136,7 +136,7 @@
 
                                     @guest
                                         
-                                        <li class="nav-item active"> 
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }}"> 
                                             <a class="nav-link" href="/"> Home</a>
                                         </li>
 
@@ -150,6 +150,10 @@
 
                                         <li class="nav-item"> 
                                             <a class="nav-link" href="#about"> About</a>
+                                        </li>
+
+                                        <li class="nav-item {{ request()->is('faq') ? 'active' : '' }}"> 
+                                            <a class="nav-link"  href="/faq"> FAQ</a>
                                         </li>
 
                                         <li class="nav-item"> 
@@ -334,7 +338,7 @@
     <!-- ============================================================== -->
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="/js/popper.min.js"></script>
+<script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <!-- This is for the animation -->
     <script src="/js/aos.js"></script>
