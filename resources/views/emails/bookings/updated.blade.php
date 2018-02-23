@@ -3,7 +3,7 @@
 
 Your booking status with ID {{$booking->id}} has been updated to : {!! getStatus($booking->status) !!}
 
-@component('mail::button', ['url' => '/bookings/' . $booking->id])
+@component('mail::button', ['url' => config('app.url') . '/bookings/' . $booking->id])
 View Details
 @endcomponent
 

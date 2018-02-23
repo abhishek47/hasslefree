@@ -3,7 +3,7 @@
 
 We have received your booking and have scheduled it up for pickup. Our representative will reach out to you in the given timespan. 
 
-@component('mail::button', ['url' => '/bookings/' . $booking->id])
+@component('mail::button', ['url' => config('app.url') . '/bookings/' . $booking->id])
 View Details
 @endcomponent
 
