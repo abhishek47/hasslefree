@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Mail\NewBookingCreated;
 use Softon\Indipay\Facades\Indipay;  
 
 class PaymentsController extends Controller
@@ -67,11 +68,34 @@ class PaymentsController extends Controller
 
         $booking->save();
 
+        $distance = $booking->distance;
+
+        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
+
+        $cgst = ($basePrice * (9/100)); // GST
+
+        $sgst = ($basePrice * (9/100)); // GST
+
+        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+
+        $invoiceData = $invoice->output();
+        
+        $message = new NewBookingCreated($booking);
+
+        $message->attachData($invoiceData, 'invoice.pdf', 
+                    [
+                        'mime' => 'application/pdf',
+                    ]);
+
+        \Mail::to(auth()->user())->send($message);
 
 
         flash('Payment was succesfully made!')->success();
 
         return redirect('/bookings/' . $booking->id);
     }  
+
+
+
 
 }

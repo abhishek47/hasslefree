@@ -32,6 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/bookings', 'BookingsController@index');
 Route::get('/bookings/{booking}', 'BookingsController@show');
 Route::get('/bookings/{booking}/receipt', 'BookingsController@print');
+Route::get('/bookings/{booking}/download', 'BookingsController@download');
 Route::get('/bookings/{booking}/pay', 'PaymentsController@addMoney');
 Route::get('/bookings/{booking}/cod', 'BookingsController@confirmWithCOD');
 Route::get('/bookings/{booking}/delete', 'BookingsController@destroy');

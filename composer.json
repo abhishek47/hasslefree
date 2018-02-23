@@ -12,6 +12,7 @@
         "backpack/base": "^0.8.9",
         "backpack/crud": "^3.3",
         "backpack/settings": "^2.0",
+        "barryvdh/laravel-dompdf": "^0.8.2",
         "fideloper/proxy": "~3.3",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",

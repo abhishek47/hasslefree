@@ -364,12 +364,17 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDul5sDHezP3kN2bCzJDgI2MYzMYqy4XIM&libraries=places"
 ></script>
 
+<script type="text/javascript">
+    var pickupType;
+    var dropType;
+</script>
 
 <script type="text/javascript">
 $('#pick_up_type').on('change', function (e) {
 console.log('changed');
 var optionSelected = $("option:selected", this);
 var valueSelected = this.value;
+pickupType = valueSelected;
 console.log('value : ' + valueSelected);
 if(valueSelected == 0){
 $('#pickup_train').addClass('hidden');
@@ -398,7 +403,7 @@ $('#pickup_other').removeClass('hidden');
 $('#drop_to_type').on('change', function (e) {
 var optionSelected = $("option:selected", this);
 var valueSelected = this.value;
-
+dropType = valueSelected;
 if(valueSelected == 0){
 $('#drop_train').addClass('hidden');
 $('#drop_bus').addClass('hidden');
