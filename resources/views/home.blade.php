@@ -446,7 +446,7 @@ next_step = false;
 if (next_step) {
 parent_fieldset.fadeOut(400, function () {
 $(this).next().fadeIn();
-
+window.scrollTo(0,0);
 var input1 = document.getElementById('pick_up_location');
 var autocomplete1 = new google.maps.places.Autocomplete(input1);
 var input2 = document.getElementById('drop_location');

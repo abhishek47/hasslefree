@@ -237,19 +237,19 @@
                         <br class="hidden-md-up"> <br class="hidden-md-up">  
 
 
-                        <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success hidden-md-up">Pay Online</a>
+                        <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success hidden-md-up">Pay Online</a>
 
-                        <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary hidden-md-up">Pay on Delivery</a>
+                        <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary hidden-md-up">Pay on Delivery</a>
 
-                        <a  href="/bookings/{{$booking->id}}/pay" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
+                        <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
 
-                         <a  href="/bookings/{{$booking->id}}/cod" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
+                         <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
                      
 
 
                       @else
 
-                         <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Pay Online</a>
+                         <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
 
                         <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
 
@@ -398,4 +398,53 @@
     </div>
 </div>
 </div>
+
+<!-- sample modal content -->
+<div id="confirmModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myLargeModalLabel">Disclaimer</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <h4>Overflowing text to show scroll behavior</h4>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/bookings/{{$booking->id}}/cod" class="btn btn-danger waves-effect text-left" >Accept &amp; Confirm</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- sample modal content -->
+<div id="confirmModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myLargeModalLabel">Disclaimer</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <h4>Overflowing text to show scroll behavior</h4>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/bookings/{{$booking->id}}/pay" class="btn btn-danger waves-effect text-left" >Accept &amp; Pay</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
 @endsection

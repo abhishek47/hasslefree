@@ -286,7 +286,7 @@
                             <div class="d-flex no-block m-b-10">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
                                 <div class="info">
-                                    <span class=" db  m-t-5">1 (888) 123 4567</span>
+                                    <span class=" db  m-t-5">(+91) 9582873902</span>
                                 </div>
                             </div>
                             <div class="d-flex no-block m-b-30">
