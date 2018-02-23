@@ -27,7 +27,7 @@
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
-                             <td>{{ $booking->pick_up_date }}, {{ $booking->pick_up_time }}</td>
+                             <td>{{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
@@ -62,7 +62,7 @@
                            </tr>
                            <tr>
                              <td class="font-medium">Drop Time</td>
-                             <td>{{ $booking->drop_date }}, {{ $booking->drop_time }}</td>
+                             <td>{{ $booking->drop_date }}, {{ getTime($booking->drop_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Drop Address</td>
@@ -122,7 +122,7 @@
                              
                            </tr>
                            <tr>
-                             <td>{{ $booking->pick_up_date }}, {{ $booking->pick_up_time }}</td>
+                             <td>{{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
@@ -163,7 +163,7 @@
                              
                            </tr>
                            <tr>
-                             <td>{{ $booking->drop_date }}, {{ $booking->drop_time }}</td>
+                             <td>{{ $booking->drop_date }}, {{ getTime($booking->drop_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Drop Address</td>

@@ -70,7 +70,7 @@
                
                 <div class="card-body text-dark font-16">
                       <hr>
-                      <h5 class="text-center m-b-20 font-bold">TAX INVOICE</h5>
+                      <h5 class="text-center m-b-20 font-bold">GST INVOICE</h5>
                       <hr>
                       <div class="pull-right text-right">
                       <h5 class="panel-heading">
