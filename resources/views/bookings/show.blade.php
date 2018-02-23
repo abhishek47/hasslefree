@@ -231,7 +231,7 @@
 
                        @if($booking->status == 0)
 
-                    
+
                         <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
                          
                         <br class="hidden-md-up"> <br class="hidden-md-up">  
@@ -249,13 +249,19 @@
 
                       @else
 
-                         <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
+                         @if($booking->status != 5)
+                           <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
+                         @endif  
 
-                        <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
+                         <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
 
-                        <a  href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
+                         @if($booking->status != 5)
+                          <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
+                         @endif
 
-                         <a target="_blank"  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">Print Receipt</a>
+                         <a target="_blank"  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">
+                          Print Receipt
+                         </a>
 
                        
 

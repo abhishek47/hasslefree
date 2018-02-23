@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
+use App\Mail\BookingCancelled;
 
 class BookingsController extends Controller
 {
@@ -183,29 +184,9 @@ class BookingsController extends Controller
     public function download(Booking $booking)
     {
 
-         if($booking->pick_up_type == 0)
-        {
-            $location1 = $booking->pickupAirport->location;
-        } else if($booking->pick_up_type == 1){
-            $location1 = $booking->pickupTrain->location;
-        } else if($booking->pick_up_type == 2){
-            $location1 = $booking->pickupBus->location;
-        } else {
-            $location1 = $booking->pick_up_from;  
-        }
+        
 
-        if($booking->drop_to_type == 0)
-        {
-            $location2 = $booking->dropAirport->location;
-        } else if($booking->drop_to_type == 1){
-            $location2 = $booking->dropTrain->location;
-        } else if($booking->drop_to_type == 2){
-            $location2 = $booking->dropBus->location;
-        } else {
-          $location2 = $booking->drop_to;
-        }
-
-        $distance = getDistance($location1, $location2);
+        $distance = $booking->distance;
 
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
@@ -216,7 +197,7 @@ class BookingsController extends Controller
 
         $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
-        return $invoice->output();
+        return $invoice->stream("booking-" . $booking->id . ".pdf");
 
     }
 
@@ -253,7 +234,7 @@ class BookingsController extends Controller
     {
         $booking->delete();
 
-
+         \Mail::to(auth()->user())->send(new BookingCancelled($booking));
 
         flash('Booking was cancelled successfully!')->success();
 
@@ -272,6 +253,8 @@ class BookingsController extends Controller
         $booking->status = -1;
 
         $booking->save();
+
+        \Mail::to(auth()->user())->send(new BookingCancelled($booking));
 
         if($booking->payment_made)
         {

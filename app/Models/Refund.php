@@ -9,4 +9,10 @@ class Refund extends Model
 {
 	use CrudTrait;
     protected $guarded = [];
+
+
+    public function getRefundStatusAttribute()
+    {
+    	return $this->status == 0 ? 'Refund Pending' : 'Refund Processed';
+    }
 }

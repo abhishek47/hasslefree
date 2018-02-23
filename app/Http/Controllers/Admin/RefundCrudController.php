@@ -30,9 +30,16 @@ class RefundCrudController extends CrudController
 
 
 
-        $this->crud->addColumns(['booking_id', 'account_name', 'amount', 'status']);
+        $this->crud->addColumns([['name' => 'booking_id', 'label' => 'Booking #ID'], 'account_name', 'amount', 'refund_status']);
 
-        $this->crud->addField(['name' => 'status', 'label' => 'Status']);
+        $this->crud->addField([ // select_from_array
+    'name' => 'status',
+    'label' => "Booking Status",
+    'type' => 'select2_from_array',
+    'options' => [0 => 'Refund Pending', 1 => 'Refund Processed'],
+    'allows_null' => false,
+    // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+]);
 
 
         // ------ CRUD FIELDS

@@ -58,6 +58,23 @@ function getTime($value)
 
 }
 
+function getStatusString($value)
+{
+
+	if($value == -1)
+	{
+		return 'Cancelled';
+	} 
+	else {
+		 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Warehouse', 'In Transit', 'Luggage Delivered' ];
+                                        
+		
+	 return $statuses[$value];
+	}
+	
+
+}
+
 
 
 function getDistance($addressFrom, $addressTo){

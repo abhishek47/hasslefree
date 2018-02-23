@@ -29,9 +29,18 @@ class BookingCrudController extends CrudController
         */
 
 
-        $this->crud->addColumns(['user', 'bags_count', 'price', 'payment_made', 'status']);
+        $this->crud->addColumns(['id', 'user_name', 'bags_count', 'price', 'payment_status', 'booking_status']);
 
-        $this->crud->addField(['name' => 'status', 'label' => 'Status']);
+        $this->crud->addField([ // select_from_array
+    'name' => 'status',
+    'label' => "Booking Status",
+    'type' => 'select2_from_array',
+    'options' => [-1 => 'Cancelled', 0 => 'Created', 1 => 'Scheduled Pickup', 2 => 'Luggage Picked', 3 => 'In Warehouse', 4 => 'In Transit', 5 => 'Luggage Delivered'],
+    'allows_null' => false,
+    // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+]);
+
+        $this->crud->addButtonFromModelFunction('line', 'open_preview', 'openPreview', 'beginning');
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -104,19 +113,30 @@ class BookingCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
+       
         // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+
+       
+
         return $redirect_location;
     }
 
     public function update(UpdateRequest $request)
     {
+        
+        
         // your additional operations before save here
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+         
+
+        
+            \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
+        
         return $redirect_location;
     }
 }
