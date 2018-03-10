@@ -202,9 +202,7 @@ class BookingsController extends Controller
 
         $sgst = ($basePrice * (9/100)); // GST
 
-        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
-
-        return $invoice->stream("booking-" . $booking->id . ".pdf");
+        return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
     }
 

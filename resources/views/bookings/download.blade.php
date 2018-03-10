@@ -73,22 +73,87 @@
                       <h5 class="text-center m-b-20 font-bold">GST INVOICE</h5>
                       <hr>
                       <div class="pull-right text-right">
-                      <h5 class="panel-heading">
-                     <span class="font-bold">HASSLEFREE LUGGAGE PRIVATE LIMITED</span>
-                      </h5>
-                      <p class="m-b-0">F4/16, KRISHNA NAGAR<br>NEW DELHI-110051<br><b>GSTIN No. : </b>  07AAECH3866L1Z6</p>
-                     </div>
+                        <h5 class="panel-heading">
+                         <span class="font-bold">HASSLEFREE LUGGAGE PRIVATE LIMITED</span>
+                          </h5>
+                          <p class="m-b-0">F4/16, KRISHNA NAGAR<br>NEW DELHI-110051<br><b>GSTIN No. : </b>  07AAECH3866L1Z6</p>
+                         </div>
 
-                     <div class="pull-left">
-                       <h5 class="panel-heading">
-                     <span class="font-bold">INVOICE #{{ $booking->id }}</span>
-                      </h5>
-                      <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
-                      </div>
+                           <div class="pull-left">
+                             <h5 class="panel-heading">
+                           <span class="font-bold">INVOICE #{{ $booking->id }}</span>
+                            </h5>
+                            <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
+                          </div>
 
                       <div class="clearfix"></div>
                      <hr>
 
+                   
+                     <div>
+                       
+                           <p ><b>Pick Up Time :</b> {{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</p>
+                            
+                             <p ><b>Pick Up Address :</b> 
+                             
+                               @if($booking->pick_up_type == 0)
+                                {{ $booking->pickupAirport->name }}
+                                <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
+                               @elseif($booking->pick_up_type == 1)
+
+
+                               {{ $booking->pickupTrain->name }}
+                              <br><b>Train PNR No. :</b> {{ $booking->pick_up_train_pnr }}
+
+                            @elseif($booking->pick_up_type == 2)
+      
+                              {{ $booking->pickupBus->name }}
+
+                            @else
+
+                             {{ $booking->pick_up_from }}</p> 
+                              @if(isset($booking->pick_up_address))
+                              <br><b>Address : </b> {{ $booking->pick_up_address }}
+                              @endif
+
+                            @endif
+                            </p>
+                             
+                           
+                             <p ><b>Drop Time :</b>
+                             {{ $booking->drop_date }}, {{ getTime($booking->drop_time) }}</p>
+                           
+                             <p ><b>Drop Address :</b> 
+                             
+                              @if($booking->drop_to_type == 0)
+
+                                
+                                {{ $booking->dropAirport->name }}
+                                <br><b>Flight Number :</b> {{ $booking->drop_flight_number }}
+
+                              @elseif($booking->drop_to_type == 1)
+
+                                
+                                {{ $booking->dropTrain->name }}
+                                <br><b>Train PNR No. :</b> {{ $booking->drop_train_pnr }}
+
+                              @elseif($booking->drop_to_type == 2)
+
+                               
+                                <b>Drop to :</b> {{ $booking->dropBus->name }}
+
+                              @elseif($booking->drop_to_type > 2)
+
+                                {{ $booking->drop_to }} 
+                                @if(isset($booking->drop_address))
+                                <br><b>Address : </b> {{ $booking->drop_address }}
+                                @endif
+
+                              @endif
+                             </p>
+                     </div>
+
+                     <hr>
                      @if($booking->special != null)
 
                         <p><b>Special Comments : </b> {{ $booking->special }}</p>
@@ -107,38 +172,41 @@
                              <td class="font-medium">Distance </td>
                              <td class="text-right">{{ $distance }} Km.</td>
                            </tr>
+
+                          
+
                            <tr>
                              <td class="font-medium">Base Price</td>
-                             <td class="text-right">Rs. {{ ($distance * 10) }}</td>
+                             <td class="text-right">&#8377 {{ ($distance * 10) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Insurance</td>
-                             <td class="text-right">Rs. {{ ($booking->bags_count * 12) }}</td>
+                             <td class="text-right">&#8377 {{ ($booking->bags_count * 12) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Handling Charges</td>
-                             <td class="text-right">Rs. {{ ($booking->bags_count * 10) }}</td>
+                             <td class="text-right">&#8377 {{ ($booking->bags_count * 10) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Security Labelling</td>
                              <td class="text-right">
-                              Rs. {{ ($booking->bags_count * 7) }}
+                              &#8377 {{ ($booking->bags_count * 7) }}
                              </td>
                            </tr>
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
-                             <td class="text-right font-bold">Rs. {{ $basePrice  }}</td>
+                             <td class="text-right font-bold">&#8377 {{ $basePrice  }}</td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">CGST 9%</td>
-                             <td class="text-right">Rs. {{ round($cgst, 2)  }}</td>
+                             <td class="text-right">&#8377 {{ round($cgst, 2)  }}</td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">SGST 9%</td>
-                             <td class="text-right">Rs. {{ round($sgst, 2)  }}</td>
+                             <td class="text-right">&#8377 {{ round($sgst, 2)  }}</td>
                            </tr>
 
                          </tbody>
@@ -148,12 +216,13 @@
 
                     <hr>
 
-                    <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->price, 2) }}</span></b></h3>
+                    <h3 class="pull-right"><b>Total : <span class="text-dark">&#8377 {{ round($booking->price, 2) }}</span></b></h3>
 
                     <div class="clearfix"></div>
                      <hr>
 
                      <div id="qrcode"></div>
+
                     
 
                 </div>
@@ -176,7 +245,7 @@
     <!--Custom JavaScript -->
     <script src="/js/custom.min.js"></script>
 
-        <script src="/js/qrcode.min.js"></script>
+    <script src="/js/qrcode.min.js"></script>
 
     <script type="text/javascript">
       var qrcode = new QRCode("qrcode", {
@@ -188,13 +257,9 @@
           correctLevel : QRCode.CorrectLevel.H
       });
     </script>
- 
     
-    <script type="text/javascript">
-<!--
-window.print();
-//-->
-</script>
+   
+
 </body>
 
 </html>

@@ -73,22 +73,24 @@
                       <h5 class="text-center m-b-20 font-bold">GST INVOICE</h5>
                       <hr>
                       <div class="pull-right text-right">
-                      <h5 class="panel-heading">
-                     <span class="font-bold">HASSLEFREE LUGGAGE PRIVATE LIMITED</span>
-                      </h5>
-                      <p class="m-b-0">F4/16, KRISHNA NAGAR<br>NEW DELHI-110051<br><b>GSTIN No. : </b>  07AAECH3866L1Z6</p>
-                     </div>
+                        <h5 class="panel-heading">
+                         <span class="font-bold">HASSLEFREE LUGGAGE PRIVATE LIMITED</span>
+                          </h5>
+                          <p class="m-b-0">F4/16, KRISHNA NAGAR<br>NEW DELHI-110051<br><b>GSTIN No. : </b>  07AAECH3866L1Z6</p>
+                         </div>
 
-                     <div class="pull-left">
-                       <h5 class="panel-heading">
-                     <span class="font-bold">INVOICE #{{ $booking->id }}</span>
-                      </h5>
-                      <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
-                      </div>
+                           <div class="pull-left">
+                             <h5 class="panel-heading">
+                           <span class="font-bold">INVOICE #{{ $booking->id }}</span>
+                            </h5>
+                            <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
+                          </div>
 
                       <div class="clearfix"></div>
                      <hr>
 
+                   
+                    
                      @if($booking->special != null)
 
                         <p><b>Special Comments : </b> {{ $booking->special }}</p>
@@ -107,6 +109,9 @@
                              <td class="font-medium">Distance </td>
                              <td class="text-right">{{ $distance }} Km.</td>
                            </tr>
+
+                          
+
                            <tr>
                              <td class="font-medium">Base Price</td>
                              <td class="text-right">&#8377 {{ ($distance * 10) }}</td>

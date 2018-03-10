@@ -20,10 +20,12 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
+    
+
 
     public function openPreview($crud = false)
     {
-        return '<a class="btn btn-xs btn-success" target="_blank" href="/bookings/' . $this->id . '/receipt' . '" data-toggle="tooltip" title="View/Download Booking Receipt"><i class="fa fa-search"></i> View Receipt</a>';
+        return '<a class="btn btn-xs btn-success" target="_blank" href="/bookings/' . $this->id . '/download' . '" data-toggle="tooltip" title="View/Download Booking Receipt"><i class="fa fa-file-text"></i> Receipt</a>';
     }
 
 
