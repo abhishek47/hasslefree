@@ -21,7 +21,7 @@ class ModifyBookingsTable extends Migration
             $table->dropColumn('pick_up_train_time')->nullable();
             $table->string('pick_up_train_pnr')->nullable();
             $table->dropColumn('drop_airport_terminal')->nullable();
-            $table->dropColumn('drop_train_station_id')->nullable();
+            $table->integer('drop_train_station_id')->nullable();
             $table->dropColumn('drop_train_no')->nullable();
             $table->dropColumn('drop_train_coach')->nullable();
             $table->dropColumn('drop_train_seat')->nullable();
@@ -45,7 +45,6 @@ class ModifyBookingsTable extends Migration
             $table->string('pick_up_train_time')->nullable();
             $table->dropColumn('pick_up_train_pnr')->nullable();
             $table->string('drop_airport_terminal')->nullable();
-            $table->string('drop_train_station_id')->nullable();
             $table->string('drop_train_no')->nullable();
             $table->string('drop_train_coach')->nullable();
             $table->string('drop_train_seat')->nullable();
