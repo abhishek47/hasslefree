@@ -25,7 +25,7 @@
                                         <h2 data-animation="animated zoomInRight" class="title text-white">Hassle Free Luggage Transport Service</h2>
                                     </div>
                                     <div class="col-md-8 col-lg-5">
-                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Transfer services in India for Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>
+                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Transfer services from Railway Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>
                                     </div>
                                     <div class="col-sm-12 btn-pad">
                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/register"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
