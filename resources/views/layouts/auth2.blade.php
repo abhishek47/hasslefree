@@ -67,9 +67,62 @@
             <!-- ============================================================== -->
             <div class="header14 po-relative">
                 <!-- Topbar  -->
-                
+                @guest
+                <div class="h14-topbar">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg font-14">
+                            <a class="navbar-brand hidden-lg-up" href="#">Top Menu</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header14a" aria-controls="header14a" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fa fa-chevron"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="header14a">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a class="nav-link">We let you enjoy your trip luggage free!</a></li>
+                                </ul>
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Infobar  -->
+                <div class="h14-infobar">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg h14-info-bar">
+                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fa fa-chevron-down"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="h14-info">
+                                <ul class="navbar-nav ml-auto text-uppercase">
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10"><i class="icon-Mail"></i></div>
+                                            <div><small>Email us at</small>
+                                                <h6 class="font-bold font-14">info@hasslefreeluggage.in</h6></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10"><i class="icon-Phone-2"></i></div>
+                                            <div><small>CALL US NOW</small>
+                                                <h6 class="font-bold">(+91) 9582873902</h6></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item donate-btn"><a href="/home" class="btn btn-danger-gradiant">Book Now</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                @endguest
                 <!-- Navbar  -->
-                <div class="h14-navbar">
+                <div class="h14-navbar no-print">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
                             
@@ -77,42 +130,49 @@
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="header14">
+                            <div class="collapse navbar-collapse collapse show" id="header14">
                                 <div class="hover-dropdown">
                                     <ul class="navbar-nav">
 
-                                    
-
-                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
+                                  
+                                        
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
                                            <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
                                         </li>
 
-                                        
-                                        
+                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
+                                            <a class="nav-link" href="/bookings"> My Bookings</a>
+                                        </li>
+
+                                         
+
+                                    
                                       
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
 
-                                  @auth
-                                    <li class="nav-item "> 
-                                              <a class="nav-link" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i> Logout
-                                        </a>
 
+                                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  {{ auth()->user()->name }} <i class="fa fa-angle-down m-l-5"></i>
+                                </a>
+                                    <ul class="b-none dropdown-menu font-14 animated fadeInUp">
+                                        
+                                        <li><a class="dropdown-item" href="/profile"><i class="fa fa-user"></i> Profile</a></li>
+                                        <li><a class="dropdown-item" href="/settings"><i class="fa fa-cog"></i> Settings</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                                   
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        </li>
-                                      @endauth  
+                                        
+                                   
 
-                                    <li class="nav-item search dropdown"><a class="nav-link dropdown-toggle" href="javascript:void(0)" id="h14-sdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
-                                        <div class="dropdown-menu b-none dropdown-menu-right animated fadeInDown" aria-labelledby="h14-sdropdown">
-                                            <input class="form-control" type="text" placeholder="Type & hit enter" />
-                                        </div>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </nav>
@@ -199,7 +259,7 @@
                             <div class="d-flex no-block m-b-10">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
                                 <div class="info">
-                                    <span class=" db  m-t-5">1 (888) 123 4567</span>
+                                    <span class=" db  m-t-5">(+91) 9582873902</span>
                                 </div>
                             </div>
                             <div class="d-flex no-block m-b-30">
@@ -237,7 +297,7 @@
             <!-- ============================================================== -->
             <!-- Back to top -->
             <!-- ============================================================== -->
-            <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="fa fa-arrow-up"></i></a>
+            <a class="bt-top btn btn-circle btn-lg btn-info no-print" href="#top"><i class="fa fa-arrow-up"></i></a>
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
@@ -251,7 +311,7 @@
     <!-- ============================================================== -->
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="./js/popper.min.js"></script>
+<script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <!-- This is for the animation -->
     <script src="/js/aos.js"></script>

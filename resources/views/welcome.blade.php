@@ -25,7 +25,7 @@
                                         <h2 data-animation="animated zoomInRight" class="title text-white">Hassle Free Luggage Transport Service</h2>
                                     </div>
                                     <div class="col-md-8 col-lg-5">
-                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Storage and Transfer services in India for Stations, Airports as well as door to door service.</p>
+                                        <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white op-8">We offer Luggage Transfer services in India for Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>
                                     </div>
                                     <div class="col-sm-12 btn-pad">
                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/register"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
@@ -69,7 +69,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2 class="m-b-30 font-bold m-t-20">We are leading Luggage Storage and Transfer company</h2>
+                        <h2 class="m-b-30 font-bold m-t-20">We are leading Luggage Transfer company</h2>
                         <h4 class="text-muted font-light">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h4>
                         <div class="row">
                             <div class="col-md-6 m-t-30">
@@ -122,7 +122,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
                         <h2 class="title font-bold">How it works</h2>
-                        <h6 class="subtitle">Our professional concierges welcome you at the airports and train stations to take care of your suitcases.</h6>
+                        <h6 class="subtitle">Our professional representative welcome you at the airports and train stations to take care of your suitcases.</h6>
                     </div>
                 </div>
                 <!-- Row  -->

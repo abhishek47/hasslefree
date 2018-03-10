@@ -69,8 +69,11 @@
                                 
                             </div>
                         </div>
-                       
-                   
+                        <button type="button" class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                            <span>Continue <i class="fa fa-arrow-right"></i></span>
+                        </button>
+                    </fieldset>
+                    <fieldset>
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -146,9 +149,16 @@
                             </div>
                         </div>
 
-                         
+                         <button class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                        <span>Continue <i class="fa fa-arrow-right"></i></span>
+                        </button>
+
+                        <button class="btn btn-success-gradiant btn-previous btn-arrow pull-left">
+                        <span>Back <i class="fa fa-arrow-left"></i></span>
+                        </button>
                        
-                    
+                    </fieldset>
+                    <fieldset>
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -224,8 +234,15 @@
                                 </div>
                             </div>
                         </div>
-                        
-                    
+                        <button class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                        <span>Continue <i class="fa fa-arrow-right"></i></span>
+                        </button>
+
+                        <button class="btn btn-success-gradiant btn-previous btn-arrow pull-left">
+                        <span>Back <i class="fa fa-arrow-left"></i></span>
+                        </button>
+                    </fieldset>
+                    <fieldset>
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -273,8 +290,15 @@
                                 </div>
                             </div>
                         </div>
-                       
-                    
+                        <button class="btn btn-danger-gradiant btn-next btn-arrow pull-right" id="timeContinue">
+                        <span>Continue <i class="fa fa-arrow-right"></i></span>
+                        </button>
+
+                        <button class="btn btn-success-gradiant btn-previous btn-arrow pull-left">
+                        <span>Back <i class="fa fa-arrow-left"></i></span>
+                        </button>
+                    </fieldset>
+                    <fieldset>
                         <div class="card card-shadow">
                             <div class="card-body">
                                 

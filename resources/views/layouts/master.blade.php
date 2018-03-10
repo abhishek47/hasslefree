@@ -162,7 +162,7 @@
 
                                      @else
                                         
-                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
                                            <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
                                         </li>
 
