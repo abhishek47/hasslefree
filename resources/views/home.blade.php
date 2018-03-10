@@ -56,6 +56,7 @@
                                 <div class="form-group">
                                     <label>Bags Count</label>
                                     <input type="number" data-parsley-required  name="bags_count" class="form-control" placeholder="No. of bags">
+                                    <small>How many bags do we need to carry?</small>
                                 </div>
                                 
                                 <div class="form-group">
@@ -84,6 +85,7 @@
                                         <option value="4">My Hotel</option>
                                         <option value="5">My Office</option>
                                     </select>
+                                     <small>Let us know where should we pick up bags from</small>
                                 </div>
                                 <div id="pickup_other" class="hidden">
                                     
@@ -127,7 +129,7 @@
                                     
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
-                                        <input type="text" name="pick_up_train_no" class="form-control" placeholder="Enter train number">
+                                        <input type="text" name="pick_up_train_pnr" class="form-control" placeholder="Enter your PNR number">
                                     </div>
 
                                    
@@ -162,6 +164,7 @@
                                         <option value="4">My Hotel</option>
                                         <option value="5">My Office</option>
                                     </select>
+                                    <small>Let us know where should we drop up bags at</small>
                                 </div>
                                 <div id="drop_other" class="hidden">
                                     
@@ -205,7 +208,7 @@
                                     
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
-                                        <input type="text" name="drop_train_no" class="form-control" placeholder="Enter train number">
+                                        <input type="text" name="drop_train_pnr" class="form-control" placeholder="Enter your PNR number">
                                     </div>
 
                                     
@@ -278,13 +281,49 @@
                         <div class="card card-shadow">
                             <div class="card-body">
                                 
-                                <div class="form-group">
+                                <div class="form-group" id="request-otp">
                                     <label>Contact Number</label>
-                                    <input type="text" name="phone" required class="form-control" >
+                                    <input type="text" name="phone" id="phone" placeholder="Enter a 10 digit mobile no." required class="form-control" >
+                                    <small>We will send an OTP to this number.</small>
+                                    <br><br>
+                                      <button type="button" class="btn btn-danger-gradiant" id="btn-request-otp">
+                                        <span>Request OTP</span>
+                                    </button>
                                 </div>
+
+                               
+
+                                <div class="form-group hidden" id="verify-otp">
+                                    <div class="panel panel-success">
+                                        <div class="panel-body">
+                                            <p class="text-info font-bold">We have sent an OTP to  <span id="user-phone"></span></p>
+                                        </div>
+                                    </div>
+                                    <label>Verify OTP</label>
+                                    <input type="text" name="otp" id="user-otp" required class="form-control" >
+                                    <small>Enter the five digit OTP received on your phone.</small>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger-gradiant" id="btn-verify-otp">
+                                        <span>Verify OTP</span>
+                                    </button>
+                                </div> 
+
+
+                                <div class="form-group hidden" id="verified-otp">
+                                    <div class="panel panel-success">
+                                        <div class="panel-body">
+                                            <h3 class="text-success m-b-0 p-b-0 font-bold"><i class="fa fa-check-circle"></i> Mobile Number Successfully Verified!</h3>
+                                        </div>
+                                    </div>
+                                   
+                                </div> 
+
+                                
+
+                               
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                        <button id="getQuote" type="submit" class="btn btn-danger-gradiant btn-next btn-arrow pull-right" disabled="true">
                         <span>Get Quote <i class="fa fa-arrow-right"></i></span>
                         </button>
 
@@ -484,5 +523,64 @@ google.maps.event.addDomListener(window, 'load', init);
     
             
   }
+
+
+  $('#btn-request-otp').on('click', function()
+  { 
+        var phone = $('#phone').val();
+        if(phone.length  < 10)
+        {
+            message = 'Please enter correct 10 digit mobile number!';
+          
+            $('#phone').addClass('parsley-error');
+            
+            $('#phone').parent().find('.parsley-errors-list').remove();
+
+            $('#phone').parent()
+             .append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+
+        } else {
+
+            $('#request-otp').addClass('hidden');
+
+            $('#user-phone').html('(+91)' + $('#phone').val());
+
+            $('#verify-otp').removeClass('hidden');
+
+            $('#btn-request-otp').addClass('hidden');
+
+            $('#btn-verify-otp').removeClass('hidden'); 
+
+        }
+
+        
+
+      
+        
+  });
+
+
+    $('#btn-verify-otp').on('click', function()
+  {
+
+        if($('#user-otp').val() == 12345)
+        {
+            $('#user-otp').addClass('parsley-error');
+            $('#user-otp').parent().find('.parsley-errors-list').remove();
+            $('#verify-otp').addClass('hidden');
+            $('#verified-otp').removeClass('hidden');
+            $('#getQuote').attr('disabled', false);
+        } else {
+             message = 'Please enter correct OTP!'
+             $('#user-otp').addClass('parsley-error');
+            $('#user-otp').parent().find('.parsley-errors-list').remove();
+
+            $('#user-otp').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+        }
+
+      
+  });
+
+
 </script>
 @endsection
