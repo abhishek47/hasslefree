@@ -25,6 +25,10 @@
                              <td class="font-medium" style="min-width: 35%;">No. of Bags</td>
                              <td>{{ $booking->bags_count }}</td>
                            </tr>
+                           <tr >
+                             <td class="font-medium" style="min-width: 35%;">Distance</td>
+                             <td>{{ $booking->distance }} Km.</td>
+                           </tr>
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
                              <td>{{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</td>
@@ -109,6 +113,14 @@
                            <tr>
                              <td>{{ $booking->bags_count }}</td>
                            </tr>
+
+                            <tr >
+                             <td class="font-medium" style="min-width: 35%;">Distance</td>
+                           </tr>
+                           <tr>
+                             <td>{{ $booking->distance }} Km.</td>
+                           </tr>
+
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
                              
@@ -207,49 +219,55 @@
 
                      <hr>
 
-                     @if($booking->status == -1)
+                     @if($booking->distance > 40)
 
-
+                       <a href="tel:+911234567890" class="btn btn-success">Call Us @ 1234567890</a>
 
                      @else
 
-                       @if($booking->status == 0)
+                         @if($booking->status == -1)
 
 
-                        <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
+
+                         @else
+
+                           @if($booking->status == 0)
+
+
+                            <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
+                             
+                            <br class="hidden-md-up"> <br class="hidden-md-up">  
+
+
+                            <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success hidden-md-up">Pay Online</a>
+
+                            <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary hidden-md-up">Pay on Delivery</a>
+
+                            <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
+
+                            <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
                          
-                        <br class="hidden-md-up"> <br class="hidden-md-up">  
 
 
-                        <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success hidden-md-up">Pay Online</a>
+                          @else
 
-                        <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary hidden-md-up">Pay on Delivery</a>
+                             @if($booking->status != 5)
+                               <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
+                             @endif  
 
-                        <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
+                             <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
 
-                         <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
-                     
+                             @if($booking->status != 5)
+                              <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
+                             @endif
 
+                             <a target="_blank"  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">
+                              Print Receipt
+                             </a>
 
-                      @else
+                          @endif
 
-                         @if($booking->status != 5)
-                           <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
-                         @endif  
-
-                         <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
-
-                         @if($booking->status != 5)
-                          <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
-                         @endif
-
-                         <a target="_blank"  href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary pull-right hidden-md-down m-r-10">
-                          Print Receipt
-                         </a>
-
-                       
-
-                      @endif
+                        @endif
 
                     @endif
 

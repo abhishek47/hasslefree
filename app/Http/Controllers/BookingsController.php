@@ -85,7 +85,14 @@ class BookingsController extends Controller
 
         $booking->save();
 
-        flash('Your booking was created successfully! Proceed with payment details.')->success();
+        if($booking->distance > 40)
+        {   
+            flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
+        } else {
+             flash('Your booking was successfully created, proceed with payment details!')->success();
+        }
+
+       
 
         return redirect('/bookings/' . $booking->id );
 

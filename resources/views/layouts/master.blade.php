@@ -222,7 +222,7 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                     <div class="container">
-                     @include('flash::message')
+                    
                     </div> 
               
                 @yield('content')
@@ -232,7 +232,7 @@
             <!-- ============================================================== -->
             <!-- footer 3  -->
             <!-- ============================================================== -->
-            @guest
+           
             <div class="footer3 bg-dark font-14">
               
                 <div class="f3-topbar container">
@@ -241,16 +241,7 @@
                             <span>A team of trained &amp; experienced <span class="text-white">profesionals</span>, who are
                             <br/>well versed with the customer requirement in the Indian market.</span>
                         </div>
-                        <div class="ml-auto no-shrink align-self-center">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control form-control-dark form-control-lg" placeholder="Sign up for updates">
-                                    <span class="input-group-btn">
-                                      <button class="btn btn-info-gradiant btn-md" type="button">Go!</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="f3-middle container">
@@ -317,7 +308,7 @@
                     </div>
                 </div>
             </div>
-             @endguest
+           
             <!-- ============================================================== -->
             <!-- End footer 3  -->
             <!-- ============================================================== -->
@@ -375,9 +366,24 @@
     });
     </script>
 
-     <script>
-    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script type="text/javascript">
+        @foreach (session('flash_notification', collect())->toArray() as $message)
+            
+             var message = "{!! $message['message'] !!}"
+             var level = "{!! $message['level'] !!}"
+             
+             swal("Notice", message, level);
+            
+        @endforeach
     </script>
+
+    {{ session()->forget('flash_notification') }}
+
+    <!-- <script>   
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script> -->
 
     @yield('js')
 </body>

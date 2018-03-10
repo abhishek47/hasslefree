@@ -153,6 +153,7 @@
                     <div class="clearfix"></div>
                      <hr>
 
+                     <div id="qrcode"></div>
                     
 
                 </div>
@@ -175,6 +176,18 @@
     <!--Custom JavaScript -->
     <script src="/js/custom.min.js"></script>
 
+        <script src="/js/qrcode.min.js"></script>
+
+    <script type="text/javascript">
+      var qrcode = new QRCode("qrcode", {
+          text: {{ $booking->id }},
+          width: 128,
+          height: 128,
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.H
+      });
+    </script>
  
     
     <script type="text/javascript">
