@@ -207,7 +207,7 @@
             <div class="container">
                 <div class="d-flex">
                     <div class="display-7 align-self-center">
-                        <h3 class="text-white">We are leading Luggage Storage and Transfer company</h3>
+                        <h3 class="text-white">We are leading Luggage Transfer company</h3>
                         <h6 class="font-16 text-white">You will feel great using our quality products and services</h6>
                     </div>
                     <div class="ml-auto m-t-10 m-b-10">
