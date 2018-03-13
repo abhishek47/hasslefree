@@ -56,8 +56,29 @@ class LoginController extends Controller
    }
 
    public function login(Request $request)
-   {
+   {  
+
+    if($request->wantsJson()) {
+      if(request('email') == '')
+      {
+        return response()->json([
+                'status' => 'failed',
+                'message' => 'Please enter email address!'
+                
+            ]);
+      } else if(request('password') == ''){
+         return response()->json([
+                'status' => 'failed',
+                'message' => 'Please enter password!'
+                
+            ]);
+      }
+    } else {
       $this->validateLogin($request);
+    }
+
+      
+
      if ($this->attemptLogin($request)) {
         $user = $this->guard()->user();
         $user->generateToken();
