@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait; // <------------------------------- this one
-
+use Illuminate\Support\Facades\Password;
 
 class User extends Authenticatable
 {

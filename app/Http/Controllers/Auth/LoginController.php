@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -63,15 +64,25 @@ class LoginController extends Controller
         
         if($request->wantsJson()) {
             return response()->json([
-                'data' => $user->toArray(),
+                'status' => 'success',
+                'message' => 'User Logged in successfully!',
+                'data' => $user->toArray()
             ]);
         }
       }
+
+      if($request->wantsJson()) {
+            return response()->json([
+                 'status' => 'failed',
+                'message' => 'User login failed! Please try again!'
+                
+            ]);
+        }
        return $this->sendFailedLoginResponse($request);
     }
 
 
-    
+
     public function logout(Request $request)
     {
         if($request->wantsJson()) {
@@ -80,7 +91,8 @@ class LoginController extends Controller
             $user->api_token = null;
             $user->save();
         }
-        return response()->json(['data' => 'User logged out.'], 200);
+        return response()->json(['status' => 'success',
+                'message' => 'User logged out'], 200);
        } else {
          $this->guard()->logout();
         $request->session()->invalidate();
