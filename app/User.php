@@ -38,5 +38,20 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class);
     }
 
+
+    public function generateToken()
+    {
+        if($this->api_token == null) {
+        $token = substr(Password::getRepository()->createNewToken(), 0, 58);
+          if (User::where('api_token', '=', $token)->exists()) {
+                //Model Found -- call self.
+                self::generate($length, $modelClass, $fieldName);
+            } else {
+                $this->api_token = $token;
+                $this->save();
+            }
+       }
+        
+    }
     
 }

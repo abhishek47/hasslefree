@@ -53,6 +53,43 @@ class LoginController extends Controller
        return \Socialite::driver($social)->redirect();
  
    }
+
+   public function login(Request $request)
+   {
+      $this->validateLogin($request);
+     if ($this->attemptLogin($request)) {
+        $user = $this->guard()->user();
+        $user->generateToken();
+        
+        if($request->wantsJson()) {
+            return response()->json([
+                'data' => $user->toArray(),
+            ]);
+        }
+      }
+       return $this->sendFailedLoginResponse($request);
+    }
+
+
+    
+    public function logout(Request $request)
+    {
+        if($request->wantsJson()) {
+        $user = \Auth::guard('api')->user();
+        if ($user) {
+            $user->api_token = null;
+            $user->save();
+        }
+        return response()->json(['data' => 'User logged out.'], 200);
+       } else {
+         $this->guard()->logout();
+        $request->session()->invalidate();
+        return redirect('/');
+       }
+    }
+
+
+
  
    /**
  
