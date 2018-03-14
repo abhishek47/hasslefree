@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\User;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
@@ -10,6 +11,16 @@ use App\Http\Controllers\Controller;
 
 class BookingsController extends Controller
 {
+
+
+    public function index()
+    {
+         $user = User::where('api_token', request('api_token'))->first();
+
+         $bookings = $user->bookings()->orderBy('created_at')->get();
+
+         return response(['status' => 'success', 'message' => 'Bookings loaded successfully!', 'data' => $bookings->toArray()]);
+    }
    
 
     /**
@@ -21,8 +32,14 @@ class BookingsController extends Controller
     public function store(Request $request)
     {
        
-        
-        $booking = auth()->user()->bookings()->create($request->all());
+       
+        $user = User::where('api_token', request('api_token'))->first();
+
+            return response(['status'=> 'success', 'message' => 'Booking created successfully!', 'data' => $user], 200);
+
+
+
+        $booking = $request->user()->bookings()->create($request->all());
 
         if(!$booking)
         {

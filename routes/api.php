@@ -17,14 +17,11 @@ use Illuminate\Http\Request;
  Route::post('login', 'Auth\LoginController@login');
  Route::post('logout', 'Auth\LoginController@logout');
 
+ Route::get('/bookings', 'Api\BookingsController@index');
+ Route::post('/bookings', 'Api\BookingsController@store');	
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 
-Route::group(['middleware' => 'auth:api'], function() {
-  Route::post('/bookings', 'Api\BookingsController@store');	
-  
- 
-});
