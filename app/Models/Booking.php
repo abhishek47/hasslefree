@@ -44,9 +44,9 @@ class Booking extends Model
     {
         if($booking->pick_up_type == 0)
         {
-            $this = $booking->pickupAirport->location;
-        } else if($booking->pick_up_type == 1){
-            $this = $booking->pickupTrain->location;
+            $location1 = $this->pickupAirport->location;
+        } else if($this->pick_up_type == 1){
+            $location1 = $this->pickupTrain->location;
         } else if($this->pick_up_type == 2){
             $location1 = $this->pickupBus->location;
         } else {
