@@ -20,6 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
+    protected $appends = ['key'];
     
 
 
@@ -32,6 +33,11 @@ class Booking extends Model
     public function user()
     {
     	return $this->belongsTo(User::class);
+    }
+
+      public function getKeyAttribute()
+    {
+        return $this->id;
     }
 
     public function getUserNameAttribute()
