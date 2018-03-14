@@ -44,13 +44,13 @@ class Booking extends Model
     {
         if($booking->pick_up_type == 0)
         {
-            $location1 = $booking->pickupAirport->location;
+            $this = $booking->pickupAirport->location;
         } else if($booking->pick_up_type == 1){
-            $location1 = $booking->pickupTrain->location;
-        } else if($booking->pick_up_type == 2){
-            $location1 = $booking->pickupBus->location;
+            $this = $booking->pickupTrain->location;
+        } else if($this->pick_up_type == 2){
+            $location1 = $this->pickupBus->location;
         } else {
-            $location1 = $booking->pick_up_from;  
+            $location1 = $this->pick_up_from;  
         }
 
         return $location1;
@@ -58,15 +58,15 @@ class Booking extends Model
 
     public function getdropLocationAttribute()
     {
-        if($booking->drop_to_type == 0)
+        if($this->drop_to_type == 0)
         {
-            $location2 = $booking->dropAirport->location;
-        } else if($booking->drop_to_type == 1){
-            $location2 = $booking->dropTrain->location;
-        } else if($booking->drop_to_type == 2){
-            $location2 = $booking->dropBus->location;
+            $location2 = $this->dropAirport->location;
+        } else if($this->drop_to_type == 1){
+            $location2 = $this->dropTrain->location;
+        } else if($this->drop_to_type == 2){
+            $location2 = $this->dropBus->location;
         } else {
-          $location2 = $booking->drop_to;
+          $location2 = $this->drop_to;
         }
 
         return $location2;
