@@ -20,7 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key'];
+    protected $appends = ['key', 'location1', 'location2'];
     
 
 
@@ -38,6 +38,38 @@ class Booking extends Model
       public function getKeyAttribute()
     {
         return $this->id;
+    }
+
+    public function location1()
+    {
+        if($booking->pick_up_type == 0)
+        {
+            $location1 = $booking->pickupAirport->location;
+        } else if($booking->pick_up_type == 1){
+            $location1 = $booking->pickupTrain->location;
+        } else if($booking->pick_up_type == 2){
+            $location1 = $booking->pickupBus->location;
+        } else {
+            $location1 = $booking->pick_up_from;  
+        }
+
+        return $location1;
+    }
+
+    public function location2()
+    {
+        if($booking->drop_to_type == 0)
+        {
+            $location2 = $booking->dropAirport->location;
+        } else if($booking->drop_to_type == 1){
+            $location2 = $booking->dropTrain->location;
+        } else if($booking->drop_to_type == 2){
+            $location2 = $booking->dropBus->location;
+        } else {
+          $location2 = $booking->drop_to;
+        }
+
+        return $location2;
     }
 
     public function getUserNameAttribute()
