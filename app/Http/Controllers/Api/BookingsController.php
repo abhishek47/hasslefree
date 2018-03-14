@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
 use App\Mail\BookingCancelled;
+use App\Http\Controllers\Controller;
 
 class BookingsController extends Controller
 {
@@ -50,7 +51,7 @@ class BookingsController extends Controller
               $location2 = $booking->drop_to;
             }
         */
-            
+
        // $distance = getDistance($location1, $location2);
 
         $distance = 7.23;
