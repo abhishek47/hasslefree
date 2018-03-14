@@ -42,7 +42,7 @@ class Booking extends Model
 
     public function getpickLocationAttribute()
     {
-        if($booking->pick_up_type == 0)
+        if($this->pick_up_type == 0)
         {
             $location1 = $this->pickupAirport->location;
         } else if($this->pick_up_type == 1){
