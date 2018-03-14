@@ -17,7 +17,7 @@ class BookingsController extends Controller
     {
          $user = User::where('api_token', request('api_token'))->first();
 
-         $bookings = $user->bookings()->orderBy('created_at')->get();
+         $bookings = $user->bookings()->orderBy('created_at', 'DESC')->get();
 
          return response(['status' => 'success', 'message' => 'Bookings loaded successfully!', 'data' => $bookings->toArray()]);
     }
