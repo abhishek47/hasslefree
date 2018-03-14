@@ -20,7 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'location1', 'location2'];
+    protected $appends = ['key', 'pick_location', 'drop_location'];
     
 
 
@@ -40,7 +40,7 @@ class Booking extends Model
         return $this->id;
     }
 
-    public function location1()
+    public function getpickLocationAttribute()
     {
         if($booking->pick_up_type == 0)
         {
@@ -56,7 +56,7 @@ class Booking extends Model
         return $location1;
     }
 
-    public function location2()
+    public function getdropLocationAttribute()
     {
         if($booking->drop_to_type == 0)
         {
