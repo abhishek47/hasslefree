@@ -20,7 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'pick_location', 'drop_location'];
+    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling'];
     
 
 
@@ -70,6 +70,22 @@ class Booking extends Model
         }
 
         return $location2;
+    }
+
+
+    public function getInsuaranceAttribute()
+    {
+        return $this->bags_count * 12;
+    }
+
+    public function getHandlingAttribute()
+    {
+        return $this->bags_count * 10;
+    }
+
+    public function getLabellingAttribute()
+    {
+        return $this->bags_count * 7;
     }
 
     public function getUserNameAttribute()
