@@ -93,7 +93,7 @@ class BookingsController extends Controller
 
         $booking->save();
 
-        \Mail::to(auth()->user())->send(new BookingCancelled($booking));
+        \Mail::to($user)->send(new BookingCancelled($booking));
 
         return response(['status'=> 'success', 'message' => 'Booking cancelled!', 'data' => []], 200);
     }
