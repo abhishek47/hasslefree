@@ -73,6 +73,46 @@ class BookingsController extends Controller
 
     }
 
+    public function confirmWithCOD(Booking $booking)
+    {
+
+        $user = User::where('api_token', request('api_token'))->first();
+
+        if($user == null)
+        {
+            return response(['status'=> 'failed', 'message' => 'Please try again!', 'data' => []], 200);
+        }
+
+        $booking->status = 1;
+
+        $booking->save();
+
+
+        $distance = $booking->distance;
+
+        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
+
+        $cgst = ($basePrice * (9/100)); // GST
+
+        $sgst = ($basePrice * (9/100)); // GST
+
+        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+
+        $invoiceData = $invoice->output();
+        
+        $message = new NewBookingCreated($booking);
+
+        $message->attachData($invoiceData, 'invoice.pdf', [
+                        'mime' => 'application/pdf',
+                    ]);
+
+        \Mail::to($user)->send($message);
+
+
+        return response(['status'=> 'success', 'message' => 'Pickup Scheduled!', 'data' => []], 200);
+
+    }
+
 
      /**
      * Remove the specified resource from storage.
