@@ -215,7 +215,7 @@
 
                     <hr>
 
-                    <h2><b>&#8377 {{ round($booking->price, 2) }}</b></h2>
+                    <h2><b>&#8377 {{ round($booking->total, 2) }}</b></h2>
 
                      <hr>
 
