@@ -20,7 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling'];
+    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total'];
     
 
 
@@ -87,6 +87,23 @@ class Booking extends Model
     {
         return $this->bags_count * 7;
     }
+
+    public function getTaxableAttribute()
+    {
+        return $this->price + $this->insuarance + $this->handling + $this->labelling;
+    }
+
+
+    public function getGstAttribute()
+    {
+        return $this->taxable * (18/100);
+    }
+
+    public function getTotalAttribute()
+    {
+        return $this->taxable + $this->gst;
+    }
+
 
     public function getUserNameAttribute()
     {
