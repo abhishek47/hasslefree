@@ -46,29 +46,6 @@ class BookingsController extends Controller
             return response(['status'=> 'failed', 'message' => 'There was some problem! Please try again.', 'data' =>[]], 200);
         }
 
-         /*  if($booking->pick_up_type == 0)
-            {
-                $location1 = $booking->pickupAirport->location;
-            } else if($booking->pick_up_type == 1){
-                $location1 = $booking->pickupTrain->location;
-            } else if($booking->pick_up_type == 2){
-                $location1 = $booking->pickupBus->location;
-            } else {
-                $location1 = $booking->pick_up_from;  
-            }
-
-            if($booking->drop_to_type == 0)
-            {
-                $location2 = $booking->dropAirport->location;
-            } else if($booking->drop_to_type == 1){
-                $location2 = $booking->dropTrain->location;
-            } else if($booking->drop_to_type == 2){
-                $location2 = $booking->dropBus->location;
-            } else {
-              $location2 = $booking->drop_to;
-            }
-        */
-
        // $distance = getDistance($location1, $location2);
 
         $distance = 7.23;
@@ -94,6 +71,31 @@ class BookingsController extends Controller
 
         return response(['status'=> 'success', 'message' => 'Booking created successfully!', 'data' => $booking->toArray()], 200);
 
+    }
+
+
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Booking  $booking
+     * @return \Illuminate\Http\Response
+     */
+    public function cancel(Booking $booking)
+    {
+        $user = User::where('api_token', request('api_token'))->first();
+
+        if(!$user)
+        {
+            return response(['status'=> 'failed', 'message' => 'Please try again!', 'data' => []], 200);
+        }
+
+        $booking->status = -1;
+
+        $booking->save();
+
+        \Mail::to(auth()->user())->send(new BookingCancelled($booking));
+
+        return response(['status'=> 'success', 'message' => 'Booking cancelled!', 'data' => []], 200);
     }
 
 
