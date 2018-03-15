@@ -84,7 +84,7 @@ class BookingsController extends Controller
     {
         $user = User::where('api_token', request('api_token'))->first();
 
-        if(!$user)
+        if($user == null)
         {
             return response(['status'=> 'failed', 'message' => 'Please try again!', 'data' => []], 200);
         }
