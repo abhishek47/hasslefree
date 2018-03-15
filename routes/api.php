@@ -17,7 +17,8 @@ use Illuminate\Http\Request;
  Route::post('login', 'Auth\LoginController@login');
  Route::post('logout', 'Auth\LoginController@logout');
 
-  Route::get('profile', 'Api\ProfileController@get');
+ Route::get('profile', 'Api\ProfileController@get');
+ Route::post('profile', 'Api\ProfileController@update');
 
  Route::get('/bookings', 'Api\BookingsController@index');
  Route::post('/bookings', 'Api\BookingsController@store');
