@@ -29,17 +29,11 @@ function getStatus($status)
 
 	else if($status == 3)
 	{
-		return '<b><i  class="fa fa-building text-success"></i> In Warehouse.</b>
-				';
-	}
-
-	else if($status == 4)
-	{
 		return '<b><i  class="fa fa-truck text-success"></i> In Transit.</b>
 				';
 	}
 
-	else if($status == 5)
+	else if($status == 4)
 	{
 		return '<b><i class="fa fa-thumbs-up text-success"></i> Luggage Delivered.</b>
 				';
@@ -66,7 +60,7 @@ function getStatusString($value)
 		return 'Cancelled';
 	} 
 	else {
-		 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Warehouse', 'In Transit', 'Luggage Delivered' ];
+		 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Transit', 'Luggage Delivered' ];
                                         
 		
 	 return $statuses[$value];
