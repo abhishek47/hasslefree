@@ -49,6 +49,8 @@ class BookingsController extends Controller
 
         $data['phone'] = '9922367414';
 
+        $data['status'] = 0;
+        
         $booking = $user->bookings()->create($data);
 
         if(!$booking)
