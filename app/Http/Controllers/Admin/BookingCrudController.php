@@ -35,7 +35,7 @@ class BookingCrudController extends CrudController
     'name' => 'status',
     'label' => "Booking Status",
     'type' => 'select2_from_array',
-    'options' => [-1 => 'Cancelled', 0 => 'Created', 1 => 'Scheduled Pickup', 2 => 'Luggage Picked', 3 => 'In Warehouse', 4 => 'In Transit', 5 => 'Luggage Delivered'],
+    'options' => [-1 => 'Cancelled', 0 => 'Created', 1 => 'Scheduled Pickup', 2 => 'Luggage Picked',  3 => 'In Transit', 4 => 'Luggage Delivered'],
     'allows_null' => false,
     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
 ]);
