@@ -37,18 +37,24 @@ class BookingsController extends Controller
 
             return response(['status'=> 'success', 'message' => 'Booking created successfully!', 'data' => $user], 200);
 
+        $data = $request->all();
 
+        $data['pick_up_type'] = 0;
 
-        $booking = $request->user()->bookings()->create($request->all());
+        $data['drop_to_type'] = 0;
+
+        $data['phone'] = '9922367414';
+
+        $booking = $request->user()->bookings()->create($data);
 
         if(!$booking)
         {
             return response(['status'=> 'failed', 'message' => 'There was some problem! Please try again.', 'data' =>[]], 200);
         }
 
-       // $distance = getDistance($location1, $location2);
+       $distance = getDistance($booking->pick_location, $booking->drop_location);
 
-        $distance = 7.23;
+       // $distance = 7.23;
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
