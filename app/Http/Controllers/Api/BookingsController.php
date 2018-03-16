@@ -35,7 +35,11 @@ class BookingsController extends Controller
        
         $user = User::where('api_token', request('api_token'))->first();
 
-            return response(['status'=> 'success', 'message' => 'Booking created successfully!', 'data' => $user], 200);
+         if(!$user)
+         {
+
+            return response(['status'=> 'failed', 'message' => 'Please login again!', 'data' =>[]], 200);
+         }  
 
         $data = $request->all();
 
