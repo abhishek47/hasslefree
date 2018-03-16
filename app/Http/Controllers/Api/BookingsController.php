@@ -49,7 +49,7 @@ class BookingsController extends Controller
 
         $data['phone'] = '9922367414';
 
-        $booking = $request->user()->bookings()->create($data);
+        $booking = $user->bookings()->create($data);
 
         if(!$booking)
         {
