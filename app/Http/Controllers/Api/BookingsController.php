@@ -47,7 +47,6 @@ class BookingsController extends Controller
 
         $data['drop_to_type'] = 3;
 
-        $data['phone'] = '9922367414';
 
         $data['status'] = 0;
         
