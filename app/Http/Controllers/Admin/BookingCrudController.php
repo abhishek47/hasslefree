@@ -32,13 +32,15 @@ class BookingCrudController extends CrudController
         $this->crud->addColumns(['id', 'user_name', 'bags_count', 'price', 'payment_status', 'booking_status']);
 
         $this->crud->addField([ // select_from_array
-    'name' => 'status',
-    'label' => "Booking Status",
-    'type' => 'select2_from_array',
-    'options' => [-1 => 'Cancelled', 0 => 'Created', 1 => 'Scheduled Pickup', 2 => 'Luggage Picked',  3 => 'In Transit', 4 => 'Luggage Delivered'],
-    'allows_null' => false,
-    // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-]);
+            'name' => 'status',
+            'label' => "Booking Status",
+            'type' => 'select2_from_array',
+            'options' => [-1 => 'Cancelled', 0 => 'Created', 1 => 'Scheduled Pickup', 2 => 'Luggage Picked',  3 => 'In Transit', 4 => 'Luggage Delivered'],
+            'allows_null' => false,
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+
+        $this->crud->orderBy('created_at', 'DESC');
 
         $this->crud->addButtonFromModelFunction('line', 'open_preview', 'openPreview', 'beginning');
 
