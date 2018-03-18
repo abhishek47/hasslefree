@@ -267,23 +267,24 @@
                                         <option value="4">03:00 AM - 04:00 AM</option>
                                         <option value="5">04:00 AM - 05:00 AM</option>
                                         <option value="6">05:00 AM - 06:00 AM</option>
-                                        <option value="7">07:00 AM - 08:00 AM</option>
-                                        <option value="8">08:00 AM - 09:00 AM</option>
-                                        <option value="9">09:00 AM - 10:00 AM</option>
-                                        <option value="10">10:00 AM - 11:00 AM</option>
-                                        <option value="11">11:00 AM - 12:00 PM</option>
-                                        <option value="12">12:00 PM - 01:00 PM</option>
-                                        <option value="13">01:00 PM - 02:00 PM</option>
-                                        <option value="14">02:00 PM - 03:00 PM</option>
-                                        <option value="15">03:00 PM - 04:00 PM</option>
-                                        <option value="16">04:00 PM - 05:00 PM</option>
-                                        <option value="17">05:00 PM - 06:00 PM</option>
-                                        <option value="18">06:00 PM - 07:00 PM</option>
-                                        <option value="19">07:00 PM - 08:00 PM</option>
-                                        <option value="20">08:00 PM - 09:00 PM</option>
-                                        <option value="21">09:00 PM - 10:00 PM</option>
-                                        <option value="22">10:00 PM -  11:00 PM</option>
-                                        <option value="23">11:00 PM - 12:00 AM</option>
+                                        <option value="7">06:00 AM - 07:00 AM</option>
+                                        <option value="8">07:00 AM - 08:00 AM</option>
+                                        <option value="9">08:00 AM - 09:00 AM</option>
+                                        <option value="10">09:00 AM - 10:00 AM</option>
+                                        <option value="11">10:00 AM - 11:00 AM</option>
+                                        <option value="12">11:00 AM - 12:00 PM</option>
+                                        <option value="13">12:00 PM - 01:00 PM</option>
+                                        <option value="14">01:00 PM - 02:00 PM</option>
+                                        <option value="15">02:00 PM - 03:00 PM</option>
+                                        <option value="16">03:00 PM - 04:00 PM</option>
+                                        <option value="17">04:00 PM - 05:00 PM</option>
+                                        <option value="18">05:00 PM - 06:00 PM</option>
+                                        <option value="19">06:00 PM - 07:00 PM</option>
+                                        <option value="20">07:00 PM - 08:00 PM</option>
+                                        <option value="21">08:00 PM - 09:00 PM</option>
+                                        <option value="22">09:00 PM - 10:00 PM</option>
+                                        <option value="23">10:00 PM -  11:00 PM</option>
+                                        <option value="24">11:00 PM - 12:00 AM</option>
                                     </select>
                                 </div>
                             </div>
