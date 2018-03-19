@@ -36,6 +36,8 @@ Route::get('/get-buses', 'Api\LocationsController@getBuses');
 
 Route::get('/get-airports', 'Api\LocationsController@getAirports');
 
+Route::get('/get-locations', 'Api\LocationsController@getLocations');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

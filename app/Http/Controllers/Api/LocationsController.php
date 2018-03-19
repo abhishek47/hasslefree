@@ -15,6 +15,12 @@ class LocationsController extends Controller
 {
 
 
+    public function getLocations()
+    {
+         return response(['trains' => TrainStation::all()->toArray(), 'buses' => BusStation::all()->toArray(), 'buses' => Airport::all()->toArray() ], 200);
+    }
+
+
     public function getTrains()
     {
          return response(['data' => TrainStation::all()->toArray()], 200);
