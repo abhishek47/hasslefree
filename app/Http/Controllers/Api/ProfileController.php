@@ -6,7 +6,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Support\Facades\Password;
+use Illuminate\Contracts\Auth\PasswordBroker;
+
 
 class ProfileController extends Controller
 {
@@ -46,15 +47,15 @@ class ProfileController extends Controller
 
 
 
-    public function sendResetLinkEmail(Request $request, Password $broker)
+    public function sendResetLinkEmail(Request $request, PasswordBroker $broker)
     {
-        if( $request->ajax() )
+        if( $request->wantsJson() )
         {
             $this->validate($request, ['email' => 'required|email']);
 
-            $response = $passwords->sendResetLink($request->only('email'));
+            $response = $broker->sendResetLink($request->only('email'));
 
-            return $response == Password::RESET_LINK_SENT
+            return $response == PasswordBroker::RESET_LINK_SENT
                     ? response(['status' => 'success', 'message' => 'Password reset instructions sent!', 'data' => []])
                     : response(['status' => 'failed', 'message' => 'There was some problem loading profile data!', 'data' => []]);
         }
