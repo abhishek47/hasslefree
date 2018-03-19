@@ -51,7 +51,19 @@ class BusstationCrudController extends CrudController
                'model' => "App\Models\City", // foreign key model
                'allows_null' => false
                
-            ]
+            ],
+
+            [
+                'name' => 'lat',
+                'label' => 'Latitute'
+
+            ],
+
+            [
+                'name' => 'lng',
+                'label' => 'Longitude'
+
+            ],
         ]);
 
         // ------ CRUD FIELDS
