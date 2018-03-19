@@ -11,6 +11,13 @@ class TrainStation extends Model
 
     protected $guarded = [];
 
+    protected $appends = ['key'];	
+
+    public function getKeyAttribute()
+    {
+    	return $this->id;
+    }
+
     public function city()
     {
     	return $this->belongsTo(City::class);
