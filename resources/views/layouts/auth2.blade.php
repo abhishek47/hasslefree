@@ -151,7 +151,7 @@
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
-
+                                      @auth
 
                                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   {{ auth()->user()->name }} <i class="fa fa-angle-down m-l-5"></i>
@@ -170,7 +170,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                         
-                                   
+                                   @endauth
 
                                    
                                 </ul>
