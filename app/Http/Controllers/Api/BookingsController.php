@@ -43,11 +43,6 @@ class BookingsController extends Controller
 
         $data = $request->all();
 
-        $data['pick_up_type'] = 3;
-
-        $data['drop_to_type'] = 3;
-
-
         $data['status'] = 0;
         
         $booking = $user->bookings()->create($data);
