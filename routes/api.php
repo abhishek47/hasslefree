@@ -26,6 +26,7 @@ use Illuminate\Http\Request;
  Route::get('/bookings/{booking}/cancel', 'Api\BookingsController@cancel');	
   Route::get('/bookings/{booking}/cod', 'Api\BookingsController@confirmWithCOD');	
 
+  Route::get('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

@@ -6,6 +6,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Password;
+
 class ProfileController extends Controller
 {
 
@@ -42,6 +44,25 @@ class ProfileController extends Controller
          return response(['status' => 'success', 'message' => 'Profile updated!', 'data' => $user->toArray()]);
     }
 
+
+
+    public function sendResetLinkEmail(Request $request, Password $broker)
+    {
+        if( $request->ajax() )
+        {
+            $this->validate($request, ['email' => 'required|email']);
+
+            $response = $passwords->sendResetLink($request->only('email'));
+
+            return $response == Password::RESET_LINK_SENT
+                    ? response(['status' => 'success', 'message' => 'Password reset instructions sent!', 'data' => []])
+                    : response(['status' => 'failed', 'message' => 'There was some problem loading profile data!', 'data' => []]);
+        }
+
+        return false;
+
+        
+    }
 
    
 
