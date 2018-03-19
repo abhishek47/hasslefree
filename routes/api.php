@@ -28,6 +28,14 @@ use Illuminate\Http\Request;
 
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
+
+
+Route::get('/get-trains', 'Api\LocationsController@getTrains');
+
+Route::get('/get-buses', 'Api\LocationsController@getBuses');
+
+Route::get('/get-airports', 'Api\LocationsController@getAirports');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
