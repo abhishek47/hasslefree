@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\User;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
