@@ -9,18 +9,14 @@ use Softon\Indipay\Facades\Indipay;
 
 class PaymentsController extends Controller
 {
-	/**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+	
     
     public function addMoney(Request $request, Booking $booking)
 	{
+          
+          $user = User::where('api_token', request('api_token'))->first();
+
+
 		  $bookingId = $booking->id;
 
 		  $amount = round($booking->price, 2);
@@ -33,8 +29,8 @@ class PaymentsController extends Controller
             
             'amount' => $amount,
             'purpose' => $bookingId,
-            'buyer_name' => \Auth::user()->name,
-            'email' => \Auth::user()->email,
+            'buyer_name' => $user->name,
+            'email' => $user->email,
             'phone' => '9922367414',
             
           ];
@@ -87,7 +83,7 @@ class PaymentsController extends Controller
                         'mime' => 'application/pdf',
                     ]);
 
-        \Mail::to(auth()->user())->send($message);
+        \Mail::to($booking->user)->send($message);
 
 
         flash('Payment was succesfully made!')->success();

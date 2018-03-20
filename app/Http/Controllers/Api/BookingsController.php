@@ -43,7 +43,8 @@ class BookingsController extends Controller
 
         $data = $request->all();
 
-        $data['status'] = 0;
+       
+     $data['status'] = 0;
         
         $booking = $user->bookings()->create($data);
 

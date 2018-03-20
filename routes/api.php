@@ -26,6 +26,8 @@ use Illuminate\Http\Request;
  Route::get('/bookings/{booking}/cancel', 'Api\BookingsController@cancel');	
   Route::get('/bookings/{booking}/cod', 'Api\BookingsController@confirmWithCOD');	
 
+  Route::get('/bookings/{booking}/pay', 'Api\PaymentsController@addMoney');
+
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
 
