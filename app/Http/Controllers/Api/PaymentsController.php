@@ -6,6 +6,7 @@ use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
 use Softon\Indipay\Facades\Indipay;  
+use App\Http\Controllers\Controller;
 
 class PaymentsController extends Controller
 {
