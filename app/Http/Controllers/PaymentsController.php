@@ -16,7 +16,7 @@ class PaymentsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('response');
     }
     
     public function addMoney(Request $request, Booking $booking)
@@ -87,7 +87,7 @@ class PaymentsController extends Controller
                         'mime' => 'application/pdf',
                     ]);
 
-        \Mail::to(auth()->user())->send($message);
+        \Mail::to($booking->user)->send($message);
 
 
         flash('Payment was succesfully made!')->success();
