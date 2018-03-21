@@ -33,7 +33,7 @@ class PaymentsController extends Controller
             'purpose' => $bookingId,
             'buyer_name' => $user->name,
             'email' => $user->email,
-            'phone' => $booking->phone,
+            'phone' => '9922367414',
              
           ];
  
