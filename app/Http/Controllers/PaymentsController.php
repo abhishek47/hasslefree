@@ -23,7 +23,7 @@ class PaymentsController extends Controller
 	{
 		  $bookingId = $booking->id;
 
-		  $amount = round($booking->price, 2);
+		  $amount = round($booking->total, 2);
 
            $parameters = [
       
