@@ -35,7 +35,7 @@ class PaymentsController extends Controller
             'purpose' => $bookingId,
             'buyer_name' => \Auth::user()->name,
             'email' => \Auth::user()->email,
-            'phone' => '9922367414',
+            'phone' => $booking->phone,
             
           ];
  
@@ -53,7 +53,7 @@ class PaymentsController extends Controller
         
         if(!$response->success)
         {
-        	return view('payments.failure');
+        	return redirect('/bookings/' . $booking->id . '/failed');
         }
         
         $bookingId = $response->payment_request->purpose;
