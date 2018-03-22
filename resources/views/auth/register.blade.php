@@ -8,7 +8,7 @@
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
                     <span class="login100-form-title p-b-55">
-                        Create Account
+                         <img style="width:250px;" src="/images/logo.png" alt="wrapkit"/>
                     </span>
 
                     @include('partials.errors')

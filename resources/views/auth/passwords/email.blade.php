@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="bg-light form4" id="register" style="margin-top: 0px;min-height: 1000px;">
+<div class="bg-light form4" id="register" style="margin-top: 0px;min-height: 1000px;padding-top: 40px;">
                 <div class="container">
                     <div class="row">
                         <!-- Column -->
