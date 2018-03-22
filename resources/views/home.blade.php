@@ -208,7 +208,7 @@
                                     
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
-                                        <input type="number" name="drop_train_pnr" id="drop_prn"  class="form-control" placeholder="Enter your PNR number">
+                                        <input type="number" name="drop_train_pnr" id="drop_prn"  class="form-control" placeholder="Enter your PNR number" required="" disabled="">
                                     </div>
 
                                     
