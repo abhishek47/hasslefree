@@ -16,7 +16,7 @@
 
           <li><a href="{{ backpack_url('bookings') }}"><i class="fa fa-file-text"></i> <span>Bookings</span></a></li>
 
-          <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li>
+        <!--  <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li> -->
 
            <li><a href="{{ backpack_url('cities') }}"><i class="fa fa-map-marker"></i> <span>Cities</span></a></li>
 
@@ -27,6 +27,14 @@
            <li><a href="{{ backpack_url('train-stations') }}"><i class="fa fa-train"></i> <span>Train Stations</span></a></li>
 
 
+           <li class="treeview">
+              <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/user') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/role') }}"><i class="fa fa-group"></i> <span>Roles</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
+              </ul>
+            </li>
 
 
           <!-- ======================================= -->

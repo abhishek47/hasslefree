@@ -8,11 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait; // <------------------------------- this one
 use Illuminate\Support\Facades\Password;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use CrudTrait; // <----- this
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
