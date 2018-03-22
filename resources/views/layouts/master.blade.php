@@ -253,12 +253,10 @@
                     <div class="row">
                         <!-- cOLUMN -->
                         <div class="col-lg-3 col-md-6 m-b-30">
-                            <h6 class="font-medium text-white">SERVICES</h6>
+                            <h6 class="font-medium text-white">Helpful Links</h6>
                             <ul class="general-listing">
-                                <li><a href="#"><i class="fa fa-arrow-right"></i> Airport Transport</a></li>
-                                <li><a href="#"><i class="fa fa-arrow-right"></i> Station Transport</a></li>
-                                <li><a href="#"><i class="fa fa-arrow-right"></i> Luggage Storage</a></li>
-                                <li><a href="#"><i class="fa fa-arrow-right"></i> Doorstep Transport</a></li>
+                                <li><a href="/faq"><i class="fa fa-arrow-right"></i> FAQ</a></li>
+                                <li><a href="/terms.pdf" target="_blank"><i class="fa fa-arrow-right"></i> Terms &amp; Conditions</a></li>
                             </ul>
                         </div>
                         <!-- cOLUMN -->

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="mini-spacer bg-light" style="min-height: 1000px;">
+<div class="mini-spacer bg-light" style="min-height: 1000px;padding-top: 90px;">
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -416,9 +416,23 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <h4>Overflowing text to show scroll behavior</h4>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>The information contained in this website is for general information purposes only. The
+                  information is provided by Hasslefree Luggage and while we endeavor to keep the information up
+                  to date and correct, we make no representations or warranties of any kind, express or implied,
+                  about the completeness, accuracy, reliability, suitability or availability with respect to the website
+                  or the information, products, services, or related graphics contained on the website for any
+                  purpose. Any reliance you place on such information is therefore strictly at your own risk.
+                  In no event will we be liable for any loss or damage including without limitation, indirect or
+                  consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
+                  profits arising out of, or in connection with, the use of this website.
+                  Through this website you are able to link to other websites which are not under the control of
+                  Hasslefree Luggage. We have no control over the nature, content and availability of those sites.
+                  The inclusion of any links does not necessarily imply a recommendation or endorse the views
+                  expressed within them. </p>
+
+                  <p>Every effort is made to keep the portal up and running smoothly. However, Hasslefree Luggage
+                  takes no responsibility for, and will not be liable for, the portal being temporarily unavailable due
+                  to technical issues beyond our control.</p>
             </div>
             <div class="modal-footer">
                 <a href="/bookings/{{$booking->id}}/cod" class="btn btn-danger waves-effect text-left" >Accept &amp; Confirm</a>
@@ -439,9 +453,23 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <h4>Overflowing text to show scroll behavior</h4>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                 <p>The information contained in this website is for general information purposes only. The
+                  information is provided by Hasslefree Luggage and while we endeavor to keep the information up
+                  to date and correct, we make no representations or warranties of any kind, express or implied,
+                  about the completeness, accuracy, reliability, suitability or availability with respect to the website
+                  or the information, products, services, or related graphics contained on the website for any
+                  purpose. Any reliance you place on such information is therefore strictly at your own risk.
+                  In no event will we be liable for any loss or damage including without limitation, indirect or
+                  consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
+                  profits arising out of, or in connection with, the use of this website.
+                  Through this website you are able to link to other websites which are not under the control of
+                  Hasslefree Luggage. We have no control over the nature, content and availability of those sites.
+                  The inclusion of any links does not necessarily imply a recommendation or endorse the views
+                  expressed within them. </p>
+
+                  <p>Every effort is made to keep the portal up and running smoothly. However, Hasslefree Luggage
+                  takes no responsibility for, and will not be liable for, the portal being temporarily unavailable due
+                  to technical issues beyond our control.</p>
             </div>
             <div class="modal-footer">
                 <a href="/bookings/{{$booking->id}}/pay" class="btn btn-danger waves-effect text-left" >Accept &amp; Pay</a>

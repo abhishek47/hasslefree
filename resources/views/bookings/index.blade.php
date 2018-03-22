@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="mini-spacer bg-light" style="min-height: 1000px;">
+<div class="mini-spacer bg-light" style="min-height: 1000px;padding-top: 90px;">
 
 <div class="container">
 

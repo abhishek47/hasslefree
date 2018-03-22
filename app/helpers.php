@@ -93,10 +93,10 @@ function sendSMS($numbers, $message)
 	$hash = "d48528be4cc869da790cd1d3be2893e0a7c5fb7cc6ad4b66278111414d0f4a7f";
 
 	// Config variables. Consult http://api.textlocal.in/docs for more info.
-	$test = "1";
+	$test = "0";
 
 	// Data for text message. This is the text message data.
-	$sender = "TXTLCL"; // This is who the message appears to be from.
+	$sender = "HASSLE"; // This is who the message appears to be from.
 	//$numbers = "910000000000"; // A single number or a comma-seperated list of numbers
 	//$message = "This is a test message from the PHP API script.";
 	// 612 chars or less
