@@ -177,36 +177,36 @@
 
                            <tr>
                              <td class="font-medium">Base Price</td>
-                             <td class="text-right">₹ {{ ($distance * 10) }}</td>
+                             <td class="text-right">Rs. {{ ($distance * 10) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Insurance</td>
-                             <td class="text-right">₹ {{ ($booking->bags_count * 12) }}</td>
+                             <td class="text-right">Rs. {{ ($booking->bags_count * 12) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Handling Charges</td>
-                             <td class="text-right">₹ {{ ($booking->bags_count * 10) }}</td>
+                             <td class="text-right">Rs. {{ ($booking->bags_count * 10) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Security Labelling</td>
                              <td class="text-right">
-                              ₹ {{ ($booking->bags_count * 7) }}
+                              Rs. {{ ($booking->bags_count * 7) }}
                              </td>
                            </tr>
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
-                             <td class="text-right font-bold">₹ {{ $basePrice  }}</td>
+                             <td class="text-right font-bold">Rs. {{ $basePrice  }}</td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">CGST 9%</td>
-                             <td class="text-right">₹ {{ round($cgst, 2)  }}</td>
+                             <td class="text-right">Rs. {{ round($cgst, 2)  }}</td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">SGST 9%</td>
-                             <td class="text-right">₹ {{ round($sgst, 2)  }}</td>
+                             <td class="text-right">Rs. {{ round($sgst, 2)  }}</td>
                            </tr>
 
                          </tbody>
@@ -216,7 +216,7 @@
 
                     <hr>
 
-                    <h3 class="pull-right"><b>Total : <span class="text-dark">₹ {{ round($booking->total, 2) }}</span></b></h3>
+                    <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>
 
                     <div class="clearfix"></div>
                      <hr>

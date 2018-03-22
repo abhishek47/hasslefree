@@ -67,7 +67,7 @@
             <!-- ============================================================== -->
             <div class="header14 po-relative">
                 <!-- Topbar  -->
-                @guest
+                
                 <div class="h14-topbar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg font-14">
@@ -90,37 +90,7 @@
                     </div>
                 </div>
 
-                <!-- Infobar  -->
-                <div class="h14-infobar">
-                    <div class="container">
-                        <nav class="navbar navbar-expand-lg h14-info-bar">
-                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="fa fa-chevron-down"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="h14-info">
-                                <ul class="navbar-nav ml-auto text-uppercase">
-                                    <li class="nav-item">
-                                        <a class="nav-link">
-                                            <div class="display-6 m-r-10"><i class="icon-Mail"></i></div>
-                                            <div><small>Email us at</small>
-                                                <h6 class="font-bold font-14">info@hasslefreeluggage.in</h6></div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link">
-                                            <div class="display-6 m-r-10"><i class="icon-Phone-2"></i></div>
-                                            <div><small>CALL US NOW</small>
-                                                <h6 class="font-bold">(+91) 9582873902</h6></div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item donate-btn"><a href="/home" class="btn btn-danger-gradiant">Book Now</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-                @endguest
+               
                 <!-- Navbar  -->
                 <div class="h14-navbar no-print">
                     <div class="container">
@@ -205,6 +175,40 @@
                         </nav>
                     </div>
                 </div>
+
+                @guest
+                 <!-- Infobar  -->
+                <div class="h14-infobar">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg h14-info-bar">
+                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fa fa-chevron-down"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="h14-info">
+                                <ul class="navbar-nav ml-auto text-uppercase">
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10"><i class="icon-Mail"></i></div>
+                                            <div><small>Email us at</small>
+                                                <h6 class="font-bold font-14">info@hasslefreeluggage.in</h6></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10"><i class="icon-Phone-2"></i></div>
+                                            <div><small>CALL US NOW</small>
+                                                <h6 class="font-bold">(+91) 9582873902</h6></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item donate-btn"><a href="/home" class="btn btn-danger-gradiant">Book Now</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                @endguest
             </div>
             <!-- ============================================================== -->
             <!-- End Header 14  -->
