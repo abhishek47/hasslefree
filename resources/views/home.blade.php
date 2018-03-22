@@ -513,7 +513,11 @@ google.maps.event.addDomListener(window, 'load', init);
 
     var message = '';
 
-    if(date1 == date2 && (time2 - time1) < 6)
+    if(date1 == date2 && time2 < 10)
+    {
+        message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
+
+    } else if(date1 == date2 && (time2 >= 10 && time2 - (time1+9) < 6))
     {
         message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
     }
