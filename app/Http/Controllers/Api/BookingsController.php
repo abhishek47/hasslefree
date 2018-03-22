@@ -115,6 +115,8 @@ class BookingsController extends Controller
 
         \Mail::to($user)->send($message);
 
+        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id . '.Track your booking on https://www.hasslefreeluggage.in/bookings/' . $booking->id.);
+
 
         return response(['status'=> 'success', 'message' => 'Pickup Scheduled!', 'data' => []], 200);
 
