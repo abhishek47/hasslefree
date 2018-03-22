@@ -658,7 +658,7 @@ google.maps.event.addDomListener(window, 'load', init);
     $('#btn-verify-otp').on('click', function()
   {
         //console.log(otp);
-        if($('#user-otp').val() ==  '12345')//otp
+        if($('#user-otp').val() == otp)
         {
 
             $('#user-otp').addClass('parsley-error');
