@@ -127,7 +127,7 @@ class BookingsController extends Controller
 
         \Mail::to(auth()->user())->send($message);
 
-        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
+        sendSMS('91' . $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
 
         flash('Your booking was confirmed & scheduled!')->success();
@@ -287,7 +287,7 @@ class BookingsController extends Controller
 
         if($booking->payment_made)
         {
-           flash('Booking was cancelled successfully! Add your payment details to initiate refund!')->success();
+           flash('Booking was cancelled successfully! Your amount will be credited to your bank account within next 48 working Hrs!')->success();
         } else {
             flash('Booking was cancelled successfully!')->success();
         }

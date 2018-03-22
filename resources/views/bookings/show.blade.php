@@ -345,7 +345,7 @@
                   @else
                     <h4 class="font-bold m-b-20"><i class="fa fa-check text-success"></i> Booking Cancelled</h4>
 
-                    @if($booking->refund()->exists())
+                   {{--  @if($booking->refund()->exists()) 
 
 
                       <h6 class="font-bold m-b-10">Refund Details</h6>
@@ -404,8 +404,10 @@
                         </div>
                     </form>
 
-                    @endif
-                  @endif
+                    @endif --}}
+
+                    <p>Your amount will be credited to your bank account within next 48 working Hrs!</p>
+                  @endif 
                 </div>
             </div>
         </div>

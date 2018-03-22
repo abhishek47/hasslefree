@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-    <title>Hassle Free Luggage | Luggage Transfer and Storage Service in India</title>
+    <title>Droghers | Luggage Transfer and Storage Service in India</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- This is for the animation CSS -->
@@ -96,7 +96,7 @@
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
                             
-                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
+                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
@@ -107,7 +107,7 @@
                                   
                                         
                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
-                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
+                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                                         </li>
 
                                          <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
