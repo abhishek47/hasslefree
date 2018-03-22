@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <div class="mini-spacer bg-light" style="min-height: 1000px;padding-top: 90px;">
 <div class="container">
     <div class="row">
@@ -218,6 +219,11 @@
                     <h2><b>&#8377 {{ round($booking->total, 2) }}</b></h2>
 
                      <hr>
+
+                     <p><b>Note:</b> Please provide a legal ID proof excluding PAN
+                        card at the time of luggage pick up.</p>
+
+                        <hr>
 
                      @if($booking->distance > 40)
 
