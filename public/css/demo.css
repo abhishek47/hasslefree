@@ -45,11 +45,11 @@ Header 14
         padding-left: 0px; }
 
 .h14-navbar {
-  background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: #481675;
+ /*   background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
     background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
     background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0); }
+    background: linear-gradient(-135deg, #c850c0, #4158d0); */ }
   .h14-navbar .navbar {
     padding: 0; }
     .h14-navbar .navbar .hidden-lg-up {
