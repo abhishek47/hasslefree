@@ -89,7 +89,7 @@ class PaymentsController extends Controller
 
         \Mail::to($booking->user)->send($message);
 
-        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id . '.Track your booking on https://www.hasslefreeluggage.in/bookings/' . $booking->id.);
+        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id . '.Track your booking on https://www.hasslefreeluggage.in/bookings/' . $booking->id);
 
 
         flash('Payment was succesfully made!')->success();

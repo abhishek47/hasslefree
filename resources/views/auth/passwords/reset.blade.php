@@ -1,6 +1,6 @@
 
 
-@extends('layouts.auth2')
+@extends('layouts.master')
 
 @section('content')
 

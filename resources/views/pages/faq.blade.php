@@ -15,44 +15,64 @@
                             <div class="col-lg-6">
                                 <div class="p-20">
                                     <div class="m-b-40 p-b-20">
-                                        <h5 class="title">What is HassleFree and how does it work?</h5>
-                                        <p>HassleFree is a platform where experts and clients come together from all over the world to
-develop projects and products. Refer our How it works (How it works page link) page to
-know about the working process of the platform.</p>
+                                        <h5 class="title">What is Hasslefree Luggage?</h5>
+                                        <p>Hasslefree Luggage is a full-service luggage shipping company. We eliminate the hassle of
+traveling with your luggage by providing door-to- door service almost anywhere in Delhi NCR.
+You simply pack and contact us. We handle the rest.</p>
                                     </div>
                                     <div class="m-b-40 p-b-20">
-                                        <h5 class="title">What is HassleFree fee?</h5>
-                                        <p>HassleFree is a free platform for experts to register and for clients to post a project. On
-completing a project, Onyomark receives 20% on the total payment.</p>
+                                        <h5 class="title">What is the advantage of paying for a luggage shipping service?</h5>
+                                        <p>Dealing with luggage at the airport, railway station or bus terminal is an inconvenience for any
+traveler. Hasslefree Luggage offers a luxurious, worry and hassle-free alternative. You’ll notice
+the difference right from the start. Hasslefree Luggage picks up at your home or office at the
+time you have requested. Our local agent prepares it for shipping to railway station or airport.
+With Hasslefree Luggage your bags are continually tracked. You receive a delivery
+confirmation by e-mail, phone or fax.</p>
                                     </div>
                                     <div class="m-b-40 p-b-20">
-                                        <h5 class="title">How and when will I be paid for projects completed through Onyomark?</h5>
-                                        <p>The payment finalized for a particular project will be deposited with Onyomark as a safety
-pledge at the beginning of the project. There exists a threshold value of *X*. If the payment
-of a project is below the threshold value then the funds will be deposited on completion of
-the project. If the payment lies above the threshold value then payment will be released as
-per expert’s demand or client’s orders. Payment will be deposited in national bank accounts
-in 5 business days and in international accounts in 10 business days.</p>
+                                        <h5 class="title">Who is Hasslefree Luggage designed for?</h5>
+                                        <p>Hasslefree Luggage is designed for all travelers who wish to make their trip as hassle free as
+possible. We are perfect for any traveler simply looking to get rid of the headaches of luggage
+out of air travel, railway or bus stop.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-20">
                                     <div class="m-b-40 p-b-20">
-                                        <h5 class="title">How should I respond if a business asks to work with me outside of the Onyomark
-platform?</h5>
-                                        <p>Approach HassleFree at (customer support link or mail id) and mention the client name and
-the case. Request the client to post the requirement as a project on HassleFree itself and to
-not take the conversation outside of the platform.</p>
+                                        <h5 class="title">How much does luggage shipping service cost?</h5>
+                                        <p>Please see our pricing page for standard shipping costs. For special service, costs are
+determined on a case-by- case basis. To learn more contact one of our luggage shipping experts.</p>
                                     </div>
                                     <div class="m-b-40 p-b-20">
-                                        <h5 class="title">My project will require me to incur business expenses. Will I be reimbursed?</h5>
-                                        <p>The expert should mention explicitly in the agreement about business expenses and their
-reimbursement by the client. On agreement of the proposal, the conditions will be fulfilled.
-Onyomark will not be responsible for any expenses regarding the project.</p>
+                                        <h5 class="title">How do I pay for Hasslefree Luggage service?</h5>
+                                        <p>We accept payment by credit card, debit card, net banking, wallets and COD.</p>
                                     </div>
                                 </div>
+                                 
+                                <div class="p-20">
+                                    <div class="m-b-40 p-b-20">
+                                        <h5 class="title">How much is my luggage delivery insured for?</h5>
+                                        <p>Hasslefree Luggage automatically covers each luggage for up to Rs 10,000.00, with additional
+coverage available. Please view our terms and condition page for a complete overview of our
+liability.</p>
+                                    </div>
+                                    <div class="m-b-40 p-b-20">
+                                        <h5 class="title">How do those prices compare to other companies?</h5>
+                                        <p>Hasslefree Luggage often costs less than other companies, while providing more services.
+Compare:
+<ul>
+<li>Our ability to completely customize our service to fit your needs</li>
+<li>Our time sensitive retrieval of your items</li>
+<li>24-hour customer service</li>
+<li>Our automatic baggage delivery notifications</li>
+</ul></p>
+                                    </div>
+                                </div>
+                           
                             </div>
+
+                            
                         </div>
                     </div>
                      
