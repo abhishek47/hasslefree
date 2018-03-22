@@ -181,7 +181,7 @@
                 <div class="h14-infobar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-info-bar">
-                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo-small.png" alt="wrapkit"/></a>
+                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-chevron-down"></span>
                             </button>
