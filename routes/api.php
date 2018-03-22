@@ -31,6 +31,9 @@ use Illuminate\Http\Request;
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
 
+  Route::post('/phone/sendotp', 'Api\ProfileController@sendOTP');
+
+
 
 Route::get('/get-trains', 'Api\LocationsController@getTrains');
 

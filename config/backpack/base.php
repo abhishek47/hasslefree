@@ -12,17 +12,17 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'HassleFree',
+    'project_name' => 'Droghers',
 
     // Menu logos
-    'logo_lg'   => '<b>Hassle</b>Free',
-    'logo_mini' => '<b>H</b>f',
+    'logo_lg'   => '<b>Drogh</b>ers',
+    'logo_mini' => '<b>D</b>g',
 
     // Developer or company name. Shown in footer.
     'developer_name' => 'Abhishek Wani',
 
     // Developer website. Link in footer.
-    'developer_link' => 'http://solicitousbusiness.com',
+    'developer_link' => 'http://trumpetstechnologies.com',
 
     // Show powered by Laravel Backpack in the footer?
     'show_powered_by' => false,

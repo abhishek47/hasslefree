@@ -94,9 +94,9 @@
                                         <input type="text" name="pick_up_from" id="pick_up_location" class="form-control" placeholder="Enter your location">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Complete Address ( optional )</label>
-                                        <input type="text" name="pick_up_address"  class="form-control" placeholder="Enter your address">
+                                    <div class="form-group" id="pickup_complete_address_div">
+                                        <label>Complete Address</label>
+                                        <input type="text" name="pick_up_address" id="pickup_complete_address"  class="form-control" placeholder="Enter your address">
                                     </div>
                                     
                                 </div>
@@ -112,8 +112,8 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Flight Number (optional)</label>
-                                        <input type="text" name="pick_up_flight_number" class="form-control" placeholder="Enter flight number">
+                                        <label>Flight Number</label>
+                                        <input type="text" name="pick_up_flight_number" id="pick_up_flight_number" class="form-control" placeholder="Enter flight number">
                                     </div>
                                 </div>
                                 <div id="pickup_train" class="hidden">
@@ -129,7 +129,7 @@
                                     
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
-                                        <input type="text" name="pick_up_train_pnr" class="form-control" placeholder="Enter your PNR number">
+                                        <input type="number" name="pick_up_train_pnr"  id="pick_up_prn" class="form-control" placeholder="Enter your PNR number" required="" disabled="">
                                     </div>
 
                                    
@@ -173,9 +173,9 @@
                                         <input type="text" name="drop_to" id="drop_location" class="form-control" placeholder="Enter your location">
                                     </div>
 
-                                     <div class="form-group" id="complete-address">
-                                        <label>Complete Address ( optional )</label>
-                                        <input type="text" name="drop_address"  class="form-control" placeholder="Enter your address">
+                                     <div class="form-group" id="complete-address_div">
+                                        <label>Complete Address</label>
+                                        <input type="text" name="drop_address" id="complete-address"  class="form-control" placeholder="Enter your address" required="" disabled="">
                                     </div>
                                     
                                 </div>
@@ -192,7 +192,7 @@
                                     
                                     <div class="form-group">
                                         <label>Flight Number </label>
-                                        <input type="text" name="drop_flight_number" class="form-control" placeholder="Enter flight number">
+                                        <input type="text" name="drop_flight_number"  class="form-control" placeholder="Enter flight number">
                                     </div>
                                 </div>
                                 <div id="drop_train" class="hidden">
@@ -208,7 +208,7 @@
                                     
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
-                                        <input type="text" name="drop_train_pnr" class="form-control" placeholder="Enter your PNR number">
+                                        <input type="number" name="drop_train_pnr" id="drop_prn"  class="form-control" placeholder="Enter your PNR number">
                                     </div>
 
                                     
@@ -366,68 +366,134 @@
 </script>
 
 <script type="text/javascript">
+
 $('#pick_up_type').on('change', function (e) {
+
 console.log('changed');
+
 var optionSelected = $("option:selected", this);
+
 var valueSelected = this.value;
+
 pickupType = valueSelected;
+
 console.log('value : ' + valueSelected);
+
 if(valueSelected == 0){
-$('#pickup_train').addClass('hidden');
-$('#pickup_bus').addClass('hidden');
-$('#pickup_other').addClass('hidden');
-$('#pickup_airport').removeClass('hidden');
+
+ $('#pickup_train').addClass('hidden');
+ $('#pickup_bus').addClass('hidden');
+ $('#pickup_other').addClass('hidden');
+ $('#pickup_airport').removeClass('hidden');
+
+  $('#pick_up_prn').attr('disabled', true);
+
+   $('#pick_up_flight_number').attr('disabled', false);
+
 } else if(valueSelected == 1) {
-$('#pickup_bus').addClass('hidden');
-$('#pickup_other').addClass('hidden');
-$('#pickup_airport').addClass('hidden');
-$('#pickup_train').removeClass('hidden');
+ 
+ $('#pickup_bus').addClass('hidden');
+ $('#pickup_other').addClass('hidden');
+ $('#pickup_airport').addClass('hidden');
+ $('#pickup_train').removeClass('hidden');
+
+ $('#pick_up_prn').attr('disabled', false);
+
+ $('#pick_up_flight_number').attr('disabled', true);
+
 } else if(valueSelected == 2) {
-$('#pickup_other').addClass('hidden');
-$('#pickup_airport').addClass('hidden');
-$('#pickup_train').addClass('hidden');
-$('#pickup_bus').removeClass('hidden');
+
+ $('#pickup_other').addClass('hidden');
+ $('#pickup_airport').addClass('hidden');
+ $('#pickup_train').addClass('hidden');
+ $('#pickup_bus').removeClass('hidden');
+
+
+  $('#pick_up_prn').attr('disabled', true);
+
+  $('#pick_up_flight_number').attr('disabled', true);
+
 } else {
-$('#pickup_airport').addClass('hidden');
-$('#pickup_train').addClass('hidden');
-$('#pickup_bus').addClass('hidden');
-$('#pickup_other').removeClass('hidden');
+
+ $('#pickup_airport').addClass('hidden');
+ $('#pickup_train').addClass('hidden');
+ $('#pickup_bus').addClass('hidden');
+ $('#pickup_other').removeClass('hidden');
+
+
+  $('#pick_up_prn').attr('disabled', true);
+
+  $('#pick_up_flight_number').attr('disabled', true);
+
+  $('#pickup_complete_address').attr('disabled', false);
+
+}
+
+if(valueSelected == 4)
+{
+    $('#pickup_complete_address_div').addClass('hidden');
+
+     $('#pickup_complete_address').attr('disabled', true);
 }
 
 
 });
+
 $('#drop_to_type').on('change', function (e) {
+
 var optionSelected = $("option:selected", this);
 var valueSelected = this.value;
 dropType = valueSelected;
-if(valueSelected == 0){
-$('#drop_train').addClass('hidden');
-$('#drop_bus').addClass('hidden');
-$('#drop_other').addClass('hidden');
-$('#drop_airport').removeClass('hidden');
+
+if(valueSelected == 0) {
+
+    $('#drop_train').addClass('hidden');
+    $('#drop_bus').addClass('hidden');
+    $('#drop_other').addClass('hidden');
+    $('#drop_airport').removeClass('hidden');
+
+     $('#drop_prn').attr('disabled', true);
+
 } else if(valueSelected == 1) {
-$('#drop_bus').addClass('hidden');
-$('#drop_other').addClass('hidden');
-$('#drop_airport').addClass('hidden');
-$('#drop_train').removeClass('hidden');
+
+    $('#drop_bus').addClass('hidden');
+    $('#drop_other').addClass('hidden');
+    $('#drop_airport').addClass('hidden');
+    $('#drop_train').removeClass('hidden');
+
+    $('#drop_prn').attr('disabled', false);
+
 } else if(valueSelected == 2) {
-$('#drop_other').addClass('hidden');
-$('#drop_airport').addClass('hidden');
-$('#drop_train').addClass('hidden');
-$('#drop_bus').removeClass('hidden');
+
+    $('#drop_other').addClass('hidden');
+    $('#drop_airport').addClass('hidden');
+    $('#drop_train').addClass('hidden');
+    $('#drop_bus').removeClass('hidden');
+
+    $('#drop_prn').attr('disabled', true);
+
 } else {
-$('#drop_airport').addClass('hidden');
-$('#drop_train').addClass('hidden');
-$('#drop_bus').addClass('hidden');
-$('#drop_other').removeClass('hidden');
+
+    $('#drop_airport').addClass('hidden');
+    $('#drop_train').addClass('hidden');
+    $('#drop_bus').addClass('hidden');
+    $('#drop_other').removeClass('hidden');
+
+    $('#drop_prn').attr('disabled', true);
+
+    $('#complete-address').attr('disabled', false);
+
 }
 
-if(valueSelected == 5)
+if(valueSelected == 4)
 {
-    $('#complete-address').addClass('hidden');
+    $('#complete-address_div').addClass('hidden');
+
+     $('#complete-address').attr('disabled', true);
 }
 
 });
+
 $(document).ready(function () {
 $('.registration-form fieldset:first-child').fadeIn('slow');
 $('.registration-form input[type="text"]').on('focus', function () {
@@ -508,16 +574,22 @@ google.maps.event.addDomListener(window, 'load', init);
     console.log('validation'); 
     var date1 = $('#datedropper1').val();   
     var date2 = $('#datedropper2').val();    
-    var time1 = $('#pick_up_time option:selected').val();
-    var time2 = $('#drop_time option:selected').val();
+    var time1 = parseInt($('#pick_up_time option:selected').val());
+    var time2 = parseInt($('#drop_time option:selected').val());
+
+    var diff = time2 - (time1+9);
+
+    console.log('time1 : ' + time1 + ' | time2 : ' + time2 + ' | Diff : ' + diff);
 
     var message = '';
 
+
+
     if(date1 == date2 && time2 < 10)
     {
-        message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
+        message = 'The delivery time should atleast be 6 hours ahead of pickup time!!';
 
-    } else if(date1 == date2 && (time2 >= 10 && time2 - (time1+9) < 6))
+    } else if(date1 == date2 && (time2 >= 10 && diff < 6))
     {
         message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
     }
@@ -541,6 +613,7 @@ google.maps.event.addDomListener(window, 'load', init);
             
   }
 
+  var otp = '';
 
   $('#btn-request-otp').on('click', function()
   { 
@@ -557,6 +630,11 @@ google.maps.event.addDomListener(window, 'load', init);
              .append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
 
         } else {
+
+            $.post('api/phone/sendotp', {'phone':  $('#phone').val() }).then(function(response) {
+              //  console.log(response);
+               otp = response.otp;
+            });
 
             $('#request-otp').addClass('hidden');
 
@@ -579,16 +657,18 @@ google.maps.event.addDomListener(window, 'load', init);
 
     $('#btn-verify-otp').on('click', function()
   {
-
-        if($('#user-otp').val() == 12345)
+        //console.log(otp);
+        if($('#user-otp').val() == otp)
         {
+
             $('#user-otp').addClass('parsley-error');
             $('#user-otp').parent().find('.parsley-errors-list').remove();
             $('#verify-otp').addClass('hidden');
             $('#verified-otp').removeClass('hidden');
             $('#getQuote').attr('disabled', false);
+
         } else {
-             message = 'Please enter correct OTP!'
+             message = 'Please enter correct OTP!';
              $('#user-otp').addClass('parsley-error');
             $('#user-otp').parent().find('.parsley-errors-list').remove();
 

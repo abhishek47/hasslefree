@@ -72,6 +72,23 @@ function getStatusString($value)
 
 }
 
+function getStatusMessage($id, $value)
+{
+
+	if($value == -1)
+	{
+		return 'Your Droghers Booking with ID ' . $id . ' has been cancelled.';
+	} 
+	else {
+		 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Transit', 'Luggage Delivered' ];
+                                        
+		
+	 return 'Your Droghers Booking with ID ' . $id . ' status updated : ' . $statuses[$value];
+	}
+	
+
+}
+
 
 
 function getDistance($addressFrom, $addressTo){
@@ -87,28 +104,30 @@ function getDistance($addressFrom, $addressTo){
        return ($data->rows[0]->elements[0]->distance->value / 1000);
 }
 
-function sendSMS($numbers, $message)
+function sendSMS($number, $message)
 {
-	$username = "hasslefree.dev@gmail.com";
-	$hash = "d48528be4cc869da790cd1d3be2893e0a7c5fb7cc6ad4b66278111414d0f4a7f";
-
-	// Config variables. Consult http://api.textlocal.in/docs for more info.
-	$test = "0";
-
-	// Data for text message. This is the text message data.
-	$sender = "HASSLE"; // This is who the message appears to be from.
-	//$numbers = "910000000000"; // A single number or a comma-seperated list of numbers
-	//$message = "This is a test message from the PHP API script.";
-	// 612 chars or less
-	// A single number or a comma-seperated list of numbers
-	$message = urlencode($message);
-	$data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-	$ch = curl_init('http://api.textlocal.in/send/?');
+	// Account details
+	$apiKey = urlencode('PlfU4yW3uc8-Jva0w5EyzaBh3Pbnjye1QIaSBYnN47');
+	
+	// Message details
+	
+	$sender = urlencode('TXTLCL');
+	$message = rawurlencode($message);
+ 
+ 
+	// Prepare data for POST request
+	$data = array('apikey' => $apiKey, 'numbers' => $number, "sender" => $sender, "message" => $message);
+ 
+	// Send the POST request with cURL
+	$ch = curl_init('https://api.textlocal.in/send/');
 	curl_setopt($ch, CURLOPT_POST, true);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$result = curl_exec($ch); // This is the result from the API
+	$response = curl_exec($ch);
 	curl_close($ch);
+	
+	// Process your response here
+	return $response;
 }
 
 

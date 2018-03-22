@@ -137,7 +137,9 @@ class BookingCrudController extends CrudController
          
 
         
-            \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
+        \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
+
+        //sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status));
         
         return $redirect_location;
     }

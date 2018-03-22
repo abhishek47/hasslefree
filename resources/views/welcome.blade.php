@@ -22,7 +22,7 @@
                                 <div class="slide-text slide_style_left">
                                     <div class="col-md-9 col-lg-6">
                                         <label class="label bg-white text-uppercase font-semibold" data-animation="animated fadeInDown">Welcome To</label>
-                                        <h2 data-animation="animated zoomInRight" class="title text-white">Hassle Free Luggage Transport Service</h2>
+                                        <h2 data-animation="animated zoomInRight" class="title text-white">Droghers Luggage Transport Service</h2>
                                     </div>
                                     <div class="col-md-8 col-lg-5">
                                         <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white">We offer Luggage Transfer services from Railway Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col-md-6 m-t-30">
                                 <h5 class="font-medium">Easy &amp; Flexible</h5>
-                                <p>HassleFree is a easy online booking service with lots of flexibility.</p>
+                                <p>Droghers is a easy online booking service with lots of flexibility.</p>
                             </div>
                             <div class="col-md-6 m-t-30">
                                 <h5 class="font-medium">Real-time Tracking</h5>
@@ -174,7 +174,7 @@
                     <!-- Column -->
                     <div class="col-lg-6">
                         <small class="text-info">Exclusive Service</small>
-                        <h3 class="font-bold">HassleFree is an Exclusive Service in India</h3>
+                        <h3 class="font-bold">Droghers is an Exclusive Service in India</h3>
                         <p>A team of trained & experienced profesionals, who are well versed with the customer requirement in the Indian market</p>
                         <ul class="list-block m-b-30">
                             <li><i class="fa fa-check-circle-o text-info"></i> Easy and seamless booking process.</li>

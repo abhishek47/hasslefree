@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-    <title>Hassle Free Luggage | Luggage Transfer and Storage Service in India</title>
+    <title>Droghers | Luggage Transfer and Storage Service in India</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- This is for the animation CSS -->
@@ -96,7 +96,7 @@
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
                             
-                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
+                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
@@ -133,7 +133,7 @@
                                      @else
                                         
                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
-                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>HassleFree</span></a>
+                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                                         </li>
 
                                          <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
@@ -298,7 +298,7 @@
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
-                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}. All Rights Reserved.Powered by <a href="http://solicitousbusiness.com">Solicitous</a>.</span>
+                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}.Powered by <a href="http://solicitousbusiness.com">Solicitous</a>. Designed &amp; Maintained by <a href="http://www.trumpetstechnologies.com">Trumpets.</a></span>
                             <div class="ml-auto m-t-10 m-b-10">
                                 <a href="#" class="link"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="link"><i class="fa fa-twitter"></i></a>

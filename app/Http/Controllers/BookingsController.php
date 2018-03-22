@@ -127,7 +127,7 @@ class BookingsController extends Controller
 
         \Mail::to(auth()->user())->send($message);
 
-        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id . '.Track your booking on https://www.hasslefreeluggage.in/bookings/' . $booking->id);
+        sendSMS('91' . $booking->phone, 'HassleFree Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
 
         flash('Your booking was confirmed & scheduled!')->success();
@@ -291,6 +291,8 @@ class BookingsController extends Controller
         } else {
             flash('Booking was cancelled successfully!')->success();
         }
+
+        sendSMS('91' . $booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
 
         return redirect('/bookings/' . $booking->id);
     }

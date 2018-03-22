@@ -1,7 +1,7 @@
 @component('mail::message')
 # Booking Cancelled
 
-Your booking for luggage transport at HassleFreeLuggage has been cancelled.
+Your booking for luggage transport at Droghers has been cancelled.
 
 @component('mail::button', ['url' => config('app.url') . '/bookings/' . $booking->id])
 View Details

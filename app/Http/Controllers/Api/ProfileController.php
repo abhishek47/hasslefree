@@ -65,6 +65,19 @@ class ProfileController extends Controller
         
     }
 
+    public function sendOTP(Request $request)
+    {
+        $phone = '91' . $request->get('phone');
+
+        $otp = mt_rand(10000, 99999);
+
+        $message = 'Your HassleFree verification OTP is ' . $otp . '.';
+
+        $response = sendSMS($phone, $message);
+
+        return response(['status' => 'success', 'message' => 'OTP sent successfully!', 'otp' => $otp, 'phone' => $phone]);
+    }
+
    
 
     

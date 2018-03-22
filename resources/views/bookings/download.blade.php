@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-    <title>Hassle Free Luggage | Luggage Transfer and Storage Service in India</title>
+    <title>Droghers | Luggage Transfer and Storage Service in India</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- This is for the animation CSS -->
