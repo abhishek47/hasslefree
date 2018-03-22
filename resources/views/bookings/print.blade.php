@@ -153,7 +153,7 @@
 
                     <hr>
 
-                    <h3 class="pull-right"><b>Total : <span class="text-dark">&#8377 {{ round($booking->price, 2) }}</span></b></h3>
+                    <h3 class="pull-right"><b>Total : <span class="text-dark">&#8377 {{ round($booking->total, 2) }}</span></b></h3>
 
                     <div class="clearfix"></div>
                      <hr>
