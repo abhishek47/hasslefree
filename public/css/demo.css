@@ -282,15 +282,15 @@ Footer 3
 
 
       .bg-primary {
-  background: #9053c7;
+  background: #481675;
 }
 
 .bg-primary-gradiant {
-  background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: #481675;
+  /*  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
     background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
     background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0); */
 }
 
 
