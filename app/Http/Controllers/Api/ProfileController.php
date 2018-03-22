@@ -67,7 +67,7 @@ class ProfileController extends Controller
 
     public function sendOTP(Request $request)
     {
-        $phone = '91' . $request->get('phone');
+        $phone = $request->get('phone');
 
         $otp = mt_rand(10000, 99999);
 
@@ -75,7 +75,7 @@ class ProfileController extends Controller
 
         $response = sendSMS($phone, $message);
 
-        return response(['status' => 'success', 'message' => 'OTP sent successfully!', 'otp' => $otp, 'phone' => $phone]);
+        return response(['status' => 'success', 'message' => 'OTP sent successfully!', 'otp' => $otp, 'phone' => $phone, 'api' => $response]);
     }
 
    

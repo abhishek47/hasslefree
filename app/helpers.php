@@ -114,7 +114,8 @@ function sendSMS($number, $message)
 	$sender = urlencode('TXTLCL');
 	$message = rawurlencode($message);
  
- 
+ 	$number = '91' . $number;
+ 	
 	// Prepare data for POST request
 	$data = array('apikey' => $apiKey, 'numbers' => $number, "sender" => $sender, "message" => $message);
  

@@ -292,7 +292,7 @@ class BookingsController extends Controller
             flash('Booking was cancelled successfully!')->success();
         }
 
-        sendSMS('91' . $booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
+        sendSMS($booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
 
         return redirect('/bookings/' . $booking->id);
     }

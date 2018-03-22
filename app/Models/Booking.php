@@ -90,7 +90,7 @@ class Booking extends Model
 
     public function getTaxableAttribute()
     {
-        return $this->price + $this->insuarance + $this->handling + $this->labelling;
+        return ($this->distance * 10) + $this->insuarance + $this->handling + $this->labelling;
     }
 
 
