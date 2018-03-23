@@ -122,7 +122,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
                         <h2 class="title font-bold">How it works</h2>
-                        <h6 class="subtitle">Our professional representative welcome you at the airports and train stations to take care of your suitcases.</h6>
+                        <h6 class="subtitle">Our professional representative welcome you at the airports and train stations to take care of your luggage.</h6>
                     </div>
                 </div>
                 <!-- Row  -->
@@ -133,7 +133,7 @@
                             <img class="card-img-top" src="/images/features/5.jpg" alt="wrappixel kit" />
                             <div class="card-body text-center">
                                 <h5 class="font-medium">You Make a Booking</h5>
-                                <p class="m-t-20">Book your luggage storage and transfer online, in less than 5 minutes with our easy service.</p>
+                                <p class="m-t-20">Book your luggage transfer online, in less than 5 minutes with our easy service.</p>
                             </div>
                         </div>
                     </div>
@@ -174,11 +174,11 @@
                     <!-- Column -->
                     <div class="col-lg-6">
                         <small class="text-info">Exclusive Service</small>
-                        <h3 class="font-bold">Droghers is an Exclusive Service in India</h3>
-                        <p>A team of trained & experienced profesionals, who are well versed with the customer requirement in the Indian market</p>
+                        <h3 class="font-bold">Droghers is an Exclusive Service in New Delhi &amp; NCR Region</h3>
+                        <p>A team of trained &amp; experienced profesionals, who are well versed with the customer requirement in the Indian market</p>
                         <ul class="list-block m-b-30">
                             <li><i class="fa fa-check-circle-o text-info"></i> Easy and seamless booking process.</li>
-                            <li><i class="fa fa-check-circle-o text-info"></i> A secured and satisfiable trasfer and storage service.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> A secured and satisfiable trasfer service.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> A perpeptual customer service.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> A rated and trusted team.</li>
                             <li><i class="fa fa-check-circle-o text-info"></i> An Easy door to door service.</li>
