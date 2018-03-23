@@ -43,7 +43,7 @@ return [
      
        'client_secret' => '13543d9db88c3157478b86f47669c636', //Facebook Secret
      
-       'redirect' => 'http://droghers.in/login/facebook/callback',
+       'redirect' => 'https://droghers.in/login/facebook/callback',
          
     ],
 
@@ -53,7 +53,7 @@ return [
      
        'client_secret' => 'LpcBBv_KQV1Boa79R4PHNHJT', //GOOGLE Secret
      
-       'redirect' => 'http://droghers.in/login/google/callback',
+       'redirect' => 'https://droghers.in/login/google/callback',
          
     ]
 
