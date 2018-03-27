@@ -298,7 +298,7 @@
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
-                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}.Powered by <a href="http://solicitousbusiness.com">Solicitous</a>. Designed &amp; Maintained by <a href="http://www.trumpetstechnologies.com">Trumpets.</a></span>
+                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}. HassleFree Luggage Pvt. Ltd. Powered by <a href="http://solicitousbusiness.com">Solicitous</a>. Maintained by <a href="http://www.trumpetstechnologies.com">Trumpets.</a></span>
                             <div class="ml-auto m-t-10 m-b-10">
                                 <a href="#" class="link"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="link"><i class="fa fa-twitter"></i></a>
