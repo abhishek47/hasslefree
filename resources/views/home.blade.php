@@ -319,6 +319,10 @@
                                     <button type="button" class="btn btn-danger-gradiant" id="btn-verify-otp">
                                         <span>Verify OTP</span>
                                     </button>
+
+                                     <button type="button" class="btn btn-primary" id="btn-resend-otp">
+                                        <span>Resend OTP</span>
+                                    </button>
                                 </div> 
 
 
@@ -653,6 +657,24 @@ google.maps.event.addDomListener(window, 'load', init);
       
         
   });
+
+  $('#btn-resend-otp').on('click', function()
+  { 
+        
+
+            $.post('api/phone/sendotp', {'phone':  $('#phone').val() }).then(function(response) {
+              console.log(response);
+               otp = response.otp;
+            });
+
+            
+        });
+
+        
+
+      
+        
+
 
 
     $('#btn-verify-otp').on('click', function()

@@ -70,11 +70,11 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h2 class="m-b-30 font-bold m-t-20">We are leading Luggage Transfer company</h2>
-                        <h4 class="text-muted font-light">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h4>
+                        <h4 class="text-muted font-light">You can rely on our amazing features list and also our customer service will be great experience for you without doubt and in no-time</h4>
                         <div class="row">
                             <div class="col-md-6 m-t-30">
                                 <h5 class="font-medium">Smart Time Management</h5>
-                                <p>Carrying luggage along with you, makes you invest time in managing it.</p>
+                                <p>Avoid the hassles of carrying your heavy luggages with you.</p>
                             </div>
                             <div class="col-md-6 m-t-30">
                                 <h5 class="font-medium">Easy &amp; Flexible</h5>
@@ -122,7 +122,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
                         <h2 class="title font-bold">How it works</h2>
-                        <h6 class="subtitle">Our professional representative welcome you at the airports and train stations to take care of your luggage.</h6>
+                        <h6 class="subtitle">A simple and flawless luggage travel solution from HassleFree Luggage Pvt. Ltd.</h6>
                     </div>
                 </div>
                 <!-- Row  -->
