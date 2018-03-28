@@ -127,7 +127,9 @@ class BookingsController extends Controller
 
         \Mail::to(auth()->user())->send($message);
 
-        sendSMS('91' . $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
+        sendSMS( $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
+
+        sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
 
 
         flash('Your booking was confirmed & scheduled!')->success();
@@ -293,6 +295,8 @@ class BookingsController extends Controller
         }
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
+
+        sendSMS('9582873902', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
 
         return redirect('/bookings/' . $booking->id);
     }

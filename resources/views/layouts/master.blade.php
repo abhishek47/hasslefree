@@ -96,7 +96,7 @@
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
                             
-                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
+                            <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-main.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
                             </button>
@@ -133,7 +133,7 @@
                                      @else
                                         
                                         <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
-                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
+                                           <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-main.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                                         </li>
 
                                          <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
@@ -181,7 +181,7 @@
                 <div class="h14-infobar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-info-bar">
-                            <a class="navbar-brand"><img style="width:250px;" src="/images/logo.png" alt="wrapkit"/></a>
+                            <a class="navbar-brand"><img style="width:230px;" src="/images/logo.png" alt="wrapkit"/></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h14-info" aria-controls="h14-info" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-chevron-down"></span>
                             </button>
@@ -272,8 +272,7 @@
                             <div class="d-flex no-block m-b-10 m-t-20">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
                                 <div class="info">
-                                    <p> New Dehli, Maharashtra,
-                                        <br/> India</p>
+                                    <p> New Delhi, India</p>
                                 </div>
                             </div>
                             <div class="d-flex no-block m-b-10">
@@ -347,6 +346,9 @@
     <script src="/js/jquery.touchSwipe.min.js"></script>
     <script src="/js/bootstrap-touch-slider.js"></script>
     <script src="/js/jquery.magnific-popup.min.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
     <script>
     $('#slider2').bsTouchSlider();
     $('.popup-gallery').magnificPopup({

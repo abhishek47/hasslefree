@@ -576,6 +576,14 @@ google.maps.event.addDomListener(window, 'load', init);
   function checkTimeDifference()
   {
     console.log('validation'); 
+
+    var now = moment();
+
+
+
+    var today = moment().format("DD-MM-YYYY");  
+
+
     var date1 = $('#datedropper1').val();   
     var date2 = $('#datedropper2').val();    
     var time1 = parseInt($('#pick_up_time option:selected').val());
@@ -583,11 +591,24 @@ google.maps.event.addDomListener(window, 'load', init);
 
     var diff = time2 - (time1+9);
 
+
     console.log('time1 : ' + time1 + ' | time2 : ' + time2 + ' | Diff : ' + diff);
 
     var message = '';
+    var message2 = '';
+    var message3 = '';
 
+     var hours = moment().hour();
 
+    if(date1 == today)
+    {
+        var cur = time1+9;
+     
+        if(cur < hours)
+        {
+            message2 = 'Please select a valid pickup time';
+        }
+    }
 
     if(date1 == date2 && time2 < 10)
     {
@@ -596,7 +617,15 @@ google.maps.event.addDomListener(window, 'load', init);
     } else if(date1 == date2 && (time2 >= 10 && diff < 6))
     {
         message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
-    }
+    } 
+
+    if(date2 == today)
+    {
+        if(time2 < hours)
+        {
+            message = 'Please select a valid drop time';
+        }
+    } 
 
     if(message != '')
     {
@@ -612,6 +641,23 @@ google.maps.event.addDomListener(window, 'load', init);
          $('#drop_time').parent().find('.parsley-errors-list').remove();
           $('#timeContinue').attr('disabled', false);
     } 
+
+    if(message2 != '')
+    {
+        $('#pick_up_time').addClass('parsley-error');
+        $('#pick_up_time').parent().find('.parsley-errors-list').remove();
+
+        $('#pick_up_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message2+'</li></ul>'); 
+
+        $('#timeContinue').attr('disabled', true);
+
+    } else {
+        $('#pick_up_time').removeClass('parsley-error');
+         $('#pick_up_time').parent().find('.parsley-errors-list').remove();
+          $('#timeContinue').attr('disabled', false);
+    } 
+
+  
 
     
             

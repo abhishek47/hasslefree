@@ -329,6 +329,9 @@
     <script src="/js/jquery.touchSwipe.min.js"></script>
     <script src="/js/bootstrap-touch-slider.js"></script>
     <script src="/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    
     <script>
     $('#slider2').bsTouchSlider();
     $('.popup-gallery').magnificPopup({

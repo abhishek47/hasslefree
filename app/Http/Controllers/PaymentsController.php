@@ -89,8 +89,9 @@ class PaymentsController extends Controller
 
         \Mail::to($booking->user)->send($message);
 
-       sendSMS('91' . $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
+        sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
+        sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
 
         flash('Payment was succesfully made!')->success();
 
