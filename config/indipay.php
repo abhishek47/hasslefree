@@ -54,12 +54,7 @@ return [
         'notifyUrl' => env('INDIPAY_SUCCESS_URL', 'indipay/response'),
     ],
 
-    'instamojo' =>  [
-        'api_key' => env('INSTAMOJO_API_KEY',''),
-        'auth_token' => env('INSTAMOJO_AUTH_TOKEN',''),
-        'redirectUrl' => env('INDIPAY_REDIRECT_URL', 'indipay/response'),
-    ],
-
+   
     'instamojo' =>  [
         'api_key' => env('INSTAMOJO_API_KEY','1657073bb1d60fae6d9252f55676c223'),
         'auth_token' => env('INSTAMOJO_AUTH_TOKEN','5e4c1055524cfe8c10e9922677dbb995'),
