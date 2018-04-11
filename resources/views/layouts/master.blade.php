@@ -242,7 +242,7 @@
                 <div class="f3-topbar container">
                     <div class="d-flex">
                         <div class="d-flex no-block align-items-center">
-                            <span>A team of trained &amp; experienced <span class="text-white">profesionals</span>, who are
+                            <span>A team of trained &amp; experienced <span class="text-white">professionals</span>, who are
                             <br/>well versed with the customer requirement in the Indian market.</span>
                         </div>
                        
@@ -297,7 +297,7 @@
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
-                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}. HassleFree Luggage Pvt. Ltd. Powered by <a href="http://solicitousbusiness.com">Solicitous</a>. Maintained by <a href="http://www.trumpetstechnologies.com">Trumpets.</a></span>
+                            <span class="m-t-10 m-b-10">Copyright {{date('Y')}}. HassleFree Luggage Pvt. Ltd.</span>
                             <div class="ml-auto m-t-10 m-b-10">
                                 <a href="#" class="link"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="link"><i class="fa fa-twitter"></i></a>

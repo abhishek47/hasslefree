@@ -145,7 +145,11 @@ class BookingsController extends Controller
      */
     public function show(Booking $booking)
     {
-
+        if($booking->distance > 40)
+        {
+            flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
+        }
+        
         return view('bookings.show', compact('booking'));
     }
 
