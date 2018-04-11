@@ -130,6 +130,9 @@ class BookingsController extends Controller
         sendSMS( $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
         sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('7838233012', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('9873431797', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+
 
 
         flash('Your booking was confirmed & scheduled!')->success();
@@ -149,7 +152,7 @@ class BookingsController extends Controller
         {
             flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
         }
-        
+
         return view('bookings.show', compact('booking'));
     }
 
@@ -301,6 +304,8 @@ class BookingsController extends Controller
         sendSMS($booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
 
         sendSMS('9582873902', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
+        sendSMS('7838233012', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
+        sendSMS('9873431797', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
 
         return redirect('/bookings/' . $booking->id);
     }
