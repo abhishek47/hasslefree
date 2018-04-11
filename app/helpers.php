@@ -111,7 +111,7 @@ function sendSMS($number, $message)
 	
 	// Message details
 	
-	$sender = urlencode('TXTLCL');
+	$sender = urlencode('DROGHR');
 	$message = rawurlencode($message);
  
  	$number = '91' . $number;
