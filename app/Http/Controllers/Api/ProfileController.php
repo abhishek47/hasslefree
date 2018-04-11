@@ -71,7 +71,8 @@ class ProfileController extends Controller
 
         $otp = mt_rand(10000, 99999);
 
-        $message = 'Your Droghers verification OTP is ' . $otp . '.';
+
+        $message = 'Your Droghers verification OTP is ' . $otp;
 
         $response = sendSMS($phone, $message);
 
