@@ -49,7 +49,7 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <div class="container">
+                <div class="container" style="margin: 8px;">
                        <h2 style="font-weight: bold;">About HassleFree</h2> 
 
                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
