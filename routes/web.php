@@ -19,6 +19,10 @@ Route::get('/faq', function () {
     return view('pages.faq');
 })->middleware('guest');
 
+Route::get('/about-app', function () {
+    return view('pages.about-app');
+})->middleware('guest');
+
 Auth::routes();
 
 Route::get('/profile', 'UserController@profile');
