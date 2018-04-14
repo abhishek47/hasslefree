@@ -136,6 +136,13 @@
                              <td class="text-right font-bold">Rs. {{ $basePrice  }}</td>
                            </tr>
 
+                           @if($booking->coupon_applied != null)
+                               <tr>
+                                 <td class="font-medium">Discount ( COUPON : {{ $coupon->code }} )</td>
+                                 <td class="text-right font-bold">- Rs. {{ $booking->discount_amount  }}</td>
+                               </tr>
+                           @endif
+
                            <tr>
                              <td class="font-medium">CGST 9%</td>
                              <td class="text-right">Rs. {{ round($cgst, 2)  }}</td>
@@ -152,8 +159,11 @@
                    
 
                     <hr>
-
-                    <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>
+                    @if($booking->coupon_applied != null)
+                      <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->offer_amount, 2) }}</span></b></h3>
+                    @else
+                      <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>
+                    @endif
 
                     <div class="clearfix"></div>
                      <hr>

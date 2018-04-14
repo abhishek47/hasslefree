@@ -26,6 +26,8 @@
 
            <li><a href="{{ backpack_url('train-stations') }}"><i class="fa fa-train"></i> <span>Train Stations</span></a></li>
 
+           <li><a href="{{ backpack_url('coupons') }}"><i class="fa fa-qrcode"></i> <span>Offer Coupons</span></a></li>
+
 
            <li class="treeview">
               <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>

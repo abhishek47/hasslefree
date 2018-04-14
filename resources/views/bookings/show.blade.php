@@ -215,8 +215,36 @@
                      </div>
 
                     <hr>
+                      @if($booking->coupon_applied != null && $booking->status != -1)
+                    <div class="alert alert-primary" role="alert">
+                                    <b>Applied Coupon : <i class="fa fa-qrcode"></i> {{ $coupon->code }}</b> <br>
+                                    {{ $coupon->promo_text }}<br>
+                                    @if($booking->status == 0)
+                                    <a href="javascript:void(0)" style="text-decoration: underline;color: red" onclick="removeCoupon({{ $booking->id }})" >Remove Coupon</a>
+                                    @endif
+                                </div>
+                               @endif 
 
-                    <h2><b>&#8377 {{ round($booking->total, 2) }}</b></h2>
+                    <hr>
+
+                    <div style="display: flex;">
+                         <h2 style="flex: 1"><b>
+                         @if($booking->coupon_applied != null)
+                           <del style="color: #ccc;">&#8377 {{ round($booking->total, 2) }}</del>
+                            &#8377 {{ round($booking->offer_amount, 2) }}
+                         @else
+                            &#8377 {{ round($booking->total, 2) }}
+                         @endif   
+                         </b></h2>
+                         @if($booking->coupon_applied == null && $booking->status != -1)
+                         <div style="display: flex;">
+                            <input type="text" name="coupon_code" id="coupon_code" placeholder="Coupon Code" class="form-control form-input-sm" style="height: 40px;margin-right: 10px;">
+                            <button onclick="applyCoupon({{$booking->id}})" class="btn btn-dark btn-sm" style="height: 40px;">Apply Coupon</button>
+                         </div>
+                         
+                         @endif
+                    </div>
+                   
 
                      <hr>
 
@@ -490,5 +518,25 @@
 <!-- /.modal -->
 
 
+
+@endsection
+
+
+@section('js')
+
+ <script type="text/javascript">
+                                                
+    function applyCoupon(bookingId)
+    {
+        location.href = '/coupons/apply/' + bookingId + '/coupon:' + $('#coupon_code').val();
+    }
+
+    function removeCoupon(bookingId)
+    {
+        location.href = '/coupons/apply/' + bookingId + '/coupon:' + $('#coupon_code').val() + '/remove';
+    }
+
+
+  </script>
 
 @endsection

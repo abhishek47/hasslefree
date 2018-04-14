@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
 use App\Mail\BookingCancelled;
@@ -153,6 +154,12 @@ class BookingsController extends Controller
             flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
         }
 
+        if($booking->coupon_applied != null)
+        {
+            $coupon = Coupon::where('code', $booking->coupon_applied)->first();
+            return view('bookings.show', compact('booking', 'coupon'));
+        }
+
         return view('bookings.show', compact('booking'));
     }
 
@@ -195,6 +202,12 @@ class BookingsController extends Controller
 
         $sgst = ($basePrice * (9/100)); // GST
 
+        if($booking->coupon_applied != null)
+        {
+            $coupon = Coupon::where('code', $booking->coupon_applied)->first();
+            return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice', 'coupon'));
+        }
+
         return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
     }
 
@@ -234,6 +247,12 @@ class BookingsController extends Controller
         $cgst = ($basePrice * (9/100)); // GST
 
         $sgst = ($basePrice * (9/100)); // GST
+
+         if($booking->coupon_applied != null)
+        {
+            $coupon = Coupon::where('code', $booking->coupon_applied)->first();
+            return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice', 'coupon'));
+        }
 
         return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 

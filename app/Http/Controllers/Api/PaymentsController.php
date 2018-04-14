@@ -20,8 +20,16 @@ class PaymentsController extends Controller
 
 
 		  $bookingId = $booking->id;
-
-		  $amount = round($booking->total, 2);
+      
+      $amount = 0;
+      
+      if($booking->coupon_applied != null)
+      {
+        $amount = round($booking->offer_amount, 2);
+      } else {
+        $amount = round($booking->total, 2);
+      }
+		  
 
            $parameters = [
       

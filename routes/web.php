@@ -46,6 +46,10 @@ Route::get('/bookings/{booking}/cancel', 'BookingsController@cancel');
 Route::post('/booking/refund', 'RefundController@store');
 Route::post('/bookings', 'BookingsController@store');
 
+Route::get('/coupons/apply/{booking}/coupon:{code}', 'CouponsController@apply');
+
+Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'CouponsController@remove');
+
 
 Route::get('/payments/response/', 'PaymentsController@response');
 
