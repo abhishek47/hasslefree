@@ -49,29 +49,37 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <div class="container" style="margin: 8px;">
-                       <h2 style="font-weight: bold;">About HassleFree</h2> 
+                <div class="container" style=";">
 
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                       <div class="feature8 m-t-20" id="about">
+            <div class="container">
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-6">
+                        <small class="text-info">Exclusive Service</small>
+                        <h3 class="font-bold">Droghers is an Exclusive Service in New Delhi &amp; NCR Region</h3>
+                        <p>A team of trained &amp; experienced profesionals, who are well versed with the customer requirement in the Indian market</p>
+                        <ul class="list-block m-b-30">
+                            <li><i class="fa fa-check-circle-o text-info"></i> Easy and seamless booking process.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> A secured and satisfiable trasfer service.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> A perpeptual customer service.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> A rated and trusted team.</li>
+                            <li><i class="fa fa-check-circle-o text-info"></i> An Easy door to door service.</li>
+                        </ul>
+                       <!-- <a class="btn btn-danger-gradiant btn-md btn-arrow" href="#"><span>Know About Us <i class="fa fa-arrow-right"></i></span></a> -->
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-6">
+                        <div class="p-20">
+                            <img src="/images/features/safe.jpg" alt="wrapkit" class="img-responsive img-shadow" data-aos="flip-right" data-aos-duration="1200" />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+            </div>
+        </div>
                 </div> 
               
               
