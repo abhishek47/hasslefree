@@ -236,7 +236,7 @@
                             &#8377 {{ round($booking->total, 2) }}
                          @endif   
                          </b></h2>
-                         @if($booking->coupon_applied == null && $booking->status != -1)
+                         @if($booking->coupon_applied == null && $booking->status == 0)
                          <div style="display: flex;">
                             <input type="text" name="coupon_code" id="coupon_code" placeholder="Coupon Code" class="form-control form-input-sm" style="height: 40px;margin-right: 10px;">
                             <button onclick="applyCoupon({{$booking->id}})" class="btn btn-dark btn-sm" style="height: 40px;">Apply Coupon</button>
