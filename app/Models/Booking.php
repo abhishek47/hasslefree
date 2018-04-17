@@ -22,7 +22,7 @@ class Booking extends Model
 
     protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount'];
     
-    protected $with = ['coupon'];
+    
 
     public function openPreview($crud = false)
     {
@@ -35,10 +35,7 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 
-     public function coupon()
-    {
-        return $this->belongsTo(Coupon::class, 'code', 'coupon_applied');
-    }
+    
 
       public function getKeyAttribute()
     {
