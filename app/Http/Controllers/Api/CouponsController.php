@@ -29,7 +29,7 @@ class CouponsController extends Controller
     					
     					$booking->save();	
 
-    					return response(['status'=> 'success', 'message' => 'Coupon applied successfully', 'booking' => $booking->toArray()], 200);
+    					return response(['status'=> 'success', 'message' => 'Coupon applied successfully', 'booking' => $booking], 200);
     				
     				} else {
     				
