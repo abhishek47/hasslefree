@@ -121,7 +121,7 @@ class Booking extends Model
             return null;
         }
         
-        return App\Models\Coupon::where('code', $this->coupon_applied)->first();
+        return App\Models\Coupon::where('code', $this->coupon_applied)->first()->toArray();
     }
 
 
