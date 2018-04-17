@@ -20,7 +20,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount'];
+    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount', 'coupon_promo_text'];
     
     
 
@@ -114,6 +114,16 @@ class Booking extends Model
         }
 
         return ($this->taxable - $this->discount_amount) + $this->gst;
+    }
+
+     public function getCouponPromoTextAttribute()
+    {
+        if($this->discount_amount == null)
+        {
+            return '';
+        }
+
+        return Coupon::where('code', $this->coupon_applied)->first()->promo_text;
     }
 
     
