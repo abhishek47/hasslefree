@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Coupon;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait; // <------------------------------- this one
@@ -21,9 +20,8 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount', 'coupon' ];
+    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount'];
     
-
 
 
     public function openPreview($crud = false)
@@ -110,17 +108,6 @@ class Booking extends Model
     {
         return ($this->taxable - $this->discount_amount) + $this->gst;
     }
-
-     public function getCouponAttribute()
-    {
-        if(isset($this->coupon_applied))
-        {
-            return Coupon::where($this->coupon_applied)->first();
-        } else {
-            return [];
-        }
-    }
-
 
 
     public function getUserNameAttribute()
