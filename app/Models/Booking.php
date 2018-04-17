@@ -20,9 +20,9 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status'
     ];
 
-    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount', 'coupon'];
+    protected $appends = ['key', 'pick_location', 'drop_location', 'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount'];
     
-
+    protected $with = ['coupon'];
 
     public function openPreview($crud = false)
     {
@@ -33,6 +33,11 @@ class Booking extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+     public function coupon()
+    {
+        return $this->belongsTo(Coupon::class, 'code', 'coupon_applied');
     }
 
       public function getKeyAttribute()
@@ -114,16 +119,7 @@ class Booking extends Model
         return ($this->taxable - $this->discount_amount) + $this->gst;
     }
 
-     public function getCouponAttribute()
-    {
-        if($this->discount_amount == null)
-        {
-            return null;
-        }
-        
-        return App\Models\Coupon::where('code', $this->coupon_applied)->first()->toArray();
-    }
-
+    
 
     public function getUserNameAttribute()
     {
