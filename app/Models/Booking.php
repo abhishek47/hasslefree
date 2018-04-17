@@ -9,7 +9,7 @@ use Backpack\CRUD\CrudTrait; // <------------------------------- this one
 class Booking extends Model
 {
     use CrudTrait;
-	/**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -32,7 +32,7 @@ class Booking extends Model
 
     public function user()
     {
-    	return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
       public function getKeyAttribute()
@@ -105,14 +105,8 @@ class Booking extends Model
     }
 
     public function getOfferAmountAttribute()
-    {   
-        if(isset($this->discount_amount))
-        {
-
+    {
         return ($this->taxable - $this->discount_amount) + $this->gst;
-    } else {
-        return 0;
-    }
     }
 
 
