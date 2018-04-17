@@ -105,8 +105,14 @@ class Booking extends Model
     }
 
     public function getOfferAmountAttribute()
-    {
+    {   
+        if(isset($this->discount_amount))
+        {
+
         return ($this->taxable - $this->discount_amount) + $this->gst;
+    } else {
+        return 0;
+    }
     }
 
 
