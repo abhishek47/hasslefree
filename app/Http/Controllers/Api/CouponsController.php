@@ -60,6 +60,6 @@ class CouponsController extends Controller
     	
     	$booking->save();	
 
-    	return response(['status'=> 'success', 'message' => 'Coupon is removed!', 'data' =>[]], 200);
+    	return response(['status'=> 'success', 'message' => 'Coupon is removed!', 'booking' => $booking->toArray()], 200);
     }
 }
