@@ -29,7 +29,7 @@ class CouponsController extends Controller
     					
     					$booking->save();	
 
-    					return response(['status'=> 'success', 'message' => 'Coupon applied successfully', 'data' => []], 200);
+    					return response(['status' => 'success', 'message' => 'Coupon was applied!', 'data' => $booking->toArray()], 200);
     				
     				} else {
     				
@@ -52,7 +52,7 @@ class CouponsController extends Controller
 
     }
 
-    public function remove(Restaurant $restaurant, $code)
+    public function remove(Booking $booking, $code)
     {
     	$booking->coupon_applied = null;
 		
