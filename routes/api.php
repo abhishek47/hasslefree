@@ -13,17 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
- Route::post('register', 'Auth\RegisterController@register');
- Route::post('login', 'Auth\LoginController@login');
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');
 Route::post('login/direct', 'Auth\LoginController@direct');
 Route::post('register/direct', 'Auth\RegisterController@direct');
- Route::post('logout', 'Auth\LoginController@logout');
+Route::post('logout', 'Auth\LoginController@logout');
 
- Route::get('profile', 'Api\ProfileController@get');
- Route::post('profile', 'Api\ProfileController@update');
+Route::get('profile', 'Api\ProfileController@get');
+Route::post('profile', 'Api\ProfileController@update');
 
- Route::get('/bookings', 'Api\BookingsController@index');
- Route::post('/bookings', 'Api\BookingsController@store');
+Route::get('/bookings', 'Api\BookingsController@index');
+Route::post('/bookings', 'Api\BookingsController@store');
 
  Route::get('/bookings/{booking}/cancel', 'Api\BookingsController@cancel');	
   Route::get('/bookings/{booking}/cod', 'Api\BookingsController@confirmWithCOD');	

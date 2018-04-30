@@ -84,8 +84,8 @@ class RegisterController extends Controller
 
           $user = User::where('email', request('email'))->first();
 
-          if (empty($user)) {
-              return response()->json([
+              if (empty($user)) {
+                   return response()->json([
                       'status' => 'failed',
                       'message' => 'Account doesn\'t Exist!'
                       
@@ -93,12 +93,15 @@ class RegisterController extends Controller
           }
 
           if(\Auth::loginUsingId($user->id)) {
-              $user->generateToken();
-              return response()->json([
-                    'status' => 'success',
-                    'message' => 'User Logged in successfully!',
-                    'data' => $user->toArray()
-                ]);
+
+                  $user->generateToken();
+
+                  return response()->json([
+                        'status' => 'success',
+                        'message' => 'User Logged in successfully!',
+                        'data' => $user->toArray()
+                    ]);
+
           } 
 
     }

@@ -78,11 +78,12 @@ class BookingsController extends Controller
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
+        $booking->price = $basePrice;
+
         $basePrice = $basePrice + ($basePrice * (18/100)); // GST
 
         $booking->distance = $distance;
 
-        $booking->price = $basePrice;
 
         $booking->save();
 
