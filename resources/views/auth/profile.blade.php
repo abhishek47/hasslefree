@@ -12,7 +12,7 @@
 		 <div class="col-md-8">	
 			<div class="card card-shadow">
 				<div class="card-body">
-					<form method="post" class="text-dark" action="/profile">
+					<form method="POST" class="text-dark" action="/profile">
 						{{ csrf_field() }}
 						<div class="form-group"> 
 							<label>Full Name</label>

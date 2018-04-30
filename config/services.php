@@ -49,9 +49,9 @@ return [
 
     'google' => [
      
-       'client_id' => '478637737516-12gop6qsaqe8cbn6lkt3ipnb7npm9jdo.apps.googleusercontent.com', //GOOGLE API
+       'client_id' => '478637737516-nb0m8b9n65v0ea5kv35qn7cbovvvmtv2.apps.googleusercontent.com', //GOOGLE API
      
-       'client_secret' => 'LpcBBv_KQV1Boa79R4PHNHJT', //GOOGLE Secret
+       'client_secret' => 'FCajrcKfE_9QsCn-LafB9m38', //GOOGLE Secret
      
        'redirect' => 'https://droghers.in/login/google/callback',
          

@@ -15,9 +15,9 @@ class ProfileController extends Controller
 
     public function get()
     {
-         $user = User::where('api_token', request('api_token'))->first();
+        $user = User::where('api_token', request('api_token'))->first();
 
-         if(!$user)
+        if(!$user)
         {
             return response(['status' => 'failed', 'message' => 'There was some problem loading profile data!', 'data' => []]);
         }

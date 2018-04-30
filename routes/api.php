@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
  Route::post('register', 'Auth\RegisterController@register');
  Route::post('login', 'Auth\LoginController@login');
+  Route::post('login/direct', 'Auth\LoginController@direct');
  Route::post('logout', 'Auth\LoginController@logout');
 
  Route::get('profile', 'Api\ProfileController@get');

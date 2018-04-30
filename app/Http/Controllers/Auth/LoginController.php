@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -50,8 +51,11 @@ class LoginController extends Controller
    public function socialLogin($social)
  
    {
- 
-       return \Socialite::driver($social)->redirect();
+        
+        
+         
+          return \Socialite::driver($social)->redirect();
+        
  
    }
 
@@ -122,6 +126,39 @@ class LoginController extends Controller
     }
 
 
+    public function direct(Request $request)
+    {
+        
+        if(request('email') == '')
+        {
+          return response()->json([
+                  'status' => 'failed',
+                  'message' => 'Please enter email address!'
+                  
+              ]);
+        }
+
+      $user = User::where('email', request('email'))->first();
+
+      if (empty($user)) {
+          return response()->json([
+                  'status' => 'failed',
+                  'message' => 'Account doesn\'t Exist!'
+                  
+              ]);
+      }
+
+      if(Auth::loginUsingId($user->id)){
+          $user->generateToken();
+          return response()->json([
+                'status' => 'success',
+                'message' => 'User Logged in successfully!',
+                'data' => $user->toArray()
+            ]);
+      } 
+
+    }
+
 
  
    /**
@@ -137,22 +174,24 @@ class LoginController extends Controller
    public function handleProviderCallback($social)
  
    {
+    
+        
+           $userSocial = \Socialite::driver($social)->user();
  
-       $userSocial = \Socialite::driver($social)->user();
- 
-       $user = \App\User::where(['email' => $userSocial->getEmail()])->first();
- 
-       if($user){
- 
-           \Auth::login($user);
- 
-           return redirect()->action('HomeController@index');
- 
-       }else{
- 
-           return view('auth.register',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
- 
-       }
+             $user = \App\User::where(['email' => $userSocial->getEmail()])->first();
+       
+             if($user){
+       
+                 \Auth::login($user);
+       
+                 return redirect()->action('HomeController@index');
+       
+             }else{
+       
+                 return view('auth.register',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
+       
+             }
+     
  
    }
 
