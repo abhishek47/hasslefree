@@ -148,7 +148,7 @@ class LoginController extends Controller
               ]);
       }
 
-      if(\Auth::loginUsingId($user->id)){
+      if(\Auth::loginUsingId($user->id)) {
           $user->generateToken();
           return response()->json([
                 'status' => 'success',

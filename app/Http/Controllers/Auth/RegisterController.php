@@ -70,6 +70,39 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function direct(Request $request)
+    {
+        
+          if(request('email') == '')
+          {
+              return response()->json([
+                  'status' => 'failed',
+                  'message' => 'Please enter email address!'
+                  
+              ]);
+          }
+
+          $user = User::where('email', request('email'))->first();
+
+          if (empty($user)) {
+              return response()->json([
+                      'status' => 'failed',
+                      'message' => 'Account doesn\'t Exist!'
+                      
+                  ]);
+          }
+
+          if(\Auth::loginUsingId($user->id)) {
+              $user->generateToken();
+              return response()->json([
+                    'status' => 'success',
+                    'message' => 'User Logged in successfully!',
+                    'data' => $user->toArray()
+                ]);
+          } 
+
+    }
+
 
      /**
      * The user has been registered.
