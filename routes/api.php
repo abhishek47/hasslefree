@@ -45,9 +45,9 @@ Route::get('/get-airports', 'Api\LocationsController@getAirports');
 
 Route::get('/get-locations', 'Api\LocationsController@getLocations');
 
-Route::get('/coupons/apply/{booking}/coupon:{code}', 'CouponsController@apply');
+Route::get('/coupons/apply/{booking}/coupon:{code}', 'Api\CouponsController@apply');
 
-Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'CouponsController@remove');
+Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'Api\CouponsController@remove');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

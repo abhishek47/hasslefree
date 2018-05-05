@@ -117,7 +117,10 @@ class BookingsController extends Controller
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
+
         sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('7838233012', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('9873431797', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
 
 
         return response(['status'=> 'success', 'message' => 'Pickup Scheduled!', 'data' => []], 200);
@@ -149,6 +152,9 @@ class BookingsController extends Controller
         sendSMS( $booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
 
         sendSMS('9582873902', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
+        sendSMS('7838233012', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
+        sendSMS('9873431797', 'Droghers -  Booking ID ' . $booking->id . ' is cancelled!');
+
 
         return response(['status'=> 'success', 'message' => 'Booking cancelled!', 'data' => []], 200);
     }
