@@ -29,11 +29,11 @@ class CouponsController extends Controller
     					
     					$booking->save();	
 
-    					return response(['status' => 'success', 'message' => 'Coupon was applied!', 'data' => $booking->toArray()], 200);
+    					return response(['status' => 'success', 'message' => 'Coupon was applied!', 'data' => $booking->toArray()]);
     				
     				} else {
     				
-    					return response(['status'=> 'failed', 'message' => 'Minimum booking amount should be ' . $coupon->min_order, 'data' =>[]], 200);
+    					return response(['status'=> 'failed', 'message' => 'Minimum booking amount should be ' . $coupon->min_order, 'data' =>[]]);
     				
     				}
     				
@@ -41,12 +41,12 @@ class CouponsController extends Controller
     			
     		} else {
     			
-    			return response(['status'=> 'failed', 'message' => 'Coupon is expired!', 'data' =>[]], 200);
+    			return response(['status'=> 'failed', 'message' => 'Coupon is expired!', 'data' =>[]]);
     		
     		}
     		
     	} else {
-    		return response(['status'=> 'failed', 'message' => 'Coupon doesn\'t Exist', 'data' =>[]], 200);
+    		return response(['status'=> 'failed', 'message' => 'Coupon doesn\'t Exist', 'data' =>[]]);
     	}
     	
 
@@ -60,6 +60,6 @@ class CouponsController extends Controller
     	
     	$booking->save();	
 
-    	return response(['status'=> 'success', 'message' => 'Coupon is removed!', 'booking' => $booking->toArray()], 200);
+    	return response(['status'=> 'success', 'message' => 'Coupon is removed!', 'booking' => $booking->toArray()]);
     }
 }
