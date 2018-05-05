@@ -98,7 +98,10 @@ class PaymentsController extends Controller
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
+      
         sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('7838233012', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
+        sendSMS('9873431797', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
 
         flash('Payment was succesfully made!')->success();
 
