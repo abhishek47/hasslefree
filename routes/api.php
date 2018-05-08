@@ -32,6 +32,7 @@ Route::post('/bookings', 'Api\BookingsController@store');
 
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
+  Route::get('/estimate', 'Api\BookingsController@estimate');	
 
   Route::post('/phone/sendotp', 'Api\ProfileController@sendOTP');
 
@@ -48,6 +49,8 @@ Route::get('/get-locations', 'Api\LocationsController@getLocations');
 Route::get('/coupons/apply/{booking}/coupon:{code}', 'Api\CouponsController@apply');
 
 Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'Api\CouponsController@remove');
+
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

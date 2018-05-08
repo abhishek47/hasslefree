@@ -160,5 +160,20 @@ class BookingsController extends Controller
     }
 
 
+
+    public function estimate()
+    {
+         $distance = request('distance');
+         $bags_count = request('bags_count');
+
+         $basePrice = ($distance * 10) + ($bags_count * 12) + ($bags_count * 10) + ($bags_count * 7);
+
+         $price =  $basePrice + ($basePrice * (18/100));
+
+         return response(['status'=> 'success', 'message' => 'Price estimated!', 'estimate' => $price], 200);
+
+    }
+
+
    
 }
