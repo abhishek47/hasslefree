@@ -63,7 +63,7 @@ class BookingsController extends Controller
 
         $booking->distance = $distance;
 
-        $booking->price = $basePrice;
+        $booking->price = ceil($basePrice);
 
         $booking->save();
 
@@ -170,7 +170,7 @@ class BookingsController extends Controller
 
          $price =  $basePrice + ($basePrice * (18/100));
 
-         return response(['status'=> 'success', 'message' => 'Price estimated!', 'estimate' => $price], 200);
+         return response(['status'=> 'success', 'message' => 'Price estimated!', 'estimate' => ceil($price)], 200);
 
     }
 
