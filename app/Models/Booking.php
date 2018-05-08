@@ -128,7 +128,7 @@ class Booking extends Model
             return '';
         }
 
-        return Coupon::where('code', $this->coupon_applied)->first()->promo_text;
+        return 'Congratulations! A Coupon is applied. You saved Rs. ' . $this->discount_amount;
     }
 
     
