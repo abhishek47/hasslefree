@@ -217,7 +217,7 @@
                     <hr>
                       @if($booking->coupon_applied != null && $booking->status != -1)
                     <div class="alert alert-primary" role="alert">
-                                    Congratulations! A coupon is applied. You saved Rs. {{ $booking->discount_amount}}.
+                                    Congratulations! A coupon is applied. You saved Rs. {{ round($booking->discount_amount, 2) }}.
                                     @if($booking->status == 0)
                                     <a href="javascript:void(0)" style="text-decoration: underline;color: red" onclick="removeCoupon({{ $booking->id }})" >Remove Coupon</a>
                                     @endif
@@ -340,17 +340,9 @@
                         </div>
                       </div>
 
+                      
                       <div class="sl-item {{ $booking->status >= 3 ? ' b-success' : '' }}">
                        @if($booking->status >= 3)
-                          <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
-                        @endif
-                        <div class="sl-content">
-                            <p class="font-bold">In Warehouse</p>
-                        </div>
-                      </div>
-
-                      <div class="sl-item {{ $booking->status >= 4 ? ' b-success' : '' }}">
-                       @if($booking->status >= 4)
                           <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
                         @endif
                         <div class="sl-content">
@@ -358,8 +350,8 @@
                         </div>
                       </div>
 
-                      <div class="sl-item {{ $booking->status >= 5 ? ' b-success' : '' }}">
-                       @if($booking->status >= 5)
+                      <div class="sl-item {{ $booking->status >= 4 ? ' b-success' : '' }}">
+                       @if($booking->status >= 4)
                           <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
                         @endif
                         <div class="sl-content">
