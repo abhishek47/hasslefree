@@ -32,7 +32,7 @@ Route::post('/bookings', 'Api\BookingsController@store');
 
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
-  Route::get('/estimate', 'Api\BookingsController@estimate');	
+  Route::post('/estimate', 'Api\BookingsController@estimate');	
 
   Route::post('/phone/sendotp', 'Api\ProfileController@sendOTP');
 
