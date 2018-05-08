@@ -217,8 +217,7 @@
                     <hr>
                       @if($booking->coupon_applied != null && $booking->status != -1)
                     <div class="alert alert-primary" role="alert">
-                                    <b>Applied Coupon : <i class="fa fa-qrcode"></i> {{ $coupon->code }}</b> <br>
-                                    {{ $coupon->promo_text }}<br>
+                                    Congratulations! A coupon is applied. You saved Rs. {{ $booking->discount_amount}}.
                                     @if($booking->status == 0)
                                     <a href="javascript:void(0)" style="text-decoration: underline;color: red" onclick="removeCoupon({{ $booking->id }})" >Remove Coupon</a>
                                     @endif
