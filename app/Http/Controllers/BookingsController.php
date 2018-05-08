@@ -80,7 +80,7 @@ class BookingsController extends Controller
 
         // $booking->price = $basePrice;
 
-        $basePrice = $basePrice + ($basePrice * (18/100)); // GST
+        $basePrice = $basePrice + ($basePrice * (12/100)); // GST
 
         $booking->distance = $distance;
 
@@ -116,9 +116,9 @@ class BookingsController extends Controller
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
-        $cgst = ($basePrice * (9/100)); // GST
+        $cgst = ($basePrice * (6/100)); // GST
 
-        $sgst = ($basePrice * (9/100)); // GST
+        $sgst = ($basePrice * (6/100)); // GST
 
         $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
@@ -202,9 +202,9 @@ class BookingsController extends Controller
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
-        $cgst = ($basePrice * (9/100)); // GST
+        $cgst = ($basePrice * (6/100)); // GST
 
-        $sgst = ($basePrice * (9/100)); // GST
+        $sgst = ($basePrice * (6/100)); // GST
 
         if($booking->coupon_applied != null)
         {
@@ -248,9 +248,9 @@ class BookingsController extends Controller
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
-        $cgst = ($basePrice * (9/100)); // GST
+        $cgst = ($basePrice * (6/100)); // GST
 
-        $sgst = ($basePrice * (9/100)); // GST
+        $sgst = ($basePrice * (6/100)); // GST
 
          if($booking->coupon_applied != null)
         {
