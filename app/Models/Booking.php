@@ -108,17 +108,17 @@ class Booking extends Model
 
     public function getTotalAttribute()
     {
-        return $this->taxable + $this->gst;
+        return ceil($this->taxable + $this->gst);
     }
 
     public function getOfferAmountAttribute()
     {
         if($this->discount_amount == null)
         {
-            return $this->taxable + $this->gst;
+            return ceil($this->taxable + $this->gst);
         }
 
-        return ($this->taxable - $this->discount_amount) + $this->gst;
+        return ceil(($this->taxable - $this->discount_amount) + $this->gst);
     }
 
      public function getCouponPromoTextAttribute()
@@ -128,7 +128,7 @@ class Booking extends Model
             return '';
         }
 
-        return 'Congratulations! A Coupon is applied. You saved Rs. ' . $this->discount_amount;
+        return 'Congratulations! A Coupon is applied. You saved Rs. ' . ceil($this->discount_amount);
     }
 
     
