@@ -198,7 +198,7 @@
                                         <a class="nav-link">
                                             <div class="display-6 m-r-10"><i class="icon-Phone-2"></i></div>
                                             <div><small>CALL US NOW</small>
-                                                <h6 class="font-bold">(+91) 9582873902</h6></div>
+                                                <h6 class="font-bold">(+91) 7291047153</h6></div>
                                         </a>
                                     </li>
                                     <li class="nav-item donate-btn"><a href="/home" class="btn btn-danger-gradiant">Book Now</a></li>
