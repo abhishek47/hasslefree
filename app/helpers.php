@@ -74,6 +74,7 @@ function getStatusString($value)
 
 function getStatusMessage($id, $value)
 {	
+	 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Transit', 'Luggage Delivered' ];
 
 	if($value == -1)
 	{
