@@ -37,28 +37,28 @@
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
                              <td>
-                               @if($booking->pick_up_type == 0)
-                                {{ $booking->pickupAirport->name }}
-                                <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
-                               @elseif($booking->pick_up_type == 1)
+                              
+
+                           
+
+                             {{ $booking->pick_up_from }}
+
+                              @if($booking->pick_up_type == 0)
+                              
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
+                              
+                              @elseif($booking->pick_up_type == 1)
 
 
-                               {{ $booking->pickupTrain->name }}
                               <br><b>Train PNR No. :</b> {{ $booking->pick_up_train_pnr }}
 
-                            @elseif($booking->pick_up_type == 2)
-      
-                              {{ $booking->pickupBus->name }}
+                              @endif
 
-                            @else
-
-                             {{ $booking->pick_up_from }}</p> 
                               @if(isset($booking->pick_up_address))
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
-                            @endif
-
+                           
                              </td>
                            </tr>
                            <tr>
@@ -68,31 +68,28 @@
                            <tr>
                              <td class="font-medium">Drop Address</td>
                              <td>
+                              
+
+                           
+
+                             {{ $booking->drop_to }}
+
                               @if($booking->drop_to_type == 0)
-
-                                
-                                {{ $booking->dropAirport->name }}
-                                <br><b>Flight Number :</b> {{ $booking->drop_flight_number }}
-
+                              
+                               <br><b>Flight Number :</b> {{ $booking->drop_flight_number }} 
+                              
                               @elseif($booking->drop_to_type == 1)
 
-                                
-                                {{ $booking->dropTrain->name }}
-                                <br><b>Train PNR No. :</b> {{ $booking->drop_train_pnr }}
 
-                              @elseif($booking->drop_to_type == 2)
-
-                               
-                                <b>Drop to :</b> {{ $booking->dropBus->name }}
-
-                              @elseif($booking->drop_to_type > 2)
-
-                                {{ $booking->drop_to }} 
-                                @if(isset($booking->drop_address))
-                                <br><b>Address : </b> {{ $booking->drop_address }}
-                                @endif
+                              <br><b>Train PNR No. :</b> {{ $booking->drop_train_pnr }}
 
                               @endif
+
+                              @if(isset($booking->drop_address))
+                              <br><b>Address : </b> {{ $booking->drop_address }}
+                              @endif
+
+                           
                              </td>
                            </tr>
 
@@ -135,28 +132,28 @@
                            </tr>
                            <tr>
                               <td>
-                               @if($booking->pick_up_type == 0)
-                                {{ $booking->pickupAirport->name }}
-                                <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
-                               @elseif($booking->pick_up_type == 1)
+                              
+
+                           
+
+                             {{ $booking->pick_up_from }}
+
+                              @if($booking->pick_up_type == 0)
+                              
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
+                              
+                              @elseif($booking->pick_up_type == 1)
 
 
-                               {{ $booking->pickupTrain->name }}
                               <br><b>Train PNR No. :</b> {{ $booking->pick_up_train_pnr }}
 
-                            @elseif($booking->pick_up_type == 2)
-      
-                              {{ $booking->pickupBus->name }}
+                              @endif
 
-                            @else
-
-                             {{ $booking->pick_up_from }}</p> 
                               @if(isset($booking->pick_up_address))
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
-                            @endif
-
+                           
                              </td>
                            </tr>
                            <tr>
@@ -172,32 +169,29 @@
                            </tr>
 
                            <tr>
-                              <td>
-                              @if($booking->drop_to_type == 0)
+                               <td>
+                              
 
-                                
-                                {{ $booking->dropAirport->name }}
-                                <br><b>Flight Number :</b> {{ $booking->drop_flight_number }}
+                           
 
-                              @elseif($booking->drop_to_type == 1)
+                             {{ $booking->pick_up_from }}
 
-                                
-                                {{ $booking->dropTrain->name }}
-                                <br><b>Train PNR No. :</b> {{ $booking->drop_train_pnr }}
+                              @if($booking->pick_up_type == 0)
+                              
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
+                              
+                              @elseif($booking->pick_up_type == 1)
 
-                              @elseif($booking->drop_to_type == 2)
 
-                               
-                                <b>Drop to :</b> {{ $booking->dropBus->name }}
-
-                              @elseif($booking->drop_to_type > 2)
-
-                                {{ $booking->drop_to }} 
-                                @if(isset($booking->drop_address))
-                                <br><b>Address : </b> {{ $booking->drop_address }}
-                                @endif
+                              <br><b>Train PNR No. :</b> {{ $booking->pick_up_train_pnr }}
 
                               @endif
+
+                              @if(isset($booking->pick_up_address))
+                              <br><b>Address : </b> {{ $booking->pick_up_address }}
+                              @endif
+
+                           
                              </td>
                            </tr>
 

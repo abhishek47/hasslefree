@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
+            'referral_code' => $data['referral_code'] != '' ? $data['referral_code'] : null
         ]);
     }
 

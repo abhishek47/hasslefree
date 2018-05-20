@@ -21,7 +21,7 @@
                          @endif   
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <span class="fa fa-envelope"></span>
+                            <span class="fa fa-user"></span>
                         </span>
                     </div>
 
@@ -47,7 +47,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <span class="fa fa-envelope"></span>
+                            <span class="fa fa-phone"></span>
                         </span>
                     </div>
 
@@ -75,7 +75,7 @@
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <span class="fa fa-envelope"></span>
+                            <span class="fa fa-qrcode"></span>
                         </span>
                     </div>
 
@@ -86,7 +86,7 @@
                         </button>
                     </div>
 
-                    <div class="text-center w-full p-t-42 p-b-22">
+                    <div class="text-center w-full p-t-32 p-b-22">
                         <span class="txt1">
                             Or sign up with
                         </span>
@@ -102,7 +102,7 @@
                         Google
                     </a>
 
-                    <div class="text-center w-full p-t-115">
+                    <div class="text-center w-full p-t-45">
                         <span class="txt1">
                             Already a member?
                         </span>

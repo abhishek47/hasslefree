@@ -278,13 +278,13 @@
                             <div class="d-flex no-block m-b-10">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
                                 <div class="info">
-                                    <span class=" db  m-t-5">(+91) 9582873902</span>
+                                    <span class=" db  m-t-5"><a href="tel:7291047153">(+91) 7291047153</a></span>
                                 </div>
                             </div>
                             <div class="d-flex no-block m-b-30">
                                 <div class="display-7 m-r-20 align-self-top"><i class="icon-Mail"></i></div>
                                 <div class="info">
-                                    <a href="#" class="link db  m-t-5">info@hasslefreeluggage.in</a>
+                                    <a href="mailto:info@hasslefreeluggage.in" class="link db  m-t-5">info@hasslefreeluggage.in</a>
                                 </div>
                             </div>
                         </div>
