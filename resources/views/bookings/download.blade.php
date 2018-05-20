@@ -109,7 +109,7 @@
                               @if(isset($booking->pick_up_address))
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
-                              
+
                             @endif
                             </p>
                              
@@ -183,13 +183,13 @@
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
-                             <td class="text-right font-bold">Rs. {{ $basePrice  }}</td>
+                             <td class="text-right font-bold">Rs. {{ round($basePrice,2)  }}</td>
                            </tr>
 
                            @if($booking->coupon_applied != null)
                                <tr>
                                  <td class="font-medium">Discount </td>
-                                 <td class="text-right font-bold">- Rs. {{ $booking->discount_amount  }}</td>
+                                 <td class="text-right font-bold">- Rs. {{ round($booking->discount_amount, 2)  }}</td>
                                </tr>
                            @endif
 
