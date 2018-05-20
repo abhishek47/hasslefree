@@ -27,11 +27,23 @@
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
                         
-                        @if(!empty($name))
+                        @if(!empty($email))
                          <input class="input100" type="text" name="email" placeholder="Email" value="{{ $email }}">
                         @else
                           <input class="input100" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
                         @endif
+
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="fa fa-envelope"></span>
+                        </span>
+                    </div>
+
+                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Phone number is required">
+                        
+                      
+                          <input class="input100" type="number" name="phone" placeholder="Phone Number" value="{{ old('phone') }}">
+                       
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
