@@ -138,7 +138,7 @@
 
                            @if($booking->coupon_applied != null)
                                <tr>
-                                 <td class="font-medium">Discount ( COUPON : {{ $coupon->code }} )</td>
+                                 <td class="font-medium">Discount </td>
                                  <td class="text-right font-bold">- Rs. {{ $booking->discount_amount  }}</td>
                                </tr>
                            @endif

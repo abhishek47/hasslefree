@@ -175,29 +175,10 @@ class BookingsController extends Controller
      */
     public function print(Booking $booking)
     {
-         if($booking->pick_up_type == 0)
-        {
-            $location1 = $booking->pickupAirport->location;
-        } else if($booking->pick_up_type == 1){
-            $location1 = $booking->pickupTrain->location;
-        } else if($booking->pick_up_type == 2){
-            $location1 = $booking->pickupBus->location;
-        } else {
-            $location1 = $booking->pick_up_from;  
-        }
+       
+        
 
-        if($booking->drop_to_type == 0)
-        {
-            $location2 = $booking->dropAirport->location;
-        } else if($booking->drop_to_type == 1){
-            $location2 = $booking->dropTrain->location;
-        } else if($booking->drop_to_type == 2){
-            $location2 = $booking->dropBus->location;
-        } else {
-          $location2 = $booking->drop_to;
-        }
-
-        $distance = getDistance($location1, $location2);
+        $distance = $booking->distance;
 
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
@@ -206,11 +187,7 @@ class BookingsController extends Controller
 
         $sgst = ($basePrice * (6/100)); // GST
 
-        if($booking->coupon_applied != null)
-        {
-            $coupon = Coupon::where('code', $booking->coupon_applied)->first();
-            return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice', 'coupon'));
-        }
+       
 
         return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
     }
@@ -221,29 +198,7 @@ class BookingsController extends Controller
 
         
 
-        if($booking->pick_up_type == 0)
-        {
-            $location1 = $booking->pickupAirport->location;
-        } else if($booking->pick_up_type == 1){
-            $location1 = $booking->pickupTrain->location;
-        } else if($booking->pick_up_type == 2){
-            $location1 = $booking->pickupBus->location;
-        } else {
-            $location1 = $booking->pick_up_from;  
-        }
-
-        if($booking->drop_to_type == 0)
-        {
-            $location2 = $booking->dropAirport->location;
-        } else if($booking->drop_to_type == 1){
-            $location2 = $booking->dropTrain->location;
-        } else if($booking->drop_to_type == 2){
-            $location2 = $booking->dropBus->location;
-        } else {
-          $location2 = $booking->drop_to;
-        }
-
-        $distance = getDistance($location1, $location2);
+        $distance = $booking->distance;
 
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
@@ -252,11 +207,7 @@ class BookingsController extends Controller
 
         $sgst = ($basePrice * (6/100)); // GST
 
-         if($booking->coupon_applied != null)
-        {
-            $coupon = Coupon::where('code', $booking->coupon_applied)->first();
-            return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice', 'coupon'));
-        }
+        
 
         return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
