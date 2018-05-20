@@ -87,6 +87,9 @@ class BookingsController extends Controller
 
         $booking->price = ceil($basePrice);
 
+        $otp = mt_rand(10000, 99999);
+
+        $booking->verification_otp = $otp;
 
         $booking->save();
 

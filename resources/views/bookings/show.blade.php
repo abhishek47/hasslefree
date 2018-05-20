@@ -208,6 +208,15 @@
                        </table>
                      </div>
 
+                     <hr>
+                      @if($booking->status >= 2)
+                      <div class="alert alert-success" role="alert">
+                          Delivery Verification OTP : {{ $booking->verification_otp }}
+                      </div>
+                     @endif 
+
+                    <hr>
+
                     <hr>
                       @if($booking->coupon_applied != null && $booking->status != -1)
                     <div class="alert alert-primary" role="alert">

@@ -73,12 +73,15 @@ function getStatusString($value)
 }
 
 function getStatusMessage($id, $value)
-{
+{	
 
 	if($value == -1)
 	{
 		return 'Your Droghers Booking with ID ' . $id . ' has been cancelled.';
-	} 
+	} else if($value == 2)
+	{
+		 return 'Booking ' . $id . '- ' . $statuses[$value] . '. Your delivery verification OTP is : ' \App\Booking::findOrFail($id)->verification_otp . 'Please save this OTP with you as it is needed while delivery.';
+	}
 	else {
 		 $statuses = ['Created', 'Scheduled Pickup', 'Luggage Picked', 'In Transit', 'Luggage Delivered' ];
                                         
