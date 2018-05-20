@@ -67,6 +67,18 @@
                         </span>
                     </div>
 
+                    <div class="wrap-input100 m-b-16" >
+                        
+                      
+                          <input class="input100" type="text" name="referal_code" placeholder="Referal Code (optional)" value="{{ old('referal_code') }}">
+                       
+
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="fa fa-envelope"></span>
+                        </span>
+                    </div>
+
                    
                     <div class="container-login100-form-btn p-t-25">
                         <button class="login100-form-btn">
