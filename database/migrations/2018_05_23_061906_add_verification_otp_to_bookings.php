@@ -13,9 +13,11 @@ class AddVerificationOtpToBookings extends Migration
      */
     public function up()
     {
-        Schema::table('verification_otp', function (Blueprint $table) {
-            
+
+        Schema::table('bookings', function (Blueprint $table) {
+            $table->string('verification_otp');
         });
+
     }
 
     /**
@@ -25,8 +27,9 @@ class AddVerificationOtpToBookings extends Migration
      */
     public function down()
     {
-        Schema::table('verification_otp', function (Blueprint $table) {
-            //
+        Schema::table('bookings', function (Blueprint $table) {
+            $table->dropColumn('verification_otp');
         });
+
     }
 }

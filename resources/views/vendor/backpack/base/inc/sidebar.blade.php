@@ -16,7 +16,7 @@
 
           <li><a href="{{ backpack_url('bookings') }}"><i class="fa fa-file-text"></i> <span>Bookings</span></a></li>
 
-          <li><a href="{{ backpack_url('customers') }}"><i class="fa fa-file-text"></i> <span>Customers</span></a></li>
+          <li><a href="{{ backpack_url('customers') }}"><i class="fa fa-ul"></i> <span>Customers</span></a></li>
 
         <!--  <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li> -->
 
@@ -29,6 +29,8 @@
            <li><a href="{{ backpack_url('train-stations') }}"><i class="fa fa-train"></i> <span>Train Stations</span></a></li>
 
            <li><a href="{{ backpack_url('coupons') }}"><i class="fa fa-qrcode"></i> <span>Offer Coupons</span></a></li>
+
+           <li><a href="{{ backpack_url('references') }}"><i class="fa fa-users"></i> <span>References</span></a></li>
 
 
            <li class="treeview">

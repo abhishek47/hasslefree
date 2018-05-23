@@ -8,7 +8,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use App\Http\Requests\CouponRequest as StoreRequest;
 use App\Http\Requests\CouponRequest as UpdateRequest;
 
-class CouponCrudController extends CrudController
+class ReferenceCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,10 @@ class CouponCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Coupon');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/coupons');
-        $this->crud->setEntityNameStrings('coupon', 'coupons');
+
+        $this->crud->setModel('App\Models\Reference');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/references');
+        $this->crud->setEntityNameStrings('reference', 'references');
 
         /*
         |--------------------------------------------------------------------------
@@ -29,29 +30,19 @@ class CouponCrudController extends CrudController
         */
 
          $this->crud->addColumns([
-            ['name' => 'code', 'label' => 'Coupon Code'],
-            ['name' => 'discount_type_text', 'label' => 'Discount Type'],
-            ['name' => 'discount', 'label' => 'Discount (Rs.)'],
+            ['name' => 'name', 'label' => 'Name'],
+            ['name' => 'email', 'label' => 'E-mail Address'],
+            ['name' => 'code', 'label' => 'Reference code'],
+            ['name' => 'points', 'label' => 'Points']
         ]);
 
         $this->crud->addFields([
             
-            ['name' => 'code', 'label' => 'Coupon Code  <span style="color: red;">*</span>'],
-
-            ['name' => 'promo_text', 'label' => 'Promo Text (optional)', 'type' => 'textarea'],
+            ['name' => 'name', 'label' => 'Name  <span style="color: red;">*</span>'],
             
-            [ // select_from_array
-                'name' => 'discount_type',
-                'label' => 'Flat or Percentage? <span style="color: red;">*</span>',
-                'type' => 'select2_from_array',
-                'options' => [0 => 'Flat Discount', 1 => 'Percentage Base'],
-                'allows_null' => false,
-                'default' => 0,
-            ],
+            ['name' => 'email', 'label' => 'E-mail Address  <span style="color: red;">*</span>'],
 
-            ['name' => 'discount', 'label' => 'Discount  <span style="color: red;">*</span>', 'type' => 'number', 'attributes' => ["min" => 1]],
-
-            ['name' => 'min_order', 'label' => 'Min Order Amount <span style="color: red;">*</span>', 'type' => 'number', 'attributes' => ["min" => 1]],
+            ['name' => 'code', 'label' => 'Referral Code  <span style="color: red;">*</span>'],
 
             ['name' => 'valid_from', 'label' => 'Valid From  <span style="color: red;">*</span>', 'type' => 'date_picker'],
 
