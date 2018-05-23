@@ -53,9 +53,9 @@ class BookingsController extends Controller
             return response(['status'=> 'failed', 'message' => 'There was some problem! Please try again.', 'data' =>[]], 200);
         }
 
-       $distance = getDistance($booking->pick_location, $booking->drop_location);
+        $distance = getDistance($booking->pick_location, $booking->drop_location);
 
-       // $distance = 7.23;
+        // $distance = 7.23;
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
@@ -64,6 +64,13 @@ class BookingsController extends Controller
         $booking->distance = $distance;
 
         $booking->price = ceil($basePrice);
+
+         if($user->bookings()->count() == 1 && ($user->referral_code != null || $user->referral_code != ''))
+        {
+            $discount = ceil($booking->price * (10/100));
+            $booking->discount_amount = $discount;
+            $booking->referral_applied = 1;
+        }
 
         $booking->save();
 
