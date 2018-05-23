@@ -45,6 +45,9 @@ class BookingsController extends Controller
 
        
      $data['status'] = 0;
+
+
+        $data['verification_otp'] = mt_rand(10000, 99999);
         
         $booking = $user->bookings()->create($data);
 
