@@ -92,7 +92,7 @@
                    
                      <div>
                        
-                           <p ><b>Pick Up Time :</b> {{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</p>
+                           <p ><b>Pick Up Time :</b> {{ $booking->pick_up_date }}, {{ getHalfTime($booking->pick_up_time) }}</p>
                             
                              <p ><b>Pick Up Address :</b> 
                               {{ $booking->pick_up_from }}
