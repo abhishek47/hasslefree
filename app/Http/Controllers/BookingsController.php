@@ -48,9 +48,12 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-       
         
-        $booking = auth()->user()->bookings()->create($request->all());
+        $data = $request->all();
+
+        $data['verification_otp'] = mt_rand(10000, 99999);
+        
+        $booking = auth()->user()->bookings()->create($data);
 
         if($booking->pick_up_type == 0)
         {
@@ -87,9 +90,14 @@ class BookingsController extends Controller
 
         $booking->price = ceil($basePrice);
 
-        $otp = mt_rand(10000, 99999);
+        if(auth()->user()->bookings()->count() == 1 && (auth()->user()->referral_code != null || auth()->user()->referral_code != ''))
+        {
+            $discount = ceil($booking->price * (10/100));
+            $booking->discount_amount = $discount;
+            $booking->referral_applied = 1;
+        }
 
-        $booking->verification_otp = $otp;
+        
 
         $booking->save();
 

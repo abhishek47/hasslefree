@@ -144,12 +144,12 @@
                            @endif
 
                            <tr>
-                             <td class="font-medium">CGST 9%</td>
+                             <td class="font-medium">CGST 6%</td>
                              <td class="text-right">Rs. {{ round($cgst, 2)  }}</td>
                            </tr>
 
                            <tr>
-                             <td class="font-medium">SGST 9%</td>
+                             <td class="font-medium">SGST 6%</td>
                              <td class="text-right">Rs. {{ round($sgst, 2)  }}</td>
                            </tr>
 
@@ -159,7 +159,7 @@
                    
 
                     <hr>
-                    @if($booking->coupon_applied != null)
+                    @if($booking->coupon_applied != null || $booking->referral_code)
                       <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->offer_amount, 2) }}</span></b></h3>
                     @else
                       <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>

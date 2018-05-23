@@ -32,7 +32,7 @@
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
-                             <td>{{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</td>
+                             <td>{{ $booking->pick_up_date }}, {{ getHalfTime($booking->pick_up_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
@@ -220,6 +220,14 @@
                    
 
                     <hr>
+                    @if($booking->referral_applied)
+                      <div class="alert alert-primary" role="alert">
+                                    Congratulations! You have 10% discount for your first order. You saved Rs. {{ round($booking->discount_amount, 2) }}.
+                                    
+                                </div>
+
+                    @else
+
                       @if($booking->coupon_applied != null && $booking->status != -1)
                     <div class="alert alert-primary" role="alert">
                                     Congratulations! A coupon is applied. You saved Rs. {{ round($booking->discount_amount, 2) }}.
@@ -229,18 +237,20 @@
                                 </div>
                                @endif 
 
+                       @endif        
+
                     <hr>
 
                     <div style="display: flex;">
                          <h2 style="flex: 1"><b>
-                         @if($booking->coupon_applied != null)
+                         @if($booking->coupon_applied != null || $booking->referral_applied)
                            <del style="color: #ccc;">&#8377 {{ round($booking->total, 2) }}</del>
                             &#8377 {{ round($booking->offer_amount, 2) }}
                          @else
                             &#8377 {{ round($booking->total, 2) }}
                          @endif   
                          </b></h2>
-                         @if($booking->coupon_applied == null && $booking->status == 0)
+                         @if($booking->coupon_applied == null && $booking->status == 0 && !$booking->referral_applied)
                          <div style="display: flex;">
                             <input type="text" name="coupon_code" id="coupon_code" placeholder="Coupon Code" class="form-control form-input-sm" style="height: 40px;margin-right: 10px;">
                             <button onclick="applyCoupon({{$booking->id}})" class="btn btn-dark btn-sm" style="height: 40px;">Apply Coupon</button>

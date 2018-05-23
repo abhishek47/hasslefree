@@ -210,7 +210,7 @@
 
                     <hr>
 
-                    @if($booking->coupon_applied != null)
+                    @if($booking->coupon_applied != null || $booking->referral_code)
                       <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->offer_amount, 2) }}</span></b></h3>
                     @else
                       <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>

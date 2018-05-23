@@ -70,7 +70,7 @@
                     <div class="wrap-input100 m-b-16" >
                         
                       
-                          <input class="input100" type="text" name="referal_code" placeholder="Referal Code (optional)" value="{{ old('referal_code') }}">
+                          <input class="input100" type="text" name="referral_code" placeholder="Referal Code (optional)" value="{{ old('referral_code') }}">
                        
 
                         <span class="focus-input100"></span>

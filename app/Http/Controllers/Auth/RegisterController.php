@@ -119,13 +119,41 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
+
+
+
         if($request->wantsJson()) {
             $user->generateToken();
-            return response()->json([
-                'status' => 'success',
-                'message' => 'User registered successfully!',
-                'data' => $user->toArray()], 201);
+
+            if($request->has('referral_code') && $request->get('referral_code') != '')
+            {
+                $ref = Reference::where('code', $request->get('referral_code'))->first();
+
+                $ref->points = $ref->points + 10;
+
+                $ref->save();
+
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'User registered successfully! Referral code applied. Get 10% Discount on your first order',
+                    'data' => $user->toArray()], 201);
+
+                
+            } else {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'User registered successfully!',
+                    'data' => $user->toArray()], 201);
+
+            }
+
+            
+
         } else {
+            if($request->has('referral_code') && $request->get('referral_code') != '')
+            {
+                flash('User registered successfully! Referral code applied. Get 10% Discount on your first order')->success();
+            }
             return false;
         }
     }

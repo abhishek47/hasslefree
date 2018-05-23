@@ -16,7 +16,7 @@
 
           <li><a href="{{ backpack_url('bookings') }}"><i class="fa fa-file-text"></i> <span>Bookings</span></a></li>
 
-          <li><a href="{{ backpack_url('customers') }}"><i class="fa fa-ul"></i> <span>Customers</span></a></li>
+          <li><a href="{{ backpack_url('customers') }}"><i class="fa fa-list-ul"></i> <span>Customers</span></a></li>
 
         <!--  <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li> -->
 
