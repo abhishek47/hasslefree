@@ -124,7 +124,7 @@
                              
                            </tr>
                            <tr>
-                             <td>{{ $booking->pick_up_date }}, {{ getTime($booking->pick_up_time) }}</td>
+                             <td>{{ $booking->pick_up_date }}, {{ getHalfTime($booking->pick_up_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
