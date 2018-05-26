@@ -31,6 +31,7 @@ class ReferenceCrudController extends CrudController
 
          $this->crud->addColumns([
             ['name' => 'name', 'label' => 'Name'],
+            ['name' => 'phone', 'label' => 'Phone No.'],
             ['name' => 'email', 'label' => 'E-mail Address'],
             ['name' => 'code', 'label' => 'Reference code'],
             ['name' => 'points', 'label' => 'Points']
@@ -39,6 +40,8 @@ class ReferenceCrudController extends CrudController
         $this->crud->addFields([
             
             ['name' => 'name', 'label' => 'Name  <span style="color: red;">*</span>'],
+
+            ['name' => 'phone', 'label' => 'Phone No.  <span style="color: red;">*</span>'],
             
             ['name' => 'email', 'label' => 'E-mail Address  <span style="color: red;">*</span>'],
 

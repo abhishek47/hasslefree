@@ -15,7 +15,7 @@ class Reference extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $fillable = [ 'name', 'email', 'code',  'valid_from', 'valid_through', 'points' ];
+    protected $fillable = [ 'name', 'phone', 'email', 'code',  'valid_from', 'valid_through', 'points' ];
     
 
 

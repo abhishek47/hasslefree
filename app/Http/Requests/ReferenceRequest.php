@@ -26,6 +26,7 @@ class ReferenceRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     {
         return [
             'name' => 'required',
+            'phone' => 'required',
             'email' => 'required|email',
             'code' => 'required|min:3|max:10',
             'valid_from' => 'required',
