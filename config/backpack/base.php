@@ -19,7 +19,7 @@ return [
     'logo_mini' => '<b>D</b>g',
 
     // Developer or company name. Shown in footer.
-    'developer_name' => 'Abhishek Wani',
+    'developer_name' => 'Trumpets',
 
     // Developer website. Link in footer.
     'developer_link' => 'http://trumpetstechnologies.com',

@@ -439,8 +439,11 @@
                     </form>
 
                     @endif --}}
-
-                    <p>Your amount will be credited to your bank account within next 48 working Hrs!</p>
+                    @if($booking->payment_made)
+                      <p>Your amount will be credited to your bank account within next 48 working Hrs!</p>
+                    @else
+                        <p>You have cancelled your booking.</p>
+                    @endif
                   @endif 
                 </div>
             </div>

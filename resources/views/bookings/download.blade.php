@@ -247,7 +247,7 @@
 
     <script type="text/javascript">
       var qrcode = new QRCode("qrcode", {
-          text: {{ $booking->id }},
+          text: 'http://droghers.in/bookings/manage/{{ $booking->id }}/scan',
           width: 128,
           height: 128,
           colorDark : "#000000",

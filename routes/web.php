@@ -46,7 +46,10 @@ Route::get('/bookings/{booking}/pay', 'PaymentsController@addMoney');
 Route::get('/bookings/{booking}/cod', 'BookingsController@confirmWithCOD');
 Route::get('/bookings/{booking}/delete', 'BookingsController@destroy');
 Route::get('/bookings/{booking}/cancel', 'BookingsController@cancel');
-
+Route::get('/bookings/manage/{booking}/verify', 'ScannerController@verify');
+Route::post('/bookings/manage/{booking}/verify', 'ScannerController@postVerify');
+Route::get('/bookings/manage/{booking}/scan', 'ScannerController@scan');
+Route::get('/bookings/manage/{booking}/', 'ScannerController@manage');
 Route::post('/booking/refund', 'RefundController@store');
 Route::post('/bookings', 'BookingsController@store');
 
