@@ -43,6 +43,7 @@ class ScannerController extends Controller
     	{
     		$booking->status = 4;
     		$booking->save();
+    		
     		flash('The booking was successfully delivered!')->success();
 
     		\Mail::to($booking->user)->send(new \App\Mail\BookingStatusUpdated($booking));

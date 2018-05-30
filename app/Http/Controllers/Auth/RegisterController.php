@@ -134,6 +134,8 @@ class RegisterController extends Controller
 
                 $ref->save();
 
+                sendSMS($ref->phone, 'You earned 10 points on Droghers. Your amount will be credited to you within 72 Hrs.');
+
                 return response()->json([
                     'status' => 'success',
                     'message' => 'User registered successfully! Referral code applied. Get 10% Discount on your first order',
