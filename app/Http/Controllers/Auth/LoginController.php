@@ -94,7 +94,9 @@ class LoginController extends Controller
                 'data' => $user->toArray()
             ]);
         }
-      }
+
+         return $this->sendLoginResponse($request);
+      } 
 
       if($request->wantsJson()) {
             return response()->json([
