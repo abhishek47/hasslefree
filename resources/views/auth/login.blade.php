@@ -14,6 +14,17 @@
 
                     @include('partials.errors')
 
+                     @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="email" placeholder="Email">
                         <span class="focus-input100"></span>

@@ -40,6 +40,11 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class);
     }
 
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
+
 
     public function generateToken()
     {

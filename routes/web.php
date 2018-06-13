@@ -29,6 +29,9 @@ Route::get('/faq-app', function () {
 
 Auth::routes();
 
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+
 Route::get('/profile', 'UserController@profile');
 Route::get('/settings', 'UserController@settings');
 
