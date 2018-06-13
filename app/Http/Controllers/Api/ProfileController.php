@@ -85,7 +85,13 @@ class ProfileController extends Controller
     {
         $user = User::where('api_token', request('api_token'))->first();
 
-        $user->load('verifyUser');
+        if($user->verifyUser == null)
+        {
+             $verifyUser = VerifyUser::create([
+                'user_id' => $user->id,
+                'token' => str_random(40)
+            ]);
+        }
 
         \Mail::to($user->email)->send(new VerifyMail($user));
 
