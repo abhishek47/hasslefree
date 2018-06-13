@@ -20,6 +20,7 @@ Route::post('register/direct', 'Auth\RegisterController@direct');
 Route::post('logout', 'Auth\LoginController@logout');
 
 Route::get('profile', 'Api\ProfileController@get');
+Route::get('verify/resend', 'Api\ProfileController@verifyResend');
 Route::post('profile', 'Api\ProfileController@update');
 
 Route::get('/bookings', 'Api\BookingsController@index');

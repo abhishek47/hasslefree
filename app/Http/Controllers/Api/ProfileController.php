@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\User;
+use App\VerifyUser;
+use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -79,7 +81,14 @@ class ProfileController extends Controller
         return response(['status' => 'success', 'message' => 'OTP sent successfully!', 'otp' => $otp, 'phone' => $phone, 'api' => $response]);
     }
 
-   
+    public function verifyResend()
+    {
+        $user = User::where('api_token', request('api_token'))->first();
+
+        \Mail::to($user->email)->send(new VerifyMail($user->verifyUser));
+
+        return response(['status' => 'success', 'message' => 'Verification E-mail sent successfully!']);
+    }
 
     
 
