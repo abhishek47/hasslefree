@@ -85,6 +85,8 @@ class ProfileController extends Controller
     {
         $user = User::where('api_token', request('api_token'))->first();
 
+        $user->load('verifyUser');
+
         \Mail::to($user->email)->send(new VerifyMail($user));
 
         return response(['status' => 'success', 'message' => 'Verification E-mail sent successfully!']);
