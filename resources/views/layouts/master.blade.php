@@ -257,6 +257,7 @@
                             <ul class="general-listing">
                                 <li><a href="/faq"><i class="fa fa-arrow-right"></i> FAQ</a></li>
                                 <li><a href="/terms.pdf" target="_blank"><i class="fa fa-arrow-right"></i> Terms &amp; Conditions</a></li>
+                                 <li><a href="/privacy.pdf" target="_blank"><i class="fa fa-arrow-right"></i> Privacy Policy</a></li>
                             </ul>
                         </div>
                         <!-- cOLUMN -->
