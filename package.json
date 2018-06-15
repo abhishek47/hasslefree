@@ -21,6 +21,7 @@
   "dependencies": {
     "@mapbox/polyline": "^0.2.0",
     "polyline-encoded": "0.0.8",
+    "react-native-dismiss-keyboard": "^1.0.0",
     "react-native-maps-directions": "^1.6.0",
     "react-native-modal-datetime-picker": "^4.13.0",
     "react-native-stager": "^1.0.0"

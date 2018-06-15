@@ -93,9 +93,20 @@ class ProfileController extends Controller
             ]);
         }
 
-        \Mail::to($user->email)->send(new VerifyMail($user));
+        if($user->verified)
+        {
+          
+            return response(['status' => 'success', 'message' => 'Your account is verified successfully!']);
+       
+        } else {
 
-        return response(['status' => 'success', 'message' => 'Verification E-mail sent successfully!']);
+            \Mail::to($user->email)->send(new VerifyMail($user));
+
+            return response(['status' => 'failed', 'message' => 'We have resent you the verification email!']);
+        
+        }
+
+        
     }
 
     
