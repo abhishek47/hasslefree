@@ -376,12 +376,11 @@
   return check;
 };
 
-    document.onload(function(){
         if(mobilecheck())
         {
             window.location = 'droghers://';
         }
-    });
+   
     </script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
