@@ -25,7 +25,7 @@ class ProfileController extends Controller
             return response(['status' => 'failed', 'message' => 'There was some problem loading profile data!', 'data' => []]);
         }
 
-        $coupon = Coupon::latest();
+        $coupon = Coupon::latest()->first();
 
         $type = $coupon->discount_type == 0 ? ' Rs.' : '%' . ' off on all bookings uptil ' ;
 
