@@ -27,8 +27,9 @@ class ProfileController extends Controller
 
         $coupon = Coupon::first();
 
+        $type = $coupon->discount_type == 0 ? ' Rs.' : '%' . ' off on all bookings uptil ' ;
 
-        $msg = 'Use coupon code ' . $coupon->code . ' and get ' . $coupon->discount . $coupon->discount_type == 0 ? ' Rs.' : '%' . ' off on all bookings uptil ' . $coupon->valid_through->format('d M, Y');
+        $msg = 'Use coupon code ' . $coupon->code . ' and get ' . $coupon->discount . $type . $coupon->valid_through->format('d M, Y');
 
          return response(['status' => 'success', 'message' => 'Profile Data Loaded', 'data' => $user->toArray(), 'offerMessage' => $msg]);
     }
