@@ -17,7 +17,7 @@ class Coupon extends Model
 
     protected $fillable = [ 'code', 'promo_text', 'discount_type', 'discount',  'valid_from', 'valid_through', 'min_order'];
     
-
+    protected $dates = ['valid_from', 'valid_through'];
 
     public function getDiscountTypeTextAttribute()
     {

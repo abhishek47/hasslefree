@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\User;
+use App\Models\Coupon;
 use App\VerifyUser;
 use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
@@ -24,7 +25,12 @@ class ProfileController extends Controller
             return response(['status' => 'failed', 'message' => 'There was some problem loading profile data!', 'data' => []]);
         }
 
-         return response(['status' => 'success', 'message' => 'Profile Data Loaded', 'data' => $user->toArray()]);
+        $coupon = Coupon::first();
+
+
+        $msg = 'Use coupon code ' . $coupon->code . ' and get ' . $coupon->discount . $coupon->discount_type == 0 ? ' Rs.' : '%' . ' off on all bookings uptil ' . $coupon->valid_through->format('d M, Y');
+
+         return response(['status' => 'success', 'message' => 'Profile Data Loaded', 'data' => $user->toArray(), 'offerMessage' => $msg]);
     }
 
 
