@@ -64,6 +64,9 @@ class ReferenceCrudController extends CrudController
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+
+        sendSMS($this->crud->entry->phone, 'Register on Droghers and use my referral code ' . $this->crud->entry->code . ' to get 10% off on your first booking.');
+
         return $redirect_location;
     }
 
