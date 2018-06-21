@@ -35,6 +35,8 @@ class CustomerCrudController extends CrudController
             ['name' => 'email', 'label' => 'E-mail Address'],
         ]);
 
+         $this->crud->enableExportButtons();
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

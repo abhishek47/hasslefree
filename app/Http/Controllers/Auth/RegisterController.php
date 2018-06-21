@@ -188,7 +188,7 @@ class RegisterController extends Controller
                 return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
             }
      
-            return redirect('/login')->with('status', $status);
+            return redirect('/login')->with('status', $status)->with('redirect', '1');
      }
 
 
