@@ -5,6 +5,8 @@
 	<title>Droghers | Luggage Transfer and Storage Service in India</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	 <meta name="google-site-verification" content="qq55UBRGOwfkI9xMqGpV_D70LiGtlS2GM4N-amkXNiI" />
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="/images/favicon.png"/>
 <!--===============================================================================================-->
@@ -17,6 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="/auth/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/auth/vendor/select2/select2.min.css">
+
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/auth/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/auth/css/main.css">
