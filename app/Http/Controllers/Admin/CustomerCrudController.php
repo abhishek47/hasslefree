@@ -33,6 +33,7 @@ class CustomerCrudController extends CrudController
             ['name' => 'name', 'label' => 'Fullname'],
             ['name' => 'phone', 'label' => 'Phone'],
             ['name' => 'email', 'label' => 'E-mail Address'],
+            ['name' => 'created_at', 'label' => 'Registered on'],
         ]);
 
          $this->crud->enableExportButtons();
