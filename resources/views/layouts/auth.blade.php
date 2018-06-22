@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	 <meta name="google-site-verification" content="qq55UBRGOwfkI9xMqGpV_D70LiGtlS2GM4N-amkXNiI" />
+
+	 <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="/images/favicon.png"/>
 <!--===============================================================================================-->
@@ -25,6 +27,16 @@
 	<link rel="stylesheet" type="text/css" href="/auth/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/auth/css/main.css">
 <!--===============================================================================================-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121213789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121213789-1');
+</script>
 </head>
 <body>
 

@@ -11,6 +11,8 @@
     <meta name="author" content="">
 
     <meta name="google-site-verification" content="qq55UBRGOwfkI9xMqGpV_D70LiGtlS2GM4N-amkXNiI" />
+
+    <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
     
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -51,6 +53,15 @@
         </style>
     @endauth
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121213789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121213789-1');
+</script>
 
     @yield('css')
 </head>
