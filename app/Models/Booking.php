@@ -135,7 +135,7 @@ class Booking extends Model
 
     public function getUserNameAttribute()
     {
-        return $this->user->name;
+        return $this->user ? $this->user->name : 'NOT FOUND';
     }
 
     public function getPaymentStatusAttribute()
