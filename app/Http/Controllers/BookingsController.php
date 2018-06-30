@@ -17,7 +17,7 @@ class BookingsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('download');
     }
 
     /**
@@ -208,8 +208,7 @@ class BookingsController extends Controller
     {
 
         
-
-        $distance = $booking->distance;
+       $distance = $booking->distance;
 
 
         $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
@@ -218,9 +217,9 @@ class BookingsController extends Controller
 
         $sgst = ($basePrice * (6/100)); // GST
 
-        
+        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
-        return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+        return $invoice->download('invoice.pdf');
 
     }
 
