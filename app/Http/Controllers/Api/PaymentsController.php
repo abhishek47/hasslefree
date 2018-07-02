@@ -23,7 +23,8 @@ class PaymentsController extends Controller
       
       $amount = 0;
       
-      if($booking->coupon_applied != null)
+
+      if($booking->discount_amount != null)
       {
         $amount = round($booking->offer_amount, 2);
       } else {
