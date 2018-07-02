@@ -26,7 +26,7 @@ class Booking extends Model
 
     public function openPreview($crud = false)
     {
-        return '<a class="btn btn-xs btn-success" target="_blank" href="/bookings/' . $this->id . '/preview' . '" data-toggle="tooltip" title="View/Download Booking Receipt"><i class="fa fa-file-text"></i> Receipt</a>';
+        return '<a class="btn btn-xs btn-success" target="_blank" href="/bookings/' . $this->id . '/download' . '" data-toggle="tooltip" title="View/Download Booking Receipt"><i class="fa fa-file-text"></i> Receipt</a>';
     }
 
 
