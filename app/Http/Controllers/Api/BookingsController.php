@@ -88,7 +88,7 @@ class BookingsController extends Controller
 
         $booking->price = ceil(round($booking->price, 2));
 
-        if(auth()->user()->bookings()->count() == 1 && (auth()->user()->referral_code != null || auth()->user()->referral_code != ''))
+        if($user->bookings()->count() == 1 && ($user->referral_code != null || $user->referral_code != ''))
         {
             $discount = ceil(config('settings.base_price') * (10/100));
             $booking->discount_amount = round($discount, 2);
