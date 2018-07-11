@@ -19,7 +19,7 @@ class EmployeeCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel('App\Models\Employee');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/employee');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/employees');
         $this->crud->setEntityNameStrings('employee', 'employees');
 
         /*

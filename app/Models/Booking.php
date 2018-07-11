@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\User;
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait; // <------------------------------- this one
 
@@ -17,7 +18,7 @@ class Booking extends Model
     protected $fillable = [
         'user_id', 'bags_count', 'special', 'pick_up_type', 'pick_up_from', 'drop_to_type', 'drop_to', 'pick_up_airport_id', 
          'pick_up_flight_number', 'pick_up_train_station_id', 'pick_up_train_pnr', 'pick_up_bus_station_id', 'drop_airport_id', 
-        'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp'
+        'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp', 'pick_up_emp', 'delivery_emp'
     ];
 
     protected $appends = ['key',  'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount', 'coupon_promo_text', 'baseprice'];
@@ -33,6 +34,16 @@ class Booking extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function pickupEmployee()
+    {
+        return $this->belongsTo(Employee::class, 'pick_up_emp');
+    }
+
+    public function deliveryEmployee()
+    {
+        return $this->belongsTo(Employee::class, 'delivery_emp');
     }
 
     

@@ -22,7 +22,7 @@
                                 <div class="slide-text slide_style_left">
                                     <div class="col-md-9 col-lg-6">
                                         <label class="label bg-white text-uppercase font-semibold" data-animation="animated fadeInDown">Welcome To</label>
-                                        <h2 data-animation="animated zoomInRight" class="title text-white">Droghers Luggage Transport Service</h2>
+                                        <h1 data-animation="animated zoomInRight" class="title text-white">Droghers Luggage Transport Service</h1pmas>
                                     </div>
                                     <div class="col-md-8 col-lg-5">
                                         <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white">We offer Luggage Transfer services from Railway Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>

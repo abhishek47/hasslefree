@@ -40,6 +40,30 @@ class BookingCrudController extends CrudController
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
 
+
+        $this->crud->addField([  // Select2
+               'label' => "Pickup Employee",
+               'type' => 'select2',
+               'name' => 'pick_up_emp', // the db column for the foreign key
+               'entity' => 'pickupEmployee', // the method that defines the relationship in your Model
+               'attribute' => 'name', // foreign key attribute that is shown to user
+               'model' => "App\Models\Employee", // foreign key model
+               'allows_null' => true
+               
+            ]);
+
+
+         $this->crud->addField([  // Select2
+               'label' => "Delivery Employee",
+               'type' => 'select2',
+               'name' => 'delivery_emp', // the db column for the foreign key
+               'entity' => 'deliveryEmployee', // the method that defines the relationship in your Model
+               'attribute' => 'name', // foreign key attribute that is shown to user
+               'model' => "App\Models\Employee", // foreign key model
+               'allows_null' => true
+               
+            ]);
+
         $this->crud->orderBy('created_at', 'DESC');
 
         $this->crud->addButtonFromModelFunction('line', 'open_preview', 'openPreview', 'beginning');
@@ -131,7 +155,6 @@ class BookingCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         
-        
         // your additional operations before save here
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
@@ -139,10 +162,12 @@ class BookingCrudController extends CrudController
          
 
         
-        \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
+            \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
 
         
-        sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status));
+            sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status)); 
+        
+       
         
         return $redirect_location;
     }

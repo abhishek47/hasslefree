@@ -18,6 +18,8 @@
 
           <li><a href="{{ backpack_url('customers') }}"><i class="fa fa-list-ul"></i> <span>Customers</span></a></li>
 
+          <li><a href="{{ backpack_url('employees') }}"><i class="fa fa-users"></i> <span>Employees</span></a></li>
+
         <!--  <li><a href="{{ backpack_url('refunds') }}"><i class="fa fa-credit-card"></i> <span>Refunds</span></a></li> -->
 
            <li><a href="{{ backpack_url('cities') }}"><i class="fa fa-map-marker"></i> <span>Cities</span></a></li>

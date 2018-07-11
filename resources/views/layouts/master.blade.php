@@ -7,12 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="title" content="Left Luggage - Luggage Transport Services in Delhi NCR | Droghers">
+    <meta name="description" content="Let Droghers be your valet to your hotel, airport or railway station | we deliver bags to and from, so you don't have to | Droghers provides you door to door luggage transfer service in Delhi NCR | Send your bag to droghers and we will deliver it to your destination | luggage transport near me.">
+    <meta name="author" content="HassleFree">
 
     <meta name="google-site-verification" content="qq55UBRGOwfkI9xMqGpV_D70LiGtlS2GM4N-amkXNiI" />
 
     <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
+
+    <link rel="canonical" href="https://droghers.in/{{request()->url()}}" />
     
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -24,7 +27,7 @@
     <link href="/css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
     <link href="/css/magnific-popup.css" rel="stylesheet">
 
-<link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
 
     <!-- This css we made it from our predefine componenet 
     we just copy that css and paste here you can also do that -->
@@ -32,6 +35,8 @@
     <!-- Common style CSS -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/yourstyle.css" rel="stylesheet">
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
