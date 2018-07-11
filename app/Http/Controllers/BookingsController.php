@@ -79,25 +79,44 @@ class BookingsController extends Controller
 
         $distance = getDistance($location1, $location2);
 
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
 
-        // $booking->price = $basePrice;
 
-        $basePrice = $basePrice + ($basePrice * (12/100)); // GST
+
+        if($distance <= config('settings.base_km'))
+        {
+            $booking->base_price = config('settings.base_price');
+        } else {
+            $booking->base_price = config('settings.base_price') + (config('settings.base_km_multiple') * ($distance - config('settings.base_km')));
+        }
+
+        if($booking->bags_count <= config('settings.base_bags'))
+        {
+            $booking->handling_charges = 0;
+        } else {
+            $booking->handling_charges = config('settings.handling_charges') * ($booking->bags_count - config('settings.base_bags'));
+        }
+    
 
         $booking->distance = $distance;
 
+        $booking->subtotal = $booking->base_price + $booking->handling_charges;
 
-        $booking->price = ceil($basePrice);
+        $booking->subtotal = round($booking->subtotal, 2);
+
+        $booking->gst = $booking->subtotal * (config('settings.gst')/100);
+
+        $booking->gst = round($booking->gst, 2);
+
+        $booking->price = $booking->subtotal + $booking->gst;
+
+        $booking->price = ceil(round($booking->price, 2));
 
         if(auth()->user()->bookings()->count() == 1 && (auth()->user()->referral_code != null || auth()->user()->referral_code != ''))
         {
-            $discount = ceil($booking->price * (10/100));
-            $booking->discount_amount = $discount;
+            $discount = ceil(config('settings.base_price') * (10/100));
+            $booking->discount_amount = round($discount, 2);
             $booking->referral_applied = 1;
         }
-
-        
 
         $booking->save();
 
@@ -121,25 +140,19 @@ class BookingsController extends Controller
         $booking->status = 1;
 
         $booking->save();
-
-
-        $distance = $booking->distance;
-
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
-
-        $cgst = ($basePrice * (6/100)); // GST
-
-        $sgst = ($basePrice * (6/100)); // GST
-
-        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
-
-        $invoiceData = $invoice->output();
         
-        $message = new NewBookingCreated($booking);
 
-        $message->attachData($invoiceData, 'invoice.pdf', [
+      /*  $invoice = \PDF::loadView('bookings.download', compact('booking'));
+
+        $invoiceData = $invoice->output();*/
+        
+        
+
+       /* $message->attachData($invoiceData, 'invoice.pdf', [
                         'mime' => 'application/pdf',
-                    ]);
+                    ]); */
+
+        $message = new NewBookingCreated($booking);
 
         \Mail::to(auth()->user())->send($message);
 
@@ -187,20 +200,7 @@ class BookingsController extends Controller
     public function print(Booking $booking)
     {
        
-        
-
-        $distance = $booking->distance;
-
-
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
-
-        $cgst = ($basePrice * (6/100)); // GST
-
-        $sgst = ($basePrice * (6/100)); // GST
-
-       
-
-        return view('bookings.print', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+        return view('bookings.print', compact('booking'));
     }
 
 
@@ -208,20 +208,12 @@ class BookingsController extends Controller
     {
 
         
-       $distance = $booking->distance;
-
-
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
-
-        $cgst = ($basePrice * (6/100)); // GST
-
-        $sgst = ($basePrice * (6/100)); // GST
 
         //$invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
         //return $invoice->download('invoice.pdf');
 
-        return view('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+        return view('bookings.download', compact('booking'));
 
     }
 

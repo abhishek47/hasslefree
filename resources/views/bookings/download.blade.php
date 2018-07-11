@@ -111,6 +111,10 @@
                               @endif
 
                             @endif
+
+                            @if(isset($booking->complete_address))
+                              <br><b>Complete Address :</b> {{ $booking->complete_address}}  
+                            @endif
                             </p>
                              
                            
@@ -137,6 +141,10 @@
                                 @endif
 
                               @endif
+
+                              @if(isset($booking->complete_address))
+                                <br><b>Complete Address :</b> {{ $booking->complete_address}}  
+                              @endif
                              </p>
                      </div>
 
@@ -155,35 +163,27 @@
                              <td class="font-medium">No. of Bags</td>
                              <td class="text-right">{{ $booking->bags_count }}</td>
                            </tr>
-                           <tr>
+                          <!-- <tr>
                              <td class="font-medium">Distance </td>
-                             <td class="text-right">{{ $distance }} Km.</td>
-                           </tr>
+                             <td class="text-right">{{ $booking->distance }} Km.</td>
+                           </tr> -->
 
                           
 
                            <tr>
                              <td class="font-medium">Base Price</td>
-                             <td class="text-right">Rs. {{ ($distance * 10) }}</td>
+                             <td class="text-right">Rs. {{ $booking->base_price }}</td>
                            </tr>
-                           <tr>
-                             <td class="font-medium">Insurance</td>
-                             <td class="text-right">Rs. {{ ($booking->bags_count * 12) }}</td>
-                           </tr>
+
                            <tr>
                              <td class="font-medium">Handling Charges</td>
-                             <td class="text-right">Rs. {{ ($booking->bags_count * 10) }}</td>
+                             <td class="text-right">Rs. {{ $booking->handling_charges }}</td>
                            </tr>
-                           <tr>
-                             <td class="font-medium">Security Labelling</td>
-                             <td class="text-right">
-                              Rs. {{ ($booking->bags_count * 7) }}
-                             </td>
-                           </tr>
+                           
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
-                             <td class="text-right font-bold">Rs. {{ round($basePrice,2)  }}</td>
+                             <td class="text-right font-bold">Rs. {{ $booking->subtotal  }}</td>
                            </tr>
 
                            @if($booking->coupon_applied != null)
@@ -194,14 +194,11 @@
                            @endif
 
                            <tr>
-                             <td class="font-medium">CGST 6%</td>
-                             <td class="text-right">Rs. {{ round($cgst, 2)  }}</td>
+                             <td class="font-medium">GST {{config('settings.gst')}}%</td>
+                             <td class="text-right">Rs. {{ $booking->gst  }}</td>
                            </tr>
 
-                           <tr>
-                             <td class="font-medium">SGST 6%</td>
-                             <td class="text-right">Rs. {{ round($sgst, 2)  }}</td>
-                           </tr>
+                          
 
                          </tbody>
                        </table>
@@ -213,7 +210,7 @@
                     @if($booking->coupon_applied != null || $booking->referral_code)
                       <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->offer_amount, 2) }}</span></b></h3>
                     @else
-                      <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->total, 2) }}</span></b></h3>
+                      <h3 class="pull-right"><b>Total : <span class="text-dark">Rs. {{ round($booking->price, 2) }}</span></b></h3>
                     @endif
 
                     <div class="clearfix"></div>

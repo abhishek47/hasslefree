@@ -42,11 +42,24 @@ class ScannerController extends Controller
     	if($booking->verification_otp == request('otp'))
     	{
     		$booking->status = 4;
+
+            $booking->payment_made = 1;
+
     		$booking->save();
     		
     		flash('The booking was successfully delivered!')->success();
 
-    		\Mail::to($booking->user)->send(new \App\Mail\BookingStatusUpdated($booking));
+             $invoice = \PDF::loadView('bookings.download', compact('booking'));
+
+            $invoiceData = $invoice->output();
+            
+            $message = new \App\Mail\BookingStatusUpdated($booking);
+
+            $message->attachData($invoiceData, 'invoice.pdf', [
+                            'mime' => 'application/pdf',
+                        ]); 
+
+    		\Mail::to($booking->user)->send($message);
 
         	sendSMS($booking->phone, getStatusMessage($booking->id, $booking->status));
 

@@ -23,7 +23,7 @@ class CouponsController extends Controller
                     {
                         $booking->coupon_applied = $code;
                         
-                        $discount = $coupon->discount_type == 0 ? $coupon->discount : $booking->taxable * ($coupon->discount / 100);
+                        $discount = $coupon->discount_type == 0 ? $coupon->discount : config('settings.base_price') * ($coupon->discount / 100);
                         
                         $booking->discount_amount = $discount;
                         

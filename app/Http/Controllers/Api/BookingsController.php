@@ -60,18 +60,38 @@ class BookingsController extends Controller
 
         // $distance = 7.23;
 
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
+        if($distance <= config('settings.base_km'))
+        {
+            $booking->base_price = config('settings.base_price');
+        } else {
+            $booking->base_price = config('settings.base_price') + (config('settings.base_km_multiple') * ($distance - config('settings.base_km')));
+        }
 
-        $basePrice = $basePrice + ($basePrice * (12/100)); // GST
+        if($booking->bags_count <= config('settings.base_bags'))
+        {
+            $booking->handling_charges = 0;
+        } else {
+            $booking->handling_charges = config('settings.handling_charges') * ($booking->bags_count - config('settings.base_bags'));
+        }
 
         $booking->distance = $distance;
 
-        $booking->price = ceil($basePrice);
+        $booking->subtotal = $booking->base_price + $booking->handling_charges;
 
-         if($user->bookings()->count() == 1 && ($user->referral_code != null || $user->referral_code != ''))
+        $booking->subtotal = round($booking->subtotal, 2);
+
+        $booking->gst = $booking->subtotal * (config('settings.gst')/100);
+
+        $booking->gst = round($booking->gst, 2);
+
+        $booking->price = $booking->subtotal + $booking->gst;
+
+        $booking->price = ceil(round($booking->price, 2));
+
+        if(auth()->user()->bookings()->count() == 1 && (auth()->user()->referral_code != null || auth()->user()->referral_code != ''))
         {
-            $discount = ceil($booking->price * (10/100));
-            $booking->discount_amount = $discount;
+            $discount = ceil(config('settings.base_price') * (10/100));
+            $booking->discount_amount = round($discount, 2);
             $booking->referral_applied = 1;
         }
 
@@ -105,24 +125,10 @@ class BookingsController extends Controller
         $booking->save();
 
 
-        $distance = $booking->distance;
-
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
-
-        $cgst = ($basePrice * (6/100)); // GST
-
-        $sgst = ($basePrice * (6/100)); // GST
-
-        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
-
-        $invoiceData = $invoice->output();
         
         $message = new NewBookingCreated($booking);
 
-        $message->attachData($invoiceData, 'invoice.pdf', [
-                        'mime' => 'application/pdf',
-                    ]);
-
+      
         \Mail::to($user)->send($message);
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
@@ -176,11 +182,36 @@ class BookingsController extends Controller
          $distance = request('distance');
          $bags_count = request('bags_count');
 
-         $basePrice = ($distance * 10) + ($bags_count * 12) + ($bags_count * 10) + ($bags_count * 7);
+         $base_price = 0;
+         $handling_charges = 0;
 
-         $price =  $basePrice + ($basePrice * (12/100));
+        if($distance <= config('settings.base_km'))
+        {
+            $base_price = config('settings.base_price');
+        } else {
+            $base_price = config('settings.base_price') + (config('settings.base_km_multiple') * ($distance - config('settings.base_km')));
+        }
 
-         return response(['status'=> 'success', 'message' => 'Price estimated!', 'estimate' => ceil($price)], 200);
+        if($bags_count <= config('settings.base_bags'))
+        {
+            $handling_charges = 0;
+        } else {
+            $handling_charges = config('settings.handling_charges') * ($bags_count - config('settings.base_bags'));
+        }
+
+        $subtotal = $base_price + $handling_charges;
+
+        $subtotal = round($subtotal, 2);
+
+        $gst = $subtotal * (config('settings.gst')/100);
+
+        $gst = round($gst, 2);
+
+        $price = $subtotal + $gst;
+
+        $price = round($price, 2);
+
+        return response(['status'=> 'success', 'message' => 'Price estimated!', 'estimate' => ceil($price)], 200);
 
     }
 

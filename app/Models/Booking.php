@@ -21,7 +21,7 @@ class Booking extends Model
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp', 'pick_up_emp', 'delivery_emp'
     ];
 
-    protected $appends = ['key',  'insuarance', 'handling', 'labelling', 'taxable', 'gst', 'total', 'offer_amount', 'coupon_promo_text', 'baseprice'];
+    protected $appends = ['key', 'offer_amount', 'coupon_promo_text'];
     
     
 
@@ -85,51 +85,19 @@ class Booking extends Model
         return $location2;
     }
 
-    public function getBasepriceAttribute()
-    {
-        return $this->distance * 10;
-    }
+    
 
+ 
 
-    public function getInsuaranceAttribute()
-    {
-        return $this->bags_count * 12;
-    }
-
-    public function getHandlingAttribute()
-    {
-        return $this->bags_count * 10;
-    }
-
-    public function getLabellingAttribute()
-    {
-        return $this->bags_count * 7;
-    }
-
-    public function getTaxableAttribute()
-    {
-        return ($this->distance * 10) + $this->insuarance + $this->handling + $this->labelling;
-    }
-
-
-    public function getGstAttribute()
-    {
-        return $this->taxable * (12/100);
-    }
-
-    public function getTotalAttribute()
-    {
-        return ceil($this->taxable + $this->gst);
-    }
 
     public function getOfferAmountAttribute()
     {
         if($this->discount_amount == null)
         {
-            return ceil($this->taxable + $this->gst);
+            return ceil($this->price);
         }
 
-        return ceil(($this->taxable - $this->discount_amount) + $this->gst);
+        return ceil($this->price - $this->discount_amount) ;
     }
 
      public function getCouponPromoTextAttribute()

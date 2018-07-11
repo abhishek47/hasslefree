@@ -15,7 +15,7 @@
 
     <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
 
-    <link rel="canonical" href="https://droghers.in/{{request()->url()}}" />
+    <link rel="canonical" href="https://droghers.in/" />
     
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">

@@ -112,12 +112,7 @@
                              <td>{{ $booking->bags_count }}</td>
                            </tr>
 
-                            <tr >
-                             <td class="font-medium" style="min-width: 35%;">Distance</td>
-                           </tr>
-                           <tr>
-                             <td>{{ $booking->distance }} Km.</td>
-                           </tr>
+                           
 
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
@@ -244,10 +239,10 @@
                     <div style="display: flex;">
                          <h2 style="flex: 1"><b>
                          @if($booking->coupon_applied != null || $booking->referral_applied)
-                           <del style="color: #ccc;">&#8377 {{ round($booking->total, 2) }}</del>
+                           <del style="color: #ccc;">&#8377 {{ round($booking->price, 2) }}</del>
                             &#8377 {{ round($booking->offer_amount, 2) }}
                          @else
-                            &#8377 {{ round($booking->total, 2) }}
+                            &#8377 {{ round($booking->price, 2) }}
                          @endif   
                          </b></h2>
                          @if($booking->coupon_applied == null && $booking->status == 0 && !$booking->referral_applied)
