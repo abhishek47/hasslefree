@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Droghers | Luggage Transfer and Storage Service in India</title>
+	<title>@yield('title', 'Left Luggage - Luggage Transport Services in Delhi NCR | Droghers')</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,6 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="/auth/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/auth/vendor/select2/select2.min.css">
+
+	<meta name="title" content="@yield('meta-title', 'Left Luggage - Luggage Transport Services in Delhi NCR | Droghers')">
+    <meta name="description" content="@yield('meta-desc', 'Let Droghers be your valet to your hotel, airport or railway station | we deliver bags to and from, so you don\'t have to | Droghers provides you door to door luggage transfer service in Delhi NCR | Send your bag to droghers and we will deliver it to your destination | luggage transport near me.')">
 
 
 <!--===============================================================================================-->

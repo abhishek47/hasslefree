@@ -1,5 +1,10 @@
 @extends('layouts.auth')
 
+@section('title', 'Log In or Sign Up To Your Droghers Account | Create an Account with Droghers and avail the hassle free luggage delivery services. Droghers is a luggage delivery company, specialising in affordable luggage transfer.  Send your baggage door-to-door anywhere in Delhi NCR.')
+
+@section('meta-title', 'Log In or Sign Up To Your Droghers Account')
+
+@section('meta-desc', 'Create an Account with Droghers and avail the hassle free luggage delivery services. Droghers is a luggage delivery company, specialising in affordable luggage transfer.  Send your baggage door-to-door anywhere in Delhi NCR.')
 
 
 @section('content')

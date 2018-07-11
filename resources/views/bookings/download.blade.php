@@ -112,9 +112,7 @@
 
                             @endif
 
-                            @if(isset($booking->complete_address))
-                              <br><b>Complete Address :</b> {{ $booking->complete_address}}  
-                            @endif
+                            
                             </p>
                              
                            
@@ -142,9 +140,7 @@
 
                               @endif
 
-                              @if(isset($booking->complete_address))
-                                <br><b>Complete Address :</b> {{ $booking->complete_address}}  
-                              @endif
+                             
                              </p>
                      </div>
 

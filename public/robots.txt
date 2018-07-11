@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
+
+sitemap:  https://droghers.in/sitemap.xml
