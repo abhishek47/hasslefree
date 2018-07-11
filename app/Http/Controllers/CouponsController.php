@@ -19,7 +19,7 @@ class CouponsController extends Controller
             if(check_in_range($coupon->valid_from, $coupon->valid_through, date('Y-m-d')))
             {
 
-                    if($booking->taxable > $coupon->min_order)
+                    if($booking->subtotal > $coupon->min_order)
                     {
                         $booking->coupon_applied = $code;
                         
