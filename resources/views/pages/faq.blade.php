@@ -1,9 +1,8 @@
 @extends('layouts.master')
 
 
-@section('title', 'FAQs - Droghers | Do you have questions about transferring hassle free luggage to your destination? Here are some answers to the most common questions')
+@section('title', 'FAQs - Droghers')
 
-@section('meta-title', 'FAQs - Droghers')
 
 @section('meta-desc', 'Do you have questions about transferring hassle free luggage to your destination? Here are some answers to the most common questions')
 
