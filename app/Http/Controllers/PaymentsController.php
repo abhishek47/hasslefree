@@ -29,7 +29,7 @@ class PaymentsController extends Controller
           {
             $amount = round($booking->offer_amount, 2);
           } else {
-            $amount = round($booking->total, 2);
+            $amount = round($booking->price, 2);
           }
 
            $parameters = [
@@ -75,15 +75,9 @@ class PaymentsController extends Controller
 
         $booking->save();
 
-        $distance = $booking->distance;
+        
 
-        $basePrice = ($distance * 10) + ($booking->bags_count * 12) + ($booking->bags_count * 10) + ($booking->bags_count * 7);
-
-        $cgst = ($basePrice * (6/100)); // GST
-
-        $sgst = ($basePrice * (6/100)); // GST
-
-        $invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
+        $invoice = \PDF::loadView('bookings.download', compact('booking'));
 
         $invoiceData = $invoice->output();
         

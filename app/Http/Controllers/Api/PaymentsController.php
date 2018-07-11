@@ -28,7 +28,7 @@ class PaymentsController extends Controller
       {
         $amount = round($booking->offer_amount, 2);
       } else {
-        $amount = round($booking->total, 2);
+        $amount = round($booking->price, 2);
       }
 		  
 
