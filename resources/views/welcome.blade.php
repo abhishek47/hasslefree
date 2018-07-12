@@ -211,7 +211,7 @@
                         <h6 class="font-16 text-white">You will feel great using our quality products and services</h6>
                     </div>
                     <div class="ml-auto m-t-10 m-b-10">
-                        <a href="tel:9582873902" class="btn btn-danger-gradiant btn-md">Contact Us</a>
+                        <a href="/contact" class="btn btn-danger-gradiant btn-md">Contact Us</a>
                     </div>
                 </div>
             </div>

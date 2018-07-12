@@ -129,15 +129,15 @@
                                         </li>
 
                                         <li class="nav-item"> 
-                                            <a class="nav-link" href="#features"> Features</a>
+                                            <a class="nav-link" href="/#features"> Features</a>
                                         </li>
 
                                         <li class="nav-item"> 
-                                            <a class="nav-link" href="#process"> Process</a>
+                                            <a class="nav-link" href="/#process"> Process</a>
                                         </li>
 
                                         <li class="nav-item"> 
-                                            <a class="nav-link" href="#about"> About</a>
+                                            <a class="nav-link" href="/#about"> About</a>
                                         </li>
 
                                         <li class="nav-item {{ request()->is('faq') ? 'active' : '' }}"> 

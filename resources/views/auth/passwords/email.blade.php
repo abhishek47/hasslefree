@@ -1,6 +1,12 @@
 
 @extends('layouts.master')
 
+
+@section('title', 'Forgot Password -  Droghers Account')
+
+
+@section('meta-desc', 'Forgot password. We will send you an email with a temporary link where you can generate the new password of your account.')
+
 @section('content')
 
 <div class="bg-light form4" id="register" style="margin-top: 0px;min-height: 1000px;padding-top: 40px;">
