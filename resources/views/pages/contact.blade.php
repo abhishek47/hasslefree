@@ -2,6 +2,8 @@
 
 @section('title', 'Contact Us | Droghers')
 
+@section('meta-desc', '')
+
 @section('content')
 	
 	<!-- ============================================================== -->
