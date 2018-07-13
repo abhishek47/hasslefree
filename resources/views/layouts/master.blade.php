@@ -98,10 +98,8 @@
                                     <li class="nav-item"><a class="nav-link">We let you enjoy your trip luggage free!</a></li>
                                 </ul>
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/Droghers-244123833010176"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/droghers7/"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -322,11 +320,8 @@
                         <div class="d-flex">
                             <span class="m-t-10 m-b-10">Copyright {{date('Y')}}. HassleFree Luggage Pvt. Ltd.</span>
                             <div class="ml-auto m-t-10 m-b-10">
-                                <a href="#" class="link"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="link"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="link"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="link"><i class="fa fa-pinterest"></i></a>
-                                <a href="#" class="link"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/Droghers-244123833010176" class="link"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/droghers7/" class="link"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

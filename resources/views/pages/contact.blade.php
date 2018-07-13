@@ -2,7 +2,7 @@
 
 @section('title', 'Contact Us | Droghers')
 
-@section('meta-desc', '')
+@section('meta-desc', 'Contact Us. Droghers S-11, Malhan Falcon Plaza, Plot no. 4, Pocket 7, Sector 12, Dwarka, New Delhi-110078. Phone: 9582873902. Email: info@droghers.in. Website: https://droghers.in/.')
 
 @section('content')
 	
@@ -76,7 +76,7 @@
                                                         <div class="m-r-20 align-self-center"> <img src="/images/icon1.png" alt="wrapkit"> </div>
                                                         <div class="">
                                                             <h6 class="font-medium">Address</h6>
-                                                            <p class="">New Delhi, India
+                                                            <p class="">S-11, Malhan Falcon Plaza,<br> Plot no. 4, Pocket 7, <br>Sector 12, Dwarka,<br> New Delhi-110078
                                                                  </p>
                                                         </div>
                                                     </div>
