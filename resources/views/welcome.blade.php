@@ -29,14 +29,14 @@
                                     </div>
                                     <div class="col-sm-12 btn-pad">
                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/register"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
-                                       
+
                                     </div>
                                 </div>
                             </div>
                             <!-- End of Slide -->
-                            
-                            
-                           
+
+
+
                         </div>
                     </div>
                     <!-- End Slider -->
@@ -88,7 +88,7 @@
                                 <h5 class="font-medium">Damage Free &amp; Safe</h5>
                                 <p>Your luggage be safe with us and we even insure you about your luggage.</p>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -199,7 +199,7 @@
         <!-- ============================================================== -->
         <!-- End Feature 8  -->
         <!-- ============================================================== -->
-        
+
         <!-- ============================================================== -->
         <!-- call to action -->
         <!-- ============================================================== -->
@@ -219,8 +219,8 @@
         <!-- ============================================================== -->
         <!-- call to action -->
         <!-- ============================================================== -->
-        
-       
+
+
         <!-- ============================================================== -->
 
-@endsection  
+@endsection
