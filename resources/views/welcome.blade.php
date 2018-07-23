@@ -201,7 +201,7 @@
             </div>
 
             <div class="container mt-5">
-           <p>Those years gone by, when moving a luggage is a nightmare at that time. It is a bit difficult to move your luggage after your departure. Here at <b style="font-weight: 700;">Droghers</b> we've made the process a whole lot easier. We provide <b style="font-weight: 700;">door to door luggage service</b> in Delhi, Noida & Gurgaon. You can Book our services from Railway stations and airports as well with our easy online booking service. We are one of the most reliable <b style="font-weight: 700;">luggage delivery company</b> which <b style="font-weight: 700;">send luggage</b> without a doubt and in no-time. You can easily track your luggage status via our online booking system. Our <b style="font-weight: 700;">luggage transfer service</b> is totally safe. You will get your luggage safely, on time.
+           <p>Those years gone by, when moving a luggage was a nightmare at that time. It is a bit difficult to move your luggage after your departure. Here at <b style="font-weight: 700;">Droghers</b> we've made the process a whole lot easier. We provide <b style="font-weight: 700;">door to door luggage service</b> in Delhi, Noida & Gurgaon. You can Book our services from Railway stations and airports as well with our easy online booking service. We are one of the most reliable <b style="font-weight: 700;">luggage delivery company</b> which <b style="font-weight: 700;">send luggage</b> without a doubt and in no-time. You can easily track your luggage status via our online booking system. Our <b style="font-weight: 700;">luggage transfer service</b> is totally safe. You will get your luggage safely, on time.
 
                                 <br> <br>
 
