@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@yield('meta-desc', 'Let Droghers be your valet to your hotel, airport or railway station | we deliver bags to and from, so you don\'t have to | Droghers provides you door to door luggage transfer service in Delhi NCR | Send your bag to droghers and we will deliver it to your destination | luggage transport near me.')">
+    <meta name="description" content="@yield('meta-desc', 'Let Droghers be your valet to your hotel, airport or railway station | we deliver bags to and from, so you dont have to | Droghers provides you door to door luggage transfer service in Delhi NCR | Send your bag to droghers and we will deliver it to your destination | luggage transport near me.')">
     <meta name="author" content="HassleFree">
 
     <meta name="google-site-verification" content="qq55UBRGOwfkI9xMqGpV_D70LiGtlS2GM4N-amkXNiI" />
@@ -15,7 +15,7 @@
     <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
 
     <link rel="canonical" href="https://droghers.in/" />
-    
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
     <title>@yield('title', 'Left Luggage - Luggage Transport Services in Delhi NCR | Droghers')</title>
@@ -28,7 +28,7 @@
 
     <link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- This css we made it from our predefine componenet 
+    <!-- This css we made it from our predefine componenet
     we just copy that css and paste here you can also do that -->
     <link href="/css/demo.css" rel="stylesheet">
     <!-- Common style CSS -->
@@ -67,11 +67,30 @@
   gtag('config', 'UA-121213789-1');
 </script>
 
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2089814694611343');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+
+src="https://www.facebook.com/tr?id=2089814694611343&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
     @yield('css')
 </head>
 
 <body class="">
-    
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -85,7 +104,7 @@
             <!-- ============================================================== -->
             <div class="header14 po-relative">
                 <!-- Topbar  -->
-                
+
                 <div class="h14-topbar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg font-14">
@@ -106,12 +125,12 @@
                     </div>
                 </div>
 
-               
+
                 <!-- Navbar  -->
                 <div class="h14-navbar no-print">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
-                            
+
                             <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-main.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
@@ -121,49 +140,53 @@
                                     <ul class="navbar-nav">
 
                                     @guest
-                                        
-                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }}"> 
+
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
                                             <a class="nav-link" href="/"> Home</a>
                                         </li>
 
-                                        <li class="nav-item"> 
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/#features"> Features</a>
                                         </li>
 
-                                        <li class="nav-item"> 
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/#process"> Process</a>
                                         </li>
 
-                                        <li class="nav-item"> 
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/#about"> About</a>
                                         </li>
 
-                                        <li class="nav-item {{ request()->is('faq') ? 'active' : '' }}"> 
+                                        <li class="nav-item {{ request()->is('faq') ? 'active' : '' }}">
                                             <a class="nav-link"  href="/faq"> FAQ</a>
                                         </li>
 
-                                        <li class="nav-item"> 
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/contact"> Contact Us</a>
                                         </li>
 
-                                        <li class="nav-item"> 
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/mobile-apps"> Download App</a>
+                                        </li>
+
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/home"> My Account</a>
                                         </li>
 
                                      @else
-                                        
-                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
+
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down">
                                            <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-main.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                                         </li>
 
-                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
+                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}">
                                             <a class="nav-link" href="/bookings"> My Bookings</a>
                                         </li>
 
-                                         
 
-                                     @endif   
-                                      
+
+                                     @endif
+
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
@@ -174,7 +197,7 @@
                                   {{ auth()->user()->name }} <i class="fa fa-angle-down m-l-5"></i>
                                 </a>
                                     <ul class="b-none dropdown-menu font-14 animated fadeInUp">
-                                        
+
                                         <li><a class="dropdown-item" href="/profile"><i class="fa fa-user"></i> Profile</a></li>
                                         <li><a class="dropdown-item" href="/settings"><i class="fa fa-cog"></i> Settings</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}"
@@ -182,14 +205,14 @@
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a></li>
                                     </ul>
                                 </li>
-                                   
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        
-                                      @endauth  
 
-                                   
+                                      @endauth
+
+
                                 </ul>
                             </div>
                         </nav>
@@ -246,26 +269,26 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                     <div class="container">
-                    
-                    </div> 
-              
+
+                    </div>
+
                 @yield('content')
-            </div>    
+            </div>
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- footer 3  -->
             <!-- ============================================================== -->
-           
+
             <div class="footer3 bg-dark font-14">
-              
+
                 <div class="f3-topbar container">
                     <div class="d-flex">
                         <div class="d-flex no-block align-items-center">
                             <span>A team of trained &amp; experienced <span class="text-white">professionals</span>, who are
                             <br/>well versed with the customer requirement in the Indian market.</span>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="f3-middle container">
@@ -282,10 +305,10 @@
                         </div>
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
-                       
+
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
-                        
+
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
                         <div class="col-lg-3 col-md-6 m-b-30">
@@ -314,7 +337,7 @@
                     <!-- Row  -->
                 </div>
 
-               
+
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
@@ -327,7 +350,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <!-- ============================================================== -->
             <!-- End footer 3  -->
             <!-- ============================================================== -->
@@ -365,7 +388,7 @@
     <script src="/js/bootstrap-touch-slider.js"></script>
     <script src="/js/jquery.magnific-popup.min.js"></script>
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
     <script>
     $('#slider2').bsTouchSlider();
@@ -387,26 +410,26 @@
         }
     });
 
-    
-   
+
+
     </script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
+
     <script type="text/javascript">
         @foreach (session('flash_notification', collect())->toArray() as $message)
-            
+
              var message = "{!! $message['message'] !!}"
              var level = "{!! $message['level'] !!}"
-             
+
              swal("Notice", message, level);
-            
+
         @endforeach
     </script>
 
     {{ session()->forget('flash_notification') }}
 
-    <!-- <script>   
+    <!-- <script>
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
     </script> -->
 

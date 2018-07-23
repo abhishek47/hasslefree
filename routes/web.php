@@ -31,6 +31,10 @@ Route::get('/faq-app', function () {
     return view('pages.faq-app');
 })->middleware('guest');
 
+Route::get('/mobile-apps', function () {
+    return view('pages.mobile-apps');
+})->middleware('guest');
+
 Auth::routes();
 
 
