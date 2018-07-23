@@ -1,5 +1,11 @@
 @extends('layouts.auth')
 
+@section('css')
+
+    <link rel="canonical" href="https://droghers.in/register" />
+
+@endsection
+
 @section('title', 'Sign Up To Your Droghers Account')
 
 
@@ -19,10 +25,10 @@
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
                          @if(!empty($name))
-                            <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ $name }}"> 
+                            <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ $name }}">
                          @else
-                            <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ old('name') }}"> 
-                         @endif   
+                            <input class="input100" type="text" name="name" placeholder="Full Name" value="{{ old('name') }}">
+                         @endif
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <span class="fa fa-user"></span>
@@ -30,7 +36,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                        
+
                         @if(!empty($email))
                          <input class="input100" type="text" name="email" placeholder="Email" value="{{ $email }}">
                         @else
@@ -44,10 +50,10 @@
                     </div>
 
                      <div class="wrap-input100 validate-input m-b-16" data-validate = "Phone number is required">
-                        
-                      
+
+
                           <input class="input100" type="number" name="phone" placeholder="Phone Number" value="{{ old('phone') }}">
-                       
+
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
@@ -72,10 +78,10 @@
                     </div>
 
                     <div class="wrap-input100 m-b-16" >
-                        
-                      
+
+
                           <input class="input100" type="text" name="referral_code" placeholder="Referal Code (optional)" value="{{ old('referral_code') }}">
-                       
+
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
@@ -83,7 +89,7 @@
                         </span>
                     </div>
 
-                   
+
                     <div class="container-login100-form-btn p-t-25">
                         <button class="login100-form-btn">
                             Sign Up

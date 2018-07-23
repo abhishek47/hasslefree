@@ -1,5 +1,10 @@
 @extends('layouts.auth')
 
+@section('css')
+
+    <link rel="canonical" href="https://droghers.in/login" />
+
+@endsection
 
 @section('title', 'Log In To Your Droghers Account')
 

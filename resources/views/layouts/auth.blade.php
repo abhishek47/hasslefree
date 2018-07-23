@@ -39,6 +39,8 @@
 
   gtag('config', 'UA-121213789-1');
 </script>
+
+@yield('css')
 </head>
 <body>
 
@@ -66,7 +68,7 @@
 		})
 	</script>
 
-	
+
 	<script src="/auth/js/parsley.min.js"></script>
 <!--===============================================================================================-->
 	<script src="/auth/js/main.js"></script>
@@ -79,14 +81,14 @@
 			};
 
 			@if(isset($redirect))
-			
+
 				if(mobilecheck())
 		        {
 		            window.location = 'droghers://';
 		        }
-		        
+
 		    @endif
-	       
+
 	</script>
 
 </body>

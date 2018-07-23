@@ -1,11 +1,17 @@
 @extends('layouts.master')
 
+@section('css')
+
+    <link rel="canonical" href="https://droghers.in/contact" />
+
+@endsection
+
 @section('title', 'Contact Us | Droghers')
 
 @section('meta-desc', 'Contact Us. Droghers S-11, Malhan Falcon Plaza, Plot no. 4, Pocket 7, Sector 12, Dwarka, New Delhi-110078. Phone: 9582873902. Email: info@droghers.in. Website: https://droghers.in/.')
 
 @section('content')
-	
+
 	<!-- ============================================================== -->
             <!-- Static Slider 10  -->
             <!-- ============================================================== -->
@@ -107,6 +113,6 @@
                         </div>
                     </div>
                 </div>
-               
+
 
 @endsection

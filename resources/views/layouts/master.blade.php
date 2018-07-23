@@ -14,7 +14,7 @@
 
     <meta name="msvalidate.01" content="B842E0088C384B8C0BF7287B5D54ABCF" />
 
-    <link rel="canonical" href="https://droghers.in/" />
+
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -282,15 +282,14 @@ src="https://www.facebook.com/tr?id=2089814694611343&ev=PageView&noscript=1"
 
             <div class="footer3 bg-dark font-14">
 
-                <div class="f3-topbar container">
+            {{--    <div class="f3-topbar container">
                     <div class="d-flex">
                         <div class="d-flex no-block align-items-center">
-                            <span>A team of trained &amp; experienced <span class="text-white">professionals</span>, who are
-                            <br/>well versed with the customer requirement in the Indian market.</span>
+
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
                 <div class="f3-middle container">
                     <!-- Row  -->
                     <div class="row">

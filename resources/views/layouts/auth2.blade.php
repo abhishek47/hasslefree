@@ -21,7 +21,7 @@
 
 <link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- This css we made it from our predefine componenet 
+    <!-- This css we made it from our predefine componenet
     we just copy that css and paste here you can also do that -->
     <link href="/css/demo.css" rel="stylesheet">
     <!-- Common style CSS -->
@@ -53,7 +53,7 @@
 </head>
 
 <body class="">
-    
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -67,7 +67,7 @@
             <!-- ============================================================== -->
             <div class="header14 po-relative">
                 <!-- Topbar  -->
-                
+
                 <div class="h14-topbar">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg font-14">
@@ -90,12 +90,12 @@
                     </div>
                 </div>
 
-               
+
                 <!-- Navbar  -->
                 <div class="h14-navbar no-print">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg h14-nav">
-                            
+
                             <a class="hidden-lg-up" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header14" aria-controls="header14" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fa fa-bars"></span>
@@ -104,20 +104,20 @@
                                 <div class="hover-dropdown">
                                     <ul class="navbar-nav">
 
-                                  
-                                        
-                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down"> 
+
+
+                                        <li class="nav-item {{ request()->is('home') ? 'active' : '' }} hidden-sm-down">
                                            <a class="nav-link" style="font-weight: bold !important;" href="/"><img src="/images/logo-small.png" style="width: 20px;display: inline;margin-top: -10px;">  <span>Droghers</span></a>
                                         </li>
 
-                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}"> 
+                                         <li class="nav-item {{ request()->is('bookings') ? 'active' : '' }}">
                                             <a class="nav-link" href="/bookings"> My Bookings</a>
                                         </li>
 
-                                         
 
-                                    
-                                      
+
+
+
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav ml-auto">
@@ -127,7 +127,7 @@
                                   {{ auth()->user()->name }} <i class="fa fa-angle-down m-l-5"></i>
                                 </a>
                                     <ul class="b-none dropdown-menu font-14 animated fadeInUp">
-                                        
+
                                         <li><a class="dropdown-item" href="/profile"><i class="fa fa-user"></i> Profile</a></li>
                                         <li><a class="dropdown-item" href="/settings"><i class="fa fa-cog"></i> Settings</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}"
@@ -135,14 +135,14 @@
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a></li>
                                     </ul>
                                 </li>
-                                   
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        
+
                                    @endauth
 
-                                   
+
                                 </ul>
                             </div>
                         </nav>
@@ -200,10 +200,10 @@
             <div class="container-fluid">
                     <div class="container">
                      @include('flash::message')
-                    </div> 
-              
+                    </div>
+
                 @yield('content')
-            </div>    
+            </div>
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
@@ -211,7 +211,7 @@
             <!-- ============================================================== -->
             @guest
             <div class="footer3 bg-dark font-14">
-              
+
                 <div class="f3-topbar container">
                     <div class="d-flex">
                         <div class="d-flex no-block align-items-center">
@@ -243,10 +243,10 @@
                         </div>
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
-                       
+
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
-                        
+
                         <!-- cOLUMN -->
                         <!-- cOLUMN -->
                         <div class="col-lg-3 col-md-6 m-b-30">
@@ -276,7 +276,7 @@
                     <!-- Row  -->
                 </div>
 
-               
+
                 <div class="f3-bottom-bar">
                     <div class="container">
                         <div class="d-flex">
@@ -331,7 +331,7 @@
     <script src="/js/jquery.magnific-popup.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-    
+
     <script>
     $('#slider2').bsTouchSlider();
     $('.popup-gallery').magnificPopup({

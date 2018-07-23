@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+@section('css')
+
+    <link rel="canonical" href="https://droghers.in/faq" />
+
+@endsection
 
 @section('title', 'FAQs - Droghers')
 
@@ -55,7 +60,7 @@ determined on a case-by- case basis. To learn more contact one of our luggage sh
                                         <p>We accept payment by credit card, debit card, net banking, wallets and COD.</p>
                                     </div>
                                 </div>
-                                 
+
                                 <div class="p-20">
                                     <div class="m-b-40 p-b-20">
                                         <h5 class="title">How much is my luggage delivery insured for?</h5>
@@ -75,13 +80,13 @@ Compare:
 </ul></p>
                                     </div>
                                 </div>
-                           
+
                             </div>
 
-                            
+
                         </div>
                     </div>
-                     
+
                 </div>
 
 

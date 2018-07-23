@@ -1,5 +1,11 @@
 @extends('layouts.master')
 
+@section('css')
+
+    <link rel="canonical" href="https://droghers.in/mobile-apps" />
+
+@endsection
+
 
 @section('title', 'Mobile Apps - Droghers')
 
