@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/start/register', 'Api\PhoneAuthController@postRegister');
+Route::post('/start/referral', 'Api\PhoneAuthController@postReferral');
+Route::post('user/validate/', 'Api\PhoneAuthController@postLogin');
+Route::post('user/auth/', 'Api\PhoneAuthController@tryAuth');
+
+Route::post('user/otp/', 'Api\PhoneAuthController@sendOTP');
+
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('login/direct', 'Auth\LoginController@direct');
@@ -26,14 +33,14 @@ Route::post('profile', 'Api\ProfileController@update');
 Route::get('/bookings', 'Api\BookingsController@index');
 Route::post('/bookings', 'Api\BookingsController@store');
 
- Route::get('/bookings/{booking}/cancel', 'Api\BookingsController@cancel');	
-  Route::get('/bookings/{booking}/cod', 'Api\BookingsController@confirmWithCOD');	
+ Route::get('/bookings/{booking}/cancel', 'Api\BookingsController@cancel');
+  Route::get('/bookings/{booking}/cod', 'Api\BookingsController@confirmWithCOD');
 
   Route::get('/bookings/{booking}/pay', 'Api\PaymentsController@addMoney');
 
   Route::post('/password/sendmail', 'Api\ProfileController@sendResetLinkEmail');
 
-  Route::post('/estimate', 'Api\BookingsController@estimate');	
+  Route::post('/estimate', 'Api\BookingsController@estimate');
 
   Route::post('/phone/sendotp', 'Api\ProfileController@sendOTP');
 

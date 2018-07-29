@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Mail\NewBookingCreated;
-use Softon\Indipay\Facades\Indipay;  
+use Softon\Indipay\Facades\Indipay;
 
 class PaymentsController extends Controller
 {
@@ -18,13 +18,13 @@ class PaymentsController extends Controller
     {
         $this->middleware('auth')->except('response');
     }
-    
+
     public function addMoney(Request $request, Booking $booking)
 	{
 		  $bookingId = $booking->id;
 
 		   $amount = 0;
-      
+
           if($booking->discount_amount != null)
           {
             $amount = round($booking->offer_amount, 2);
@@ -33,20 +33,20 @@ class PaymentsController extends Controller
           }
 
            $parameters = [
-      
+
             'tid' => '1233221223322',
-            
+
             'order_id' => '1232212',
-            
+
             'amount' => $amount,
             'purpose' => $bookingId,
             'buyer_name' => \Auth::user()->name,
             'email' => \Auth::user()->email,
             'phone' => '9922367414',
-            
+
           ];
- 
-          
+
+
           $order = Indipay::prepare($parameters);
 
           return Indipay::process($order);
@@ -57,17 +57,17 @@ class PaymentsController extends Controller
         // For default Gateway
         $response = Indipay::response($request);
 
-        
+
         if(!$response->success)
         {
         	return redirect('/bookings/' . $booking->id . '/failed');
         }
-        
+
         $bookingId = $response->payment_request->purpose;
 
         $booking = Booking::findOrFail($bookingId);
 
-        
+
 
         $booking->status = 1;
 
@@ -75,24 +75,24 @@ class PaymentsController extends Controller
 
         $booking->save();
 
-        
+
 
         $invoice = \PDF::loadView('bookings.download', compact('booking'));
 
         $invoiceData = $invoice->output();
-        
-        $message = new NewBookingCreated($booking);
 
-        $message->attachData($invoiceData, 'invoice.pdf', 
+      //  $message = new NewBookingCreated($booking);
+
+     /*   $message->attachData($invoiceData, 'invoice.pdf',
                     [
                         'mime' => 'application/pdf',
                     ]);
-
-        \Mail::to($booking->user)->send($message);
+  */
+       // \Mail::to($booking->user)->send($message);
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
-      
+
         sendSMS('9582873902', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
         sendSMS('7838233012', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
         sendSMS('9873431797', 'Droghers - You have received a new Booking. Booking ID is ' . $booking->id);
@@ -100,7 +100,7 @@ class PaymentsController extends Controller
         flash('Payment was succesfully made!')->success();
 
         return redirect('/bookings/' . $booking->id);
-    }  
+    }
 
 
 

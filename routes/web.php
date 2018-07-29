@@ -11,6 +11,16 @@
 |
 */
 
+Route::get('/start', 'PhoneAuthController@getLogin');
+Route::get('/start/register', 'PhoneAuthController@getRegister');
+Route::post('/start/register', 'PhoneAuthController@postRegister');
+Route::get('/start/verify', 'PhoneAuthController@getVerify');
+Route::get('/start/referral', 'PhoneAuthController@getReferral');
+Route::post('/start/referral', 'PhoneAuthController@postReferral');
+
+Route::post('user/validate/', 'PhoneAuthController@postLogin');
+Route::post('user/auth/', 'PhoneAuthController@tryAuth');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -36,6 +46,14 @@ Route::get('/mobile-apps', function () {
 })->middleware('guest');
 
 Auth::routes();
+
+Route::get('/login', function(){
+    return redirect('/start');
+})->name('login');
+
+Route::get('/register', function(){
+    return redirect('/start');
+})->name('register');
 
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');

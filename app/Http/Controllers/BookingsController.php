@@ -48,11 +48,11 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $data = $request->all();
 
         $data['verification_otp'] = mt_rand(10000, 99999);
-        
+
         $booking = auth()->user()->bookings()->create($data);
 
         if($booking->pick_up_type == 0)
@@ -63,7 +63,7 @@ class BookingsController extends Controller
         } else if($booking->pick_up_type == 2){
             $location1 = $booking->pickupBus->location;
         } else {
-            $location1 = $booking->pick_up_from;  
+            $location1 = $booking->pick_up_from;
         }
 
         if($booking->drop_to_type == 0)
@@ -95,7 +95,7 @@ class BookingsController extends Controller
         } else {
             $booking->handling_charges = config('settings.handling_charges') * ($booking->bags_count - config('settings.base_bags'));
         }
-    
+
 
         $booking->distance = $distance;
 
@@ -121,13 +121,13 @@ class BookingsController extends Controller
         $booking->save();
 
         if($booking->distance > 40)
-        {   
+        {
             flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
         } else {
              flash('Your booking was successfully created, proceed with payment details!')->success();
         }
 
-       
+
 
         return redirect('/bookings/' . $booking->id );
 
@@ -140,13 +140,13 @@ class BookingsController extends Controller
         $booking->status = 1;
 
         $booking->save();
-        
+
 
       /*  $invoice = \PDF::loadView('bookings.download', compact('booking'));
 
         $invoiceData = $invoice->output();*/
-        
-        
+
+
 
        /* $message->attachData($invoiceData, 'invoice.pdf', [
                         'mime' => 'application/pdf',
@@ -154,7 +154,7 @@ class BookingsController extends Controller
 
         $message = new NewBookingCreated($booking);
 
-        \Mail::to(auth()->user())->send($message);
+      //  \Mail::to(auth()->user())->send($message);
 
         sendSMS( $booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
@@ -199,7 +199,7 @@ class BookingsController extends Controller
      */
     public function print(Booking $booking)
     {
-       
+
         return view('bookings.print', compact('booking'));
     }
 
@@ -207,7 +207,7 @@ class BookingsController extends Controller
     public function download(Booking $booking)
     {
 
-        
+
 
         //$invoice = \PDF::loadView('bookings.download', compact('booking', 'distance', 'cgst', 'sgst','basePrice'));
 
@@ -250,7 +250,7 @@ class BookingsController extends Controller
     {
         $booking->delete();
 
-         \Mail::to(auth()->user())->send(new BookingCancelled($booking));
+      //   \Mail::to(auth()->user())->send(new BookingCancelled($booking));
 
         flash('Booking was cancelled successfully!')->success();
 
@@ -270,7 +270,7 @@ class BookingsController extends Controller
 
         $booking->save();
 
-        \Mail::to(auth()->user())->send(new BookingCancelled($booking));
+       // \Mail::to(auth()->user())->send(new BookingCancelled($booking));
 
         if($booking->payment_made)
         {

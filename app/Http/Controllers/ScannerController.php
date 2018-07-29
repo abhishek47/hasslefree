@@ -10,7 +10,7 @@ class ScannerController extends Controller
     public function scan(Booking $booking)
     {
     	if($booking->bags_scanned == $booking->bags_count)
-    	{	
+    	{
 
     		if($booking->status == 4)
     		{
@@ -18,12 +18,12 @@ class ScannerController extends Controller
     		} else {
     			return redirect('/bookings/manage/' . $booking->id . '/verify');
     		}
-    	
-    	
+
+
     	} else {
-    		
+
     		$booking->bags_scanned = $booking->bags_scanned + 1;
-    	
+
     		$booking->save();
 
     		if($booking->bags_scanned < $booking->bags_count)
@@ -33,7 +33,7 @@ class ScannerController extends Controller
 				return redirect('/bookings/manage/' . $booking->id . '/verify');
     		}
 
-    	
+
     	}
     }
 
@@ -46,20 +46,20 @@ class ScannerController extends Controller
             $booking->payment_made = 1;
 
     		$booking->save();
-    		
+
     		flash('The booking was successfully delivered!')->success();
 
              $invoice = \PDF::loadView('bookings.download', compact('booking'));
 
             $invoiceData = $invoice->output();
-            
+
             $message = new \App\Mail\BookingStatusUpdated($booking);
 
             $message->attachData($invoiceData, 'invoice.pdf', [
                             'mime' => 'application/pdf',
-                        ]); 
+                        ]);
 
-    		\Mail::to($booking->user)->send($message);
+    	//	\Mail::to($booking->user)->send($message);
 
         	sendSMS($booking->phone, getStatusMessage($booking->id, $booking->status));
 

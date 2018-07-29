@@ -21,7 +21,7 @@ class BookingsController extends Controller
 
          return response(['status' => 'success', 'message' => 'Bookings loaded successfully!', 'data' => $bookings->toArray()]);
     }
-   
+
 
     /**
      * Store a newly created resource in storage.
@@ -31,24 +31,24 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-       
-       
+
+
         $user = User::where('api_token', request('api_token'))->first();
 
          if(!$user)
          {
 
             return response(['status'=> 'failed', 'message' => 'Please login again!', 'data' =>[]], 200);
-         }  
+         }
 
         $data = $request->all();
 
-       
+
      $data['status'] = 0;
 
 
         $data['verification_otp'] = mt_rand(10000, 99999);
-        
+
         $booking = $user->bookings()->create($data);
 
         if(!$booking)
@@ -98,13 +98,13 @@ class BookingsController extends Controller
         $booking->save();
 
        /* if($booking->distance > 40)
-        {   
+        {
             flash('Your travel distance is more than 40Km! we take bookings above 40km distance only on call.')->warning();
         } else {
              flash('Your booking was successfully created, proceed with payment details!')->success();
         }
         */
-       
+
 
         return response(['status'=> 'success', 'message' => 'Booking created successfully!', 'data' => $booking->toArray()], 200);
 
@@ -125,11 +125,11 @@ class BookingsController extends Controller
         $booking->save();
 
 
-        
+
         $message = new NewBookingCreated($booking);
 
-      
-        \Mail::to($user)->send($message);
+
+        //\Mail::to($user)->send($message);
 
         sendSMS($booking->phone, 'Droghers Luggage Travel booking confirmed and scheduled for pickup. Your Booking ID is ' . $booking->id);
 
@@ -163,7 +163,7 @@ class BookingsController extends Controller
 
         $booking->save();
 
-        \Mail::to($user)->send(new BookingCancelled($booking));
+        //\Mail::to($user)->send(new BookingCancelled($booking));
 
         sendSMS( $booking->phone, 'Droghers Luggage Travel booking with ID ' . $booking->id . ' has been cancelled!');
 
@@ -216,5 +216,5 @@ class BookingsController extends Controller
     }
 
 
-   
+
 }
