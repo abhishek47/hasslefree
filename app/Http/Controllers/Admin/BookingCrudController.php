@@ -49,7 +49,7 @@ class BookingCrudController extends CrudController
                'attribute' => 'name', // foreign key attribute that is shown to user
                'model' => "App\Models\Employee", // foreign key model
                'allows_null' => true
-               
+
             ]);
 
 
@@ -61,7 +61,7 @@ class BookingCrudController extends CrudController
                'attribute' => 'name', // foreign key attribute that is shown to user
                'model' => "App\Models\Employee", // foreign key model
                'allows_null' => true
-               
+
             ]);
 
         $this->crud->orderBy('created_at', 'DESC');
@@ -141,34 +141,34 @@ class BookingCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
-       
+
         // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
 
-       
+
 
         return $redirect_location;
     }
 
     public function update(UpdateRequest $request)
     {
-        
+
         // your additional operations before save here
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
-         
 
-        
+
+
             \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
 
-        
-            sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status)); 
-        
-       
-        
+
+            sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status));
+
+
+
         return $redirect_location;
     }
 }

@@ -46,13 +46,15 @@ class PhoneAuthController extends Controller
             $userWithEmail = null;
         }
 
-        if($userWithEmail){
+        $refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
+
+        if($userWithEmail) {
             $userWithEmail->name = $name;
             $userWithEmail->phone = $phoneNum;
+            $userWithEmail->refer_code = $refer_code;
             $userWithEmail->save();
             $user = $userWithEmail;
         } else {
-            $refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
             $user = User::create(['name' => $name, 'phone' => $phoneNum, 'email' => $email, 'refer_code' => $refer_code]);
             $data['is_new'] = true;
          }
@@ -77,6 +79,10 @@ class PhoneAuthController extends Controller
 
         if($user && $token == $validToken) {
             $user->verified = 1;
+            if($user->refer_code == null)
+            {
+                $user->refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
+            }
             $user->save();
             $user->generateToken();
 

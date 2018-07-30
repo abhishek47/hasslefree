@@ -58,13 +58,15 @@ class PhoneAuthController extends Controller
           $userWithEmail = User::where('email', '=', $email)->first();
         }
 
+        $refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
+
         if(isset($email) && $userWithEmail){
             $userWithEmail->name = $name;
             $userWithEmail->phone = $phoneNum;
+            $userWithEmail->refer_code = $refer_code;
             $userWithEmail->save();
             $user = $userWithEmail;
         } else {
-            $refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
             $user = User::create(['name' => $name, 'phone' => $phoneNum, 'email' => $email, 'refer_code' => $refer_code]);
             session(['is_new' => true]);
         }
@@ -87,6 +89,11 @@ class PhoneAuthController extends Controller
         $user = User::where('phone', '=', $phoneNum)->firstOrFail();
 
         if($user && $user->validateToken($token)) {
+            if($user->refer_code == null)
+            {
+                $user->refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
+                $user->save();
+            }
             if(session('is_new'))
             {
               return redirect('/start/referral')->with('status', 'Enter a referral code.');

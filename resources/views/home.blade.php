@@ -52,26 +52,26 @@
                             <div class="card-body">
                                 <h3 class="panel-heading">Take My Luggage</h3>
                                 <hr>
-                                
+
                                 <div class="form-group">
                                     <label>Bags Count</label>
                                     <input type="number" data-parsley-required  name="bags_count" class="form-control" placeholder="No. of bags">
                                     <small>How many bags do we need to carry?</small>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label>Special Comments about luggage (optional)</label>
                                     <textarea name="special" rows="3" class="form-control"></textarea>
                                 </div>
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                             </div>
                         </div>
-                       
-                   
+
+
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -88,7 +88,7 @@
                                      <small>Let us know where should we pick up bags from</small>
                                 </div>
                                 <div id="pickup_other" class="hidden">
-                                    
+
                                     <div class="form-group">
                                         <label>Tell us your location</label>
                                         <input type="text" name="pick_up_from" id="pick_up_location" class="form-control" placeholder="Enter your location">
@@ -98,7 +98,7 @@
                                         <label>Complete Address</label>
                                         <input type="text" name="pick_up_address" id="pickup_complete_address"  class="form-control" placeholder="Enter your address" required="" disabled="">
                                     </div>
-                                    
+
                                 </div>
                                 <div id="pickup_airport" class="hidden">
                                     <div class="form-group">
@@ -107,10 +107,10 @@
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\Airport::all() as $airport)
                                              <option value="{{ $airport->id }}">{{ $airport->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label>Flight Number</label>
                                         <input type="text" name="pick_up_flight_number" id="pick_up_flight_number" class="form-control" placeholder="Enter flight number">
@@ -123,16 +123,16 @@
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\TrainStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
                                         <input type="number" name="pick_up_train_pnr"  id="pick_up_prn" class="form-control" placeholder="Enter your PNR number" required="" disabled="">
                                     </div>
 
-                                   
+
                                 </div>
                                 <div id="pickup_bus" class="hidden">
                                     <div class="form-group">
@@ -141,16 +141,16 @@
                                              <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\BusStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                         
-                       
-                    
+
+
+
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -167,7 +167,7 @@
                                     <small>Let us know where should we drop up bags at</small>
                                 </div>
                                 <div id="drop_other" class="hidden">
-                                    
+
                                     <div class="form-group">
                                         <label>Tell us your location</label>
                                         <input type="text" name="drop_to" id="drop_location" class="form-control" placeholder="Enter your location">
@@ -177,7 +177,7 @@
                                         <label>Complete Address</label>
                                         <input type="text" name="drop_address" id="complete-address"  class="form-control" placeholder="Enter your address" required="" disabled="">
                                     </div>
-                                    
+
                                 </div>
                                 <div id="drop_airport" class="hidden">
                                     <div class="form-group">
@@ -186,10 +186,10 @@
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\Airport::all() as $airport)
                                              <option value="{{ $airport->id }}">{{ $airport->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label>Flight Number </label>
                                         <input type="text" name="drop_flight_number"  class="form-control" placeholder="Enter flight number">
@@ -202,33 +202,33 @@
                                             <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\TrainStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label>Ticket PNR Number </label>
                                         <input type="number" name="drop_train_pnr" id="drop_prn"  class="form-control" placeholder="Enter your PNR number" required="" disabled="">
                                     </div>
 
-                                    
+
                                 </div>
                                 <div id="drop_bus" class="hidden">
-                                    
+
                                     <div class="form-group">
                                         <label>Choose Bus station</label>
                                         <select name="drop_bus_station_id" class="form-control">
                                              <option value="0">-- Select your option --</option>
                                             @foreach(\App\Models\BusStation::all() as $station)
                                              <option value="{{ $station->id }}">{{ $station->name }}</option>
-                                            @endforeach 
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                    
+
+
                         <div class="card card-shadow">
                             <div class="card-body">
                                 <div class="form-group">
@@ -237,7 +237,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Pick up time</label>
-                                   
+
                                     <select class="form-control" name="pick_up_time" id="pick_up_time" onchange="checkTimeDifference();">
                                         <option selected disabled>--- Choose Time ---</option>
                                         <option value="1">09:00 AM - 10:00 AM</option>
@@ -289,11 +289,11 @@
                                 </div>
                             </div>
                         </div>
-                       
-                    
-                        <div class="card card-shadow">
+
+
+                     {{--    <div class="card card-shadow">
                             <div class="card-body">
-                                
+
                                 <div class="form-group" id="request-otp">
                                     <label>Contact Number</label>
                                     <input type="text" name="phone" id="phone" placeholder="Enter a 10 digit mobile no." required class="form-control" >
@@ -304,7 +304,7 @@
                                     </button>
                                 </div>
 
-                               
+
 
                                 <div class="form-group hidden" id="verify-otp">
                                     <div class="panel panel-success">
@@ -323,7 +323,7 @@
                                      <button type="button" class="btn btn-primary" id="btn-resend-otp">
                                         <span>Resend OTP</span>
                                     </button>
-                                </div> 
+                                </div>
 
 
                                 <div class="form-group hidden" id="verified-otp">
@@ -332,15 +332,15 @@
                                             <h3 class="text-success m-b-0 p-b-0 font-bold"><i class="fa fa-check-circle"></i> Mobile Number Successfully Verified!</h3>
                                         </div>
                                     </div>
-                                   
-                                </div> 
 
-                                
+                                </div>
 
-                               
+
+
+
                             </div>
-                        </div>
-                        <button id="getQuote" type="submit" class="btn btn-danger-gradiant btn-next btn-arrow pull-right" disabled="true">
+                        </div> --}}
+                        <button id="getQuote" type="submit" class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
                         <span>Get Quote <i class="fa fa-arrow-right"></i></span>
                         </button>
 
@@ -353,7 +353,7 @@
         </div>
     </div>
 
-     
+
 </div>
 
 
@@ -395,7 +395,7 @@ if(valueSelected == 0){
    $('#pick_up_flight_number').attr('disabled', false);
 
 } else if(valueSelected == 1) {
- 
+
  $('#pickup_bus').addClass('hidden');
  $('#pickup_other').addClass('hidden');
  $('#pickup_airport').addClass('hidden');
@@ -575,17 +575,17 @@ google.maps.event.addDomListener(window, 'load', init);
 
   function checkTimeDifference()
   {
-    console.log('validation'); 
+    console.log('validation');
 
     var now = moment();
 
 
 
-    var today = moment().format("DD-MM-YYYY");  
+    var today = moment().format("DD-MM-YYYY");
 
 
-    var date1 = $('#datedropper1').val();   
-    var date2 = $('#datedropper2').val();    
+    var date1 = $('#datedropper1').val();
+    var date2 = $('#datedropper2').val();
     var time1 = parseInt($('#pick_up_time option:selected').val());
     var time2 = parseInt($('#drop_time option:selected').val());
 
@@ -603,7 +603,7 @@ google.maps.event.addDomListener(window, 'load', init);
     if(date1 == today)
     {
         var cur = time1+9;
-     
+
         if(cur < hours)
         {
             message2 = 'Please select a valid pickup time';
@@ -617,7 +617,7 @@ google.maps.event.addDomListener(window, 'load', init);
     } else if(date1 == date2 && (time2 >= 10 && diff < 6))
     {
         message = 'The delivery time should atleast be 6 hours ahead of pickup time.';
-    } 
+    }
 
     if(date2 == today)
     {
@@ -625,14 +625,14 @@ google.maps.event.addDomListener(window, 'load', init);
         {
             message = 'Please select a valid drop time';
         }
-    } 
+    }
 
     if(message != '')
     {
         $('#drop_time').addClass('parsley-error');
         $('#drop_time').parent().find('.parsley-errors-list').remove();
 
-        $('#drop_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+        $('#drop_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>');
 
         $('#timeContinue').attr('disabled', true);
 
@@ -640,14 +640,14 @@ google.maps.event.addDomListener(window, 'load', init);
         $('#drop_time').removeClass('parsley-error');
          $('#drop_time').parent().find('.parsley-errors-list').remove();
           $('#timeContinue').attr('disabled', false);
-    } 
+    }
 
     if(message2 != '')
     {
         $('#pick_up_time').addClass('parsley-error');
         $('#pick_up_time').parent().find('.parsley-errors-list').remove();
 
-        $('#pick_up_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message2+'</li></ul>'); 
+        $('#pick_up_time').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message2+'</li></ul>');
 
         $('#timeContinue').attr('disabled', true);
 
@@ -655,29 +655,29 @@ google.maps.event.addDomListener(window, 'load', init);
         $('#pick_up_time').removeClass('parsley-error');
          $('#pick_up_time').parent().find('.parsley-errors-list').remove();
           $('#timeContinue').attr('disabled', false);
-    } 
+    }
 
-  
 
-    
-            
+
+
+
   }
 
   var otp = '';
 
   $('#btn-request-otp').on('click', function()
-  { 
+  {
         var phone = $('#phone').val();
         if(phone.length  < 10)
         {
             message = 'Please enter correct 10 digit mobile number!';
-          
+
             $('#phone').addClass('parsley-error');
-            
+
             $('#phone').parent().find('.parsley-errors-list').remove();
 
             $('#phone').parent()
-             .append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+             .append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>');
 
         } else {
 
@@ -694,32 +694,32 @@ google.maps.event.addDomListener(window, 'load', init);
 
             $('#btn-request-otp').addClass('hidden');
 
-            $('#btn-verify-otp').removeClass('hidden'); 
+            $('#btn-verify-otp').removeClass('hidden');
 
         }
 
-        
 
-      
-        
+
+
+
   });
 
   $('#btn-resend-otp').on('click', function()
-  { 
-        
+  {
+
 
             $.post('api/phone/sendotp', {'phone':  $('#phone').val() }).then(function(response) {
               console.log(response);
                otp = response.otp;
             });
 
-            
+
         });
 
-        
 
-      
-        
+
+
+
 
 
 
@@ -740,10 +740,10 @@ google.maps.event.addDomListener(window, 'load', init);
              $('#user-otp').addClass('parsley-error');
             $('#user-otp').parent().find('.parsley-errors-list').remove();
 
-            $('#user-otp').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>'); 
+            $('#user-otp').parent().append('<ul class="parsley-errors-list filled" id="parsley-id-3"><li class="parsley-required">'+message+'</li></ul>');
         }
 
-      
+
   });
 
 

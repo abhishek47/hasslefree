@@ -53,6 +53,8 @@ class BookingsController extends Controller
 
         $data['verification_otp'] = mt_rand(10000, 99999);
 
+        $data['phone'] = auth()->user()->phone;
+
         $booking = auth()->user()->bookings()->create($data);
 
         if($booking->pick_up_type == 0)
