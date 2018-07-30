@@ -91,7 +91,7 @@ class PhoneAuthController extends Controller
         if($user && $user->validateToken($token)) {
             if($user->refer_code == null)
             {
-                $user->refer_code = strtoupper(substr($name, 0, 3) . mt_rand(100, 999));
+                $user->refer_code = strtoupper(substr($user->name, 0, 3) . mt_rand(100, 999));
                 $user->save();
             }
             if(session('is_new'))
