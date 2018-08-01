@@ -60,7 +60,7 @@ Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'Api\CouponsControll
 
 Route::post('/users/push-token', 'Api\PushTokensController@register');
 
-Route::get('/request/edit/', 'Api\BookingsController@edit');
+Route::get('/request/edit/{booking}', 'Api\BookingsController@edit');
 
 
 
