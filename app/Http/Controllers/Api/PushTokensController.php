@@ -33,7 +33,7 @@ class PushTokensController extends Controller
 
         public function index()
         {
-            return view('notifications.new');
+            return view('notifications.index');
         }
 
         public function send()
