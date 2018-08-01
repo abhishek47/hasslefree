@@ -329,6 +329,8 @@ class BookingsController extends Controller
         return view('bookings.edit', compact('booking'));
     }
 
+
+
     /**
      * Update the specified resource in storage.
      *

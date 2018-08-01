@@ -176,6 +176,16 @@ class BookingsController extends Controller
         return response(['status'=> 'success', 'message' => 'Booking cancelled!', 'data' => []], 200);
     }
 
+    public function edit(Booking $booking)
+    {
+        sendSMS('9582873902', 'The user for booking #' . $booking->id . ' has requested edit in booking details.');
+        sendSMS('7838233012', 'The user for booking #' . $booking->id . ' has requested edit in booking details.');
+        sendSMS('9873431797', 'The user for booking #' . $booking->id . ' has requested edit in booking details.');
+
+         sendSMS( $booking->phone, 'We have received your request for editing booking # ' . $booking->id  .'. Our executive will contact you shortly.');
+
+         return response(['status' => 'success', 'message' => 'Our Executive will contact you soon.']);
+    }
 
 
     public function estimate()
