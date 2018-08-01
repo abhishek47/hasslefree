@@ -34,6 +34,7 @@
 
            <li><a href="{{ backpack_url('references') }}"><i class="fa fa-users"></i> <span>References</span></a></li>
 
+           <li><a href="/notifications/new" target="_blank"><i class="fa fa-phone"></i> <span>Notifications</span></a></li>
 
            <li class="treeview">
               <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -46,7 +47,7 @@
 
 
           <!-- ======================================= -->
-          <li class="header">General</li> 
+          <li class="header">General</li>
 
           <li><a href="{{ backpack_url('setting') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
 

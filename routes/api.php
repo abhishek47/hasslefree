@@ -58,6 +58,9 @@ Route::get('/coupons/apply/{booking}/coupon:{code}', 'Api\CouponsController@appl
 
 Route::get('/coupons/apply/{booking}/coupon:{code}/remove', 'Api\CouponsController@remove');
 
+Route::post('/users/push-token', 'Api\PushTokensController@register');
+
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

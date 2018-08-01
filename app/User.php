@@ -3,12 +3,13 @@
 namespace App;
 
 use App\Models\Booking;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\CrudTrait; // <------------------------------- this one
-use Illuminate\Support\Facades\Password;
+use App\Models\PushToken;
+use Backpack\CRUD\CrudTrait;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -34,6 +35,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function pushToken()
+    {
+        return $this->hasOne(PushToken::class);
+    }
 
     public function bookings()
     {

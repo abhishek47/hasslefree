@@ -58,6 +58,8 @@ Route::get('/register', function(){
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
+Route::get('/notifications/new', 'PushTokensController@index');
+
 Route::get('/profile', 'UserController@profile');
 Route::get('/settings', 'UserController@settings');
 
