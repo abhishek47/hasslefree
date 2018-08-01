@@ -67,8 +67,12 @@ Route::post('/password', 'UserController@updatePassword');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/bookings', 'BookingsController@index');
+Route::get('/bookings/new', 'BookingsController@new');
+Route::post('/bookings/new', 'BookingsController@storeNew');
 Route::get('/bookings/{booking}', 'BookingsController@show');
 Route::get('/bookings/{booking}/receipt', 'BookingsController@print');
+Route::get('/bookings/{booking}/edit', 'BookingsController@edit');
+Route::post('/bookings/{booking}/update', 'BookingsController@update');
 Route::get('/bookings/{booking}/preview', 'BookingsController@preview');
 Route::get('/bookings/{booking}/download', 'BookingsController@download');
 Route::get('/bookings/{booking}/pay', 'PaymentsController@addMoney');

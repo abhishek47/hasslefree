@@ -66,9 +66,13 @@ class BookingCrudController extends CrudController
 
         $this->crud->orderBy('created_at', 'DESC');
 
+        $this->crud->addButtonFromModelFunction('line', 'open_edit', 'openEdit', 'end');
         $this->crud->addButtonFromModelFunction('line', 'open_preview', 'openPreview', 'beginning');
+        $this->crud->addButtonFromModelFunction('top', 'new_booking', 'newBooking', 'beginning');
 
         $this->crud->enableExportButtons();
+
+        $this->crud->denyAccess(['create']);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

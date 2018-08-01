@@ -9,25 +9,40 @@ use Backpack\CRUD\CrudTrait; // <------------------------------- this one
 
 class Booking extends Model
 {
+
+
     use CrudTrait;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'bags_count', 'special', 'pick_up_type', 'pick_up_from', 'drop_to_type', 'drop_to', 'pick_up_airport_id', 
-         'pick_up_flight_number', 'pick_up_train_station_id', 'pick_up_train_pnr', 'pick_up_bus_station_id', 'drop_airport_id', 
+        'user_id', 'bags_count', 'special', 'pick_up_type', 'pick_up_from', 'drop_to_type', 'drop_to', 'pick_up_airport_id',
+         'pick_up_flight_number', 'pick_up_train_station_id', 'pick_up_train_pnr', 'pick_up_bus_station_id', 'drop_airport_id',
         'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp', 'pick_up_emp', 'delivery_emp'
     ];
 
     protected $appends = ['key', 'offer_amount', 'coupon_promo_text'];
-    
-    
+
+
+
+
 
     public function openPreview($crud = false)
     {
         return '<a class="btn btn-xs btn-success" target="_blank" href="/bookings/' . $this->id . '/download' . '" data-toggle="tooltip" title="View/Download Booking Receipt"><i class="fa fa-file-text"></i> Receipt</a>';
+    }
+
+    public function openEdit($crud = false)
+    {
+        return '<a class="btn btn-xs btn-info" target="_blank" href="/bookings/' . $this->id . '/edit' . '" data-toggle="tooltip" title="Update Booking Details"><i class="fa fa-save"></i> Update</a>';
+    }
+
+    public function newBooking($crud = false)
+    {
+        return '<a class="btn btn-md btn-warning" href="/bookings/new" data-toggle="tooltip" title="Add New Booking"><i class="fa fa-plus"></i> New Booking</a>';
     }
 
 
@@ -46,7 +61,7 @@ class Booking extends Model
         return $this->belongsTo(Employee::class, 'delivery_emp');
     }
 
-    
+
 
       public function getKeyAttribute()
     {
@@ -63,7 +78,7 @@ class Booking extends Model
         } else if($this->pick_up_type == 2){
             $location1 = $this->pickupBus->location;
         } else {
-            $location1 = $this->pick_up_from;  
+            $location1 = $this->pick_up_from;
         }
 
         return $location1;
@@ -85,9 +100,9 @@ class Booking extends Model
         return $location2;
     }
 
-    
 
- 
+
+
 
 
     public function getOfferAmountAttribute()
@@ -110,7 +125,7 @@ class Booking extends Model
         return 'Congratulations! A Coupon is applied. You saved Rs. ' . ceil($this->discount_amount);
     }
 
-    
+
 
     public function getUserNameAttribute()
     {

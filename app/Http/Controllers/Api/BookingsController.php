@@ -32,19 +32,18 @@ class BookingsController extends Controller
     public function store(Request $request)
     {
 
-
         $user = User::where('api_token', request('api_token'))->first();
 
-         if(!$user)
-         {
+        if(!$user)
+        {
 
             return response(['status'=> 'failed', 'message' => 'Please login again!', 'data' =>[]], 200);
-         }
+        }
 
         $data = $request->all();
 
 
-     $data['status'] = 0;
+        $data['status'] = 0;
 
 
         $data['verification_otp'] = mt_rand(10000, 99999);
