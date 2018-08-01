@@ -15,10 +15,12 @@ class NotificationsController extends Controller
         public function send()
         {
             $tokens = PushToken::all();
+             $expo = \ExponentPhpSDK\Expo::normalSetup();
+
             foreach($tokens as $key => $token) {
 
-                  $interestDetails = [$token->user_id, $token->token];
-                  $expo = \ExponentPhpSDK\Expo::normalSetup();
+                  $interestDetails = ['user-' . $token->user_id, $token->token];
+
 
                   $expo->subscribe($interestDetails[0], $interestDetails[1]);
                   $notification = ['body' => request('message')];
