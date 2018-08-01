@@ -21,6 +21,10 @@
                                     <textarea name="message" rows="3" class="form-control"></textarea>
                                 </div>
 
+                                 <button id="getQuote" type="submit" class="btn btn-danger-gradiant btn-next btn-arrow pull-right">
+                                        <span>Send Notification <i class="fa fa-arrow-right"></i></span>
+                                </button>
+
                             </div>
                     </div>
                 </form>
