@@ -67,6 +67,11 @@ class User extends Authenticatable
 
     }
 
+    public function getReferCountAttribute()
+    {
+        return $this->referred / 10;
+    }
+
 
     public function sendToken()
     {

@@ -28,10 +28,11 @@ class CustomerCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        
+
          $this->crud->addColumns([
             ['name' => 'name', 'label' => 'Fullname'],
             ['name' => 'phone', 'label' => 'Phone'],
+            ['name' => 'refer_count', 'label' => 'Referred Users'],
             ['name' => 'email', 'label' => 'E-mail Address'],
             ['name' => 'created_at', 'label' => 'Registered on'],
         ]);
