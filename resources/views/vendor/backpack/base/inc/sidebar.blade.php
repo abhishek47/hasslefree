@@ -32,7 +32,7 @@
 
            <li><a href="{{ backpack_url('coupons') }}"><i class="fa fa-qrcode"></i> <span>Offer Coupons</span></a></li>
 
-           <li><a href="{{ backpack_url('references') }}"><i class="fa fa-users"></i> <span>References</span></a></li>
+          {{--  <li><a href="{{ backpack_url('references') }}"><i class="fa fa-users"></i> <span>References</span></a></li> --}}
 
            <li><a href="/notifications/new" target="_blank"><i class="fa fa-phone"></i> <span>Notifications</span></a></li>
 
