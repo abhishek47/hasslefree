@@ -20,7 +20,7 @@
 
 <link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- This css we made it from our predefine componenet 
+    <!-- This css we made it from our predefine componenet
     we just copy that css and paste here you can also do that -->
     <link href="/css/demo.css" rel="stylesheet">
     <!-- Common style CSS -->
@@ -44,6 +44,19 @@
             padding-top: 55px;
             }
             }
+            @media print {
+              body * {
+                  visibility: hidden;
+                }
+                #section-to-print, #section-to-print * {
+                  visibility: visible;
+                }
+                #section-to-print {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                }
+            }
         </style>
     @endauth
 
@@ -52,22 +65,26 @@
 </head>
 
 <body class="">
-    
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        
-        
+
+
         <div class="page-wrapper">
-           
+
             <div class="container-fluid">
                     <div class="container">
     <div class="row">
-     
+
         <div style="width: 800px;margin: 0 auto;">
-            <div class="card card-shadow">
-               
+             <div style="margin-bottom: 30px;">
+                        <button onclick="window.print('print-div')">Print</button>
+                     </div>
+
+            <div id="section-to-print" class="card card-shadow">
+
                 <div class="card-body text-dark font-16">
                       <hr>
                       <h5 class="text-center m-b-20 font-bold">GST INVOICE</h5>
@@ -89,15 +106,15 @@
                       <div class="clearfix"></div>
                      <hr>
 
-                   
+
                      <div>
-                       
+
                            <p ><b>Pick Up Time :</b> {{ $booking->pick_up_date }}, {{ getHalfTime($booking->pick_up_time) }}</p>
-                            
-                             <p ><b>Pick Up Address :</b> 
+
+                             <p ><b>Pick Up Address :</b>
                               {{ $booking->pick_up_from }}
                                @if($booking->pick_up_type == 0)
-                                <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
+                                <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }}
                                @elseif($booking->pick_up_type == 1)
 
 
@@ -105,32 +122,32 @@
 
                             @elseif($booking->drop_to_type > 2)
 
-                              
+
                               @if(isset($booking->pick_up_address))
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
                             @endif
 
-                            
+
                             </p>
-                             
-                           
+
+
                              <p ><b>Drop Time :</b>
                              {{ $booking->drop_date }}, {{ getTime($booking->drop_time) }}</p>
-                           
-                             <p ><b>Drop Address :</b> 
-                              
-                              {{ $booking->drop_to }} 
+
+                             <p ><b>Drop Address :</b>
+
+                              {{ $booking->drop_to }}
 
                               @if($booking->drop_to_type == 0)
-                               
-                                
+
+
                                 <br><b>Flight Number :</b> {{ $booking->drop_flight_number }}
 
                               @elseif($booking->drop_to_type == 1)
 
-                                
+
                                 <br><b>Train PNR No. :</b> {{ $booking->drop_train_pnr }}
 
                               @elseif($booking->drop_to_type > 2)
@@ -140,7 +157,7 @@
 
                               @endif
 
-                             
+
                              </p>
                      </div>
 
@@ -164,7 +181,7 @@
                              <td class="text-right">{{ $booking->distance }} Km.</td>
                            </tr> -->
 
-                          
+
 
                            <tr>
                              <td class="font-medium">Base Price</td>
@@ -175,7 +192,7 @@
                              <td class="font-medium">Handling Charges</td>
                              <td class="text-right">Rs. {{ $booking->handling_charges }}</td>
                            </tr>
-                           
+
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
@@ -194,12 +211,12 @@
                              <td class="text-right">Rs. {{ $booking->gst  }}</td>
                            </tr>
 
-                          
+
 
                          </tbody>
                        </table>
                      </div>
-                   
+
 
                     <hr>
 
@@ -214,21 +231,23 @@
 
                      <div id="qrcode"></div>
 
-                    
+
+
+
 
                 </div>
             </div>
         </div>
 
-        
+
     </div>
 </div>
-            </div>    
-            
+            </div>
+
         </div>
-        
+
     </div>
-   
+
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="/js/popper.min.js"></script>
@@ -248,8 +267,8 @@
           correctLevel : QRCode.CorrectLevel.H
       });
     </script>
-    
-   
+
+
 
 </body>
 
