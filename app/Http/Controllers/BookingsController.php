@@ -458,7 +458,7 @@ class BookingsController extends Controller
 
         if($booking->payment_made)
         {
-           flash('Booking was cancelled successfully! Your amount will be credited to your bank account within next 48 working Hrs!')->success();
+           flash('Booking was cancelled successfully! Your amount will be credited to your bank account within next 48 working Hrs if online payment has been made!')->success();
         } else {
             flash('Booking was cancelled successfully!')->success();
         }
