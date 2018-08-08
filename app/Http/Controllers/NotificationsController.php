@@ -24,7 +24,11 @@ class NotificationsController extends Controller
 
                   $expo->subscribe($interestDetails[0], $interestDetails[1]);
                   $notification = ['body' => request('message')];
-                  $expo->notify($interestDetails[0], $notification);
+                  try {
+                    $expo->notify($interestDetails[0], $notification);
+                  } catch(Exception $e) {
+
+                  }
 
             }
 
