@@ -32,8 +32,11 @@
                                         <p data-animation="animated fadeInLeft" class="m-t-40 m-b-40 hidden-sm-down text-white">We offer Luggage Transfer services from Railway Stations, Airports as well as door to door service <b>in Delhi and NCR Region</b></p>
                                     </div>
                                     <div class="col-sm-12 btn-pad">
+                                        @guest
                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/start"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
-
+                                        @else
+                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/home"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
+                                        @endguest
                                     </div>
                                 </div>
                             </div>

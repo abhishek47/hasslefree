@@ -52,10 +52,11 @@ class PhoneAuthController extends Controller
             $userWithEmail->name = $name;
             $userWithEmail->phone = $phoneNum;
             $userWithEmail->refer_code = $refer_code;
+            $userWithEmail->referral_code = $code;
             $userWithEmail->save();
             $user = $userWithEmail;
         } else {
-            $user = User::create(['name' => $name, 'phone' => $phoneNum, 'email' => $email, 'refer_code' => $refer_code]);
+            $user = User::create(['name' => $name, 'phone' => $phoneNum, 'email' => $email, 'refer_code' => $refer_code, 'referral_code' => $code]);
             $data['is_new'] = true;
          }
 
