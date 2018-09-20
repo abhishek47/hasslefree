@@ -23,6 +23,11 @@ class Employee extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
+     public function getDnameAttribute()
+     {
+         return split_name($this->name)[0] . ' ' . split_name($this->name)[1][0] . '.';
+     }
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

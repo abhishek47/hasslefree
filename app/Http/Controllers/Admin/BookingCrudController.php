@@ -29,7 +29,7 @@ class BookingCrudController extends CrudController
         */
 
 
-        $this->crud->addColumns(['id', 'user_name', 'phone' ,'bags_count', 'total', 'payment_status', 'booking_status']);
+        $this->crud->addColumns(['id', 'customer_name', 'phone' ,'bags_count', 'total', 'payment_status', 'booking_status']);
 
         $this->crud->addField([ // select_from_array
             'name' => 'status',
