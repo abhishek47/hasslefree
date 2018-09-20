@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-sm-12 btn-pad">
                                         @guest
-                                        <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/start"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
+                                         <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/start"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
                                         @else
                                          <a class="btn btn-danger-gradiant btn-md btn-arrow" data-animation="animated fadeInLeft" href="/home"> <span>Take My Luggage <i class="fa fa-arrow-right"></i></span> </a>
                                         @endguest
