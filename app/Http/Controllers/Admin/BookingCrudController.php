@@ -165,11 +165,23 @@ class BookingCrudController extends CrudController
         // use $this->data['entry'] or $this->crud->entry
 
 
-
+        if(isset($this->crud->entry->user))
+        {
             \Mail::to($this->crud->entry->user)->send(new \App\Mail\BookingStatusUpdated($this->crud->entry));
+        }
+
+        if($this->crud->entry->status == 1)
+        {
+             sendSMS($this->crud->entry->phone, getPickupMessage($this->crud->entry->id));
+        } else if($this->crud->entry->status == 3)
+        {
+             sendSMS($this->crud->entry->phone, getDeliveryMessage($this->crud->entry->id));
+        } else {
+             sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status));
+        }
 
 
-            sendSMS($this->crud->entry->phone, getStatusMessage($this->crud->entry->id, $this->crud->entry->status));
+
 
 
 

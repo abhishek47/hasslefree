@@ -20,7 +20,7 @@
 
 <link href="/css/datedropper.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- This css we made it from our predefine componenet 
+    <!-- This css we made it from our predefine componenet
     we just copy that css and paste here you can also do that -->
     <link href="/css/demo.css" rel="stylesheet">
     <!-- Common style CSS -->
@@ -52,22 +52,22 @@
 </head>
 
 <body class="">
-    
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        
-        
+
+
         <div class="page-wrapper">
-           
+
             <div class="container-fluid">
                     <div class="container">
     <div class="row">
-     
+
         <div style="width: 800px;margin: 0 auto;">
             <div class="card card-shadow">
-               
+
                 <div class="card-body text-dark font-16">
                       <hr>
                       <h5 class="text-center m-b-20 font-bold">GST INVOICE</h5>
@@ -83,14 +83,14 @@
                              <h5 class="panel-heading">
                            <span class="font-bold">INVOICE #{{ $booking->id }}</span>
                             </h5>
-                            <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
+                            <p class="m-b-0">To {{ $booking->customer_name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
                           </div>
 
                       <div class="clearfix"></div>
                      <hr>
 
-                   
-                    
+
+
                      @if($booking->special != null)
 
                         <p><b>Special Comments : </b> {{ $booking->special }}</p>
@@ -110,7 +110,7 @@
                              <td class="text-right">{{ $booking->distance }} Km.</td>
                            </tr> -->
 
-                          
+
 
                            <tr>
                              <td class="font-medium">Base Price</td>
@@ -121,7 +121,7 @@
                              <td class="font-medium">Handling Charges</td>
                              <td class="text-right">Rs. {{ $booking->handling_charges }}</td>
                            </tr>
-                           
+
 
                             <tr>
                              <td class="font-medium">Taxable Amount</td>
@@ -140,12 +140,12 @@
                              <td class="text-right">Rs. {{ round($booking->gst, 2)  }}</td>
                            </tr>
 
-                          
+
 
                          </tbody>
                        </table>
                      </div>
-                   
+
 
                     <hr>
                     @if($booking->coupon_applied != null || $booking->referral_code)
@@ -159,21 +159,21 @@
 
                      <div id="qrcode"></div>
 
-                    
+
 
                 </div>
             </div>
         </div>
 
-        
+
     </div>
 </div>
-            </div>    
-            
+            </div>
+
         </div>
-        
+
     </div>
-   
+
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="/js/popper.min.js"></script>
@@ -193,7 +193,7 @@
           correctLevel : QRCode.CorrectLevel.H
       });
     </script>
-    
+
     <script type="text/javascript">
       <!--
       window.print();

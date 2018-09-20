@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Booking;
+
 
 function getStatus($status)
 {
@@ -114,6 +116,21 @@ function getStatusMessage($id, $value)
 
 }
 
+function getPickupMessage($id, $value)
+{
+	 $booking = Booking::findOrFail($id);
+
+	 return 'Your Booking ' . $id . ' is scheduled for pickup. '. $booking->pickupEmployee->name .' ( '. $booking->pickupEmployee->phone .') will pickup your luggage.';
+}
+
+function getDeliveryMessage($id, $value)
+{
+	 $booking = Booking::findOrFail($id);
+
+	 return 'Your Booking ' . $id . ' is out for delivery. '. $booking->pickupEmployee->name .' ( '. $booking->pickupEmployee->phone .') will deliver your luggage.';
+
+
+}
 
 
 function getDistance($addressFrom, $addressTo){

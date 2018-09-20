@@ -21,7 +21,7 @@ class Booking extends Model
     protected $fillable = [
         'user_id', 'bags_count', 'special', 'pick_up_type', 'pick_up_from', 'drop_to_type', 'drop_to', 'pick_up_airport_id',
          'pick_up_flight_number', 'pick_up_train_station_id', 'pick_up_train_pnr', 'pick_up_bus_station_id', 'drop_airport_id',
-        'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp', 'pick_up_emp', 'delivery_emp'
+        'drop_flight_number', 'drop_train_station_id', 'drop_train_pnr',  'drop_bus_station_id', 'pick_up_date', 'pick_up_time', 'drop_date', 'drop_time', 'phone', 'pick_up_address', 'drop_address', 'status', 'verification_otp', 'pick_up_emp', 'delivery_emp', 'customer_name', 'customer_phone'
     ];
 
     protected $appends = ['key', 'offer_amount', 'coupon_promo_text'];
@@ -66,6 +66,11 @@ class Booking extends Model
       public function getKeyAttribute()
     {
         return $this->id;
+    }
+
+    public function getCustomerNameAttribute()
+    {
+        return isset($this->attributes['customer_name']) ? $this->attributes['customer_name'] : isset($this->user) ? $this->user->name : 'Guest Customer';
     }
 
     public function getpickLocationAttribute()

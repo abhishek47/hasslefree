@@ -100,7 +100,7 @@
                              <h5 class="panel-heading">
                            <span class="font-bold">INVOICE #{{ $booking->id }}</span>
                             </h5>
-                            <p class="m-b-0">To {{ $booking->user->name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
+                            <p class="m-b-0">To {{ $booking->customer_name }}<br><b>Date : </b>  {{ $booking->created_at->format('d-m-Y') }}</p>
                           </div>
 
                       <div class="clearfix"></div>

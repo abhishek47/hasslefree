@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card card-shadow">
-               
+
                 <div class="card-body text-dark font-16">
                      <h3 class="panel-heading">Booking Details</h3>
                      <hr>
-                    
+
                      @if($booking->special != null)
 
                         <p><b>Special Comments : </b> {{ $booking->special }}</p>
@@ -37,16 +37,16 @@
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
                              <td>
-                              
 
-                           
+
+
 
                              {{ $booking->pick_up_from }}
 
                               @if($booking->pick_up_type == 0)
-                              
-                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
-                              
+
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }}
+
                               @elseif($booking->pick_up_type == 1)
 
 
@@ -58,7 +58,7 @@
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
-                           
+
                              </td>
                            </tr>
                            <tr>
@@ -68,16 +68,16 @@
                            <tr>
                              <td class="font-medium">Drop Address</td>
                              <td>
-                              
 
-                           
+
+
 
                              {{ $booking->drop_to }}
 
                               @if($booking->drop_to_type == 0)
-                              
-                               <br><b>Flight Number :</b> {{ $booking->drop_flight_number }} 
-                              
+
+                               <br><b>Flight Number :</b> {{ $booking->drop_flight_number }}
+
                               @elseif($booking->drop_to_type == 1)
 
 
@@ -89,7 +89,7 @@
                               <br><b>Address : </b> {{ $booking->drop_address }}
                               @endif
 
-                           
+
                              </td>
                            </tr>
 
@@ -112,31 +112,31 @@
                              <td>{{ $booking->bags_count }}</td>
                            </tr>
 
-                           
+
 
                            <tr>
                              <td class="font-medium">Pick Up Time</td>
-                             
+
                            </tr>
                            <tr>
                              <td>{{ $booking->pick_up_date }}, {{ getHalfTime($booking->pick_up_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Pick Up Address</td>
-                            
+
                            </tr>
                            <tr>
                               <td>
-                              
 
-                           
+
+
 
                              {{ $booking->pick_up_from }}
 
                               @if($booking->pick_up_type == 0)
-                              
-                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
-                              
+
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }}
+
                               @elseif($booking->pick_up_type == 1)
 
 
@@ -148,33 +148,33 @@
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
-                           
+
                              </td>
                            </tr>
                            <tr>
                              <td class="font-medium">Drop Time</td>
-                             
+
                            </tr>
                            <tr>
                              <td>{{ $booking->drop_date }}, {{ getTime($booking->drop_time) }}</td>
                            </tr>
                            <tr>
                              <td class="font-medium">Drop Address</td>
-                            
+
                            </tr>
 
                            <tr>
                                <td>
-                              
 
-                           
+
+
 
                              {{ $booking->pick_up_from }}
 
                               @if($booking->pick_up_type == 0)
-                              
-                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }} 
-                              
+
+                               <br><b>Flight Number :</b> {{ $booking->pick_up_flight_number }}
+
                               @elseif($booking->pick_up_type == 1)
 
 
@@ -186,13 +186,13 @@
                               <br><b>Address : </b> {{ $booking->pick_up_address }}
                               @endif
 
-                           
+
                              </td>
                            </tr>
 
                            <tr>
                              <td class="font-medium">Contact</td>
-                             
+
                            </tr>
 
                            <tr>
@@ -203,22 +203,22 @@
                        </table>
                      </div>
 
-                    
+
                       @if($booking->status >= 2)
                        <hr>
                       <div class="alert alert-success" role="alert">
                           Delivery Verification OTP : {{ $booking->verification_otp }}
                       </div>
-                      
-                     @endif 
 
-                   
+                     @endif
+
+
 
                     <hr>
                     @if($booking->referral_applied)
                       <div class="alert alert-primary" role="alert">
                                     Congratulations! You have 10% discount for your first order. You saved Rs. {{ round($booking->discount_amount, 2) }}.
-                                    
+
                                 </div>
 
                     @else
@@ -230,9 +230,9 @@
                                     <a href="javascript:void(0)" style="text-decoration: underline;color: red" onclick="removeCoupon({{ $booking->id }})" >Remove Coupon</a>
                                     @endif
                                 </div>
-                               @endif 
+                               @endif
 
-                       @endif        
+                       @endif
 
                     <hr>
 
@@ -243,17 +243,17 @@
                             &#8377 {{ round($booking->offer_amount, 2) }}
                          @else
                             &#8377 {{ round($booking->price, 2) }}
-                         @endif   
+                         @endif
                          </b></h2>
                          @if($booking->coupon_applied == null && $booking->status == 0 && !$booking->referral_applied)
                          <div style="display: flex;">
                             <input type="text" name="coupon_code" id="coupon_code" placeholder="Coupon Code" class="form-control form-input-sm" style="height: 40px;margin-right: 10px;">
                             <button onclick="applyCoupon({{$booking->id}})" class="btn btn-dark btn-sm" style="height: 40px;">Apply Coupon</button>
                          </div>
-                         
+
                          @endif
                     </div>
-                   
+
 
                      <hr>
 
@@ -278,8 +278,8 @@
 
 
                             <a href="/bookings/{{$booking->id}}/delete" class="btn btn-danger">Cancel Booking</a>
-                             
-                            <br class="hidden-md-up"> <br class="hidden-md-up">  
+
+                            <br class="hidden-md-up"> <br class="hidden-md-up">
 
 
                             <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success hidden-md-up">Pay Online</a>
@@ -289,19 +289,19 @@
                             <a  href="#confirmModal2" data-toggle="modal" class="btn btn-success pull-right hidden-md-down">Pay Online</a>
 
                             <a  href="#confirmModal1" data-toggle="modal" class="btn btn-primary pull-right hidden-md-down m-r-10">Pay on Delivery</a>
-                         
+
 
 
                           @else
 
                              @if($booking->status != 5)
                                <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger hidden-md-up">Cancel Booking</a>
-                             @endif  
+                             @endif
 
                              @if($booking->status == 4)
                                <a target="_blank" href="/bookings/{{$booking->id}}/receipt" class="btn btn-primary hidden-md-up">Print Receipt</a>
                              @endif
-                             
+
                              @if($booking->status != 5)
                               <a href="/bookings/{{$booking->id}}/cancel" class="btn btn-danger pull-right hidden-md-down">Cancel Booking</a>
                              @endif
@@ -352,7 +352,7 @@
                         </div>
                       </div>
 
-                      
+
                       <div class="sl-item {{ $booking->status >= 3 ? ' b-success' : '' }}">
                        @if($booking->status >= 3)
                           <div class="sl-icon text-success"><i class="fa fa-check"></i></div>
@@ -376,7 +376,7 @@
                   @else
                     <h4 class="font-bold m-b-20"><i class="fa fa-check text-success"></i> Booking Cancelled</h4>
 
-                   {{--  @if($booking->refund()->exists()) 
+                   {{--  @if($booking->refund()->exists())
 
 
                       <h6 class="font-bold m-b-10">Refund Details</h6>
@@ -441,7 +441,7 @@
                     @else
                         <p>You have cancelled your booking.</p>
                     @endif
-                  @endif 
+                  @endif
                 </div>
             </div>
         </div>
@@ -531,7 +531,7 @@
 @section('js')
 
  <script type="text/javascript">
-                                                
+
     function applyCoupon(bookingId)
     {
         location.href = '/coupons/apply/' + bookingId + '/coupon:' + $('#coupon_code').val();

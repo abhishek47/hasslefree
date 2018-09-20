@@ -56,6 +56,9 @@ class BookingsController extends Controller
 
         $data['phone'] = auth()->user()->phone;
 
+        $data['customer_name'] = auth()->user()->name;
+        $data['customer_phone'] = auth()->user()->phone;
+
         $booking = auth()->user()->bookings()->create($data);
 
         if($booking->pick_up_type == 0)
