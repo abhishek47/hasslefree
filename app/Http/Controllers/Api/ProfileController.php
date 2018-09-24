@@ -27,9 +27,15 @@ class ProfileController extends Controller
 
         $coupon = Coupon::latest()->first();
 
-        $type = $coupon->discount_type == 0 ? ' Rs.' : '%';
+        if($coupon->discount_type != 2)
+        {
+              $type = $coupon->discount_type == 0 ? ' Rs.' : '%';
 
-        $msg = 'Use coupon code ' . $coupon->code . ' and get ' . $coupon->discount . $type . ' off on all bookings uptil ' . $coupon->valid_through->format('d M, Y');
+              $msg = 'Use coupon code ' . $coupon->code . ' and get ' . $coupon->discount . $type . ' off on all bookings uptil ' . $coupon->valid_through->format('d M, Y');
+
+        } else {
+             $msg = 'Use coupon code ' . $coupon->code . ' and make any booking at only Rs. ' . $coupon->discount . ' uptil ' . $coupon->valid_through->format('d M, Y');
+        }
 
          return response(['status' => 'success', 'message' => 'Profile Data Loaded', 'data' => $user->toArray(), 'offerMessage' => $msg]);
     }
@@ -71,7 +77,7 @@ class ProfileController extends Controller
 
         return false;
 
-        
+
     }
 
     public function sendOTP(Request $request)
@@ -102,22 +108,22 @@ class ProfileController extends Controller
 
         if($user->verified)
         {
-          
+
             return response(['status' => 'success', 'message' => 'Your account is verified successfully!']);
-       
+
         } else {
 
             \Mail::to($user->email)->send(new VerifyMail($user));
 
             return response(['status' => 'failed', 'message' => 'We have resent you the verification email!']);
-        
+
         }
 
-        
+
     }
 
-    
 
 
-   
+
+
 }

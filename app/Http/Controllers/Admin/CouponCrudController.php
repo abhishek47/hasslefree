@@ -35,16 +35,16 @@ class CouponCrudController extends CrudController
         ]);
 
         $this->crud->addFields([
-            
+
             ['name' => 'code', 'label' => 'Coupon Code  <span style="color: red;">*</span>'],
 
             ['name' => 'promo_text', 'label' => 'Promo Text (optional)', 'type' => 'textarea'],
-            
+
             [ // select_from_array
                 'name' => 'discount_type',
                 'label' => 'Flat or Percentage? <span style="color: red;">*</span>',
                 'type' => 'select2_from_array',
-                'options' => [0 => 'Flat Discount', 1 => 'Percentage Base'],
+                'options' => [0 => 'Flat Discount', 1 => 'Percentage Base', 2 => 'Direct Amount'],
                 'allows_null' => false,
                 'default' => 0,
             ],
@@ -60,7 +60,7 @@ class CouponCrudController extends CrudController
 
         ]);
 
-        
+
 
     }
 
