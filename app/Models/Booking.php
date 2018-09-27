@@ -70,7 +70,7 @@ class Booking extends Model
 
     public function getCustomerNameAttribute()
     {
-        return isset($this->attributes['customer_name']) ? $this->attributes['customer_name'] : isset($this->user) ? $this->user->name : 'Guest Customer';
+        return isset($this->attributes['customer_name']) && $this->attributes['customer_name'] != '' ? $this->attributes['customer_name'] : isset($this->user) ? $this->user->name : 'Guest Customer';
     }
 
     public function getpickLocationAttribute()
