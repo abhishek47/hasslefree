@@ -205,17 +205,30 @@
 
                                     <select class="form-control" name="pick_up_time" id="pick_up_time" onchange="checkTimeDifference();">
                                         <option selected disabled>--- Choose Time ---</option>
-                                        <option value="1" {{ $booking->drop_to_type == 1 ? 'selected' : '' }}>09:00 AM - 10:00 AM</option>
-                                        <option value="2" {{ $booking->drop_to_type == 2 ? 'selected' : '' }}>10:00 AM - 11:00 AM</option>
-                                        <option value="3" {{ $booking->drop_to_type == 3 ? 'selected' : '' }}>11:00 AM - 12:00 PM</option>
-                                        <option value="4" {{ $booking->drop_to_type == 4 ? 'selected' : '' }}>12:00 PM - 01:00 PM</option>
-                                        <option value="5" {{ $booking->drop_to_type == 5 ? 'selected' : '' }}>01:00 PM - 02:00 PM</option>
-                                        <option value="6" {{ $booking->drop_to_type == 6 ? 'selected' : '' }}>02:00 PM - 03:00 PM</option>
-                                        <option value="7" {{ $booking->drop_to_type == 7 ? 'selected' : '' }}>03:00 PM - 04:00 PM</option>
-                                        <option value="8" {{ $booking->drop_to_type == 8 ? 'selected' : '' }}>04:00 PM - 05:00 PM</option>
-                                        <option value="9" {{ $booking->drop_to_type == 9 ? 'selected' : '' }}>05:00 PM - 06:00 PM</option>
-                                        <option value="10" {{ $booking->drop_to_type == 10 ? 'selected' : '' }}>06:00 PM - 07:00 PM</option>
-                                        <option value="11" {{ $booking->drop_to_type == 11 ? 'selected' : '' }}>07:00 PM - 08:00 PM</option>
+                                        <option value="1" {{ $booking->pick_up_time == 1 ? 'selected' : '' }}>12:00 AM - 01:00 AM</option>
+                                        <option value="2" {{ $booking->pick_up_time == 2 ? 'selected' : '' }}>01:00 AM - 02:00 AM</option>
+                                        <option value="3" {{ $booking->pick_up_time == 3 ? 'selected' : '' }}>02:00 AM - 03:00 AM</option>
+                                        <option value="4" {{ $booking->pick_up_time == 4 ? 'selected' : '' }}>03:00 AM - 04:00 AM</option>
+                                        <option value="5" {{ $booking->pick_up_time == 5 ? 'selected' : '' }}>04:00 AM - 05:00 AM</option>
+                                        <option value="6" {{ $booking->pick_up_time == 6 ? 'selected' : '' }}>05:00 AM - 06:00 AM</option>
+                                        <option value="7" {{ $booking->pick_up_time == 7 ? 'selected' : '' }}>06:00 AM - 07:00 AM</option>
+                                        <option value="8" {{ $booking->pick_up_time == 8 ? 'selected' : '' }}>07:00 AM - 08:00 AM</option>
+                                        <option value="9" {{ $booking->pick_up_time == 9 ? 'selected' : '' }}>08:00 AM - 09:00 AM</option>
+                                        <option value="10" {{ $booking->pick_up_time == 10 ? 'selected' : '' }}>09:00 AM - 10:00 AM</option>
+                                        <option value="11" {{ $booking->pick_up_time == 11 ? 'selected' : '' }}>10:00 AM - 11:00 AM</option>
+                                        <option value="12" {{ $booking->pick_up_time == 12 ? 'selected' : '' }}>11:00 AM - 12:00 PM</option>
+                                        <option value="13" {{ $booking->pick_up_time == 13 ? 'selected' : '' }}>12:00 PM - 01:00 PM</option>
+                                        <option value="14" {{ $booking->pick_up_time == 14 ? 'selected' : '' }}>01:00 PM - 02:00 PM</option>
+                                        <option value="15" {{ $booking->pick_up_time == 15 ? 'selected' : '' }}>02:00 PM - 03:00 PM</option>
+                                        <option value="16" {{ $booking->pick_up_time == 16 ? 'selected' : '' }}>03:00 PM - 04:00 PM</option>
+                                        <option value="17" {{ $booking->pick_up_time == 17 ? 'selected' : '' }}>04:00 PM - 05:00 PM</option>
+                                        <option value="18" {{ $booking->pick_up_time == 18 ? 'selected' : '' }}>05:00 PM - 06:00 PM</option>
+                                        <option value="19" {{ $booking->pick_up_time == 19 ? 'selected' : '' }}>06:00 PM - 07:00 PM</option>
+                                        <option value="20" {{ $booking->pick_up_time == 20 ? 'selected' : '' }}>07:00 PM - 08:00 PM</option>
+                                        <option value="21" {{ $booking->pick_up_time == 21 ? 'selected' : '' }}>08:00 PM - 09:00 PM</option>
+                                        <option value="22" {{ $booking->pick_up_time == 22 ? 'selected' : '' }}>09:00 PM - 10:00 PM</option>
+                                        <option value="23" {{ $booking->pick_up_time == 23 ? 'selected' : '' }}>10:00 PM -  11:00 PM</option>
+                                        <option value="24" {{ $booking->pick_up_time == 24 ? 'selected' : '' }}>11:00 PM - 12:00 AM</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -226,30 +239,30 @@
                                     <label>Drop time</label>
                                     <select class="form-control" name="drop_time" id="drop_time" onchange="checkTimeDifference();">
                                         <option selected disabled>--- Choose Time ---</option>
-                                        <option value="1" {{ $booking->drop_to_type == 1 ? 'selected' : '' }}>12:00 AM - 01:00 AM</option>
-                                        <option value="2" {{ $booking->drop_to_type == 2 ? 'selected' : '' }}>01:00 AM - 02:00 AM</option>
-                                        <option value="3" {{ $booking->drop_to_type == 3 ? 'selected' : '' }}>02:00 AM - 03:00 AM</option>
-                                        <option value="4" {{ $booking->drop_to_type == 4 ? 'selected' : '' }}>03:00 AM - 04:00 AM</option>
-                                        <option value="5" {{ $booking->drop_to_type == 5 ? 'selected' : '' }}>04:00 AM - 05:00 AM</option>
-                                        <option value="6" {{ $booking->drop_to_type == 6 ? 'selected' : '' }}>05:00 AM - 06:00 AM</option>
-                                        <option value="7" {{ $booking->drop_to_type == 7 ? 'selected' : '' }}>06:00 AM - 07:00 AM</option>
-                                        <option value="8" {{ $booking->drop_to_type == 8 ? 'selected' : '' }}>07:00 AM - 08:00 AM</option>
-                                        <option value="9" {{ $booking->drop_to_type == 9 ? 'selected' : '' }}>08:00 AM - 09:00 AM</option>
-                                        <option value="10" {{ $booking->drop_to_type == 10 ? 'selected' : '' }}>09:00 AM - 10:00 AM</option>
-                                        <option value="11" {{ $booking->drop_to_type == 11 ? 'selected' : '' }}>10:00 AM - 11:00 AM</option>
-                                        <option value="12" {{ $booking->drop_to_type == 12 ? 'selected' : '' }}>11:00 AM - 12:00 PM</option>
-                                        <option value="13" {{ $booking->drop_to_type == 13 ? 'selected' : '' }}>12:00 PM - 01:00 PM</option>
-                                        <option value="14" {{ $booking->drop_to_type == 14 ? 'selected' : '' }}>01:00 PM - 02:00 PM</option>
-                                        <option value="15" {{ $booking->drop_to_type == 15 ? 'selected' : '' }}>02:00 PM - 03:00 PM</option>
-                                        <option value="16" {{ $booking->drop_to_type == 16 ? 'selected' : '' }}>03:00 PM - 04:00 PM</option>
-                                        <option value="17" {{ $booking->drop_to_type == 17 ? 'selected' : '' }}>04:00 PM - 05:00 PM</option>
-                                        <option value="18" {{ $booking->drop_to_type == 18 ? 'selected' : '' }}>05:00 PM - 06:00 PM</option>
-                                        <option value="19" {{ $booking->drop_to_type == 19 ? 'selected' : '' }}>06:00 PM - 07:00 PM</option>
-                                        <option value="20" {{ $booking->drop_to_type == 20 ? 'selected' : '' }}>07:00 PM - 08:00 PM</option>
-                                        <option value="21" {{ $booking->drop_to_type == 21 ? 'selected' : '' }}>08:00 PM - 09:00 PM</option>
-                                        <option value="22" {{ $booking->drop_to_type == 22 ? 'selected' : '' }}>09:00 PM - 10:00 PM</option>
-                                        <option value="23" {{ $booking->drop_to_type == 23 ? 'selected' : '' }}>10:00 PM -  11:00 PM</option>
-                                        <option value="24" {{ $booking->drop_to_type == 24 ? 'selected' : '' }}>11:00 PM - 12:00 AM</option>
+                                        <option value="1" {{ $booking->drop_time == 1 ? 'selected' : '' }}>12:00 AM - 01:00 AM</option>
+                                        <option value="2" {{ $booking->drop_time == 2 ? 'selected' : '' }}>01:00 AM - 02:00 AM</option>
+                                        <option value="3" {{ $booking->drop_time == 3 ? 'selected' : '' }}>02:00 AM - 03:00 AM</option>
+                                        <option value="4" {{ $booking->drop_time == 4 ? 'selected' : '' }}>03:00 AM - 04:00 AM</option>
+                                        <option value="5" {{ $booking->drop_time == 5 ? 'selected' : '' }}>04:00 AM - 05:00 AM</option>
+                                        <option value="6" {{ $booking->drop_time == 6 ? 'selected' : '' }}>05:00 AM - 06:00 AM</option>
+                                        <option value="7" {{ $booking->drop_time == 7 ? 'selected' : '' }}>06:00 AM - 07:00 AM</option>
+                                        <option value="8" {{ $booking->drop_time == 8 ? 'selected' : '' }}>07:00 AM - 08:00 AM</option>
+                                        <option value="9" {{ $booking->drop_time == 9 ? 'selected' : '' }}>08:00 AM - 09:00 AM</option>
+                                        <option value="10" {{ $booking->drop_time == 10 ? 'selected' : '' }}>09:00 AM - 10:00 AM</option>
+                                        <option value="11" {{ $booking->drop_time == 11 ? 'selected' : '' }}>10:00 AM - 11:00 AM</option>
+                                        <option value="12" {{ $booking->drop_time == 12 ? 'selected' : '' }}>11:00 AM - 12:00 PM</option>
+                                        <option value="13" {{ $booking->drop_time == 13 ? 'selected' : '' }}>12:00 PM - 01:00 PM</option>
+                                        <option value="14" {{ $booking->drop_time == 14 ? 'selected' : '' }}>01:00 PM - 02:00 PM</option>
+                                        <option value="15" {{ $booking->drop_time == 15 ? 'selected' : '' }}>02:00 PM - 03:00 PM</option>
+                                        <option value="16" {{ $booking->drop_time == 16 ? 'selected' : '' }}>03:00 PM - 04:00 PM</option>
+                                        <option value="17" {{ $booking->drop_time == 17 ? 'selected' : '' }}>04:00 PM - 05:00 PM</option>
+                                        <option value="18" {{ $booking->drop_time == 18 ? 'selected' : '' }}>05:00 PM - 06:00 PM</option>
+                                        <option value="19" {{ $booking->drop_time == 19 ? 'selected' : '' }}>06:00 PM - 07:00 PM</option>
+                                        <option value="20" {{ $booking->drop_time == 20 ? 'selected' : '' }}>07:00 PM - 08:00 PM</option>
+                                        <option value="21" {{ $booking->drop_time == 21 ? 'selected' : '' }}>08:00 PM - 09:00 PM</option>
+                                        <option value="22" {{ $booking->drop_time == 22 ? 'selected' : '' }}>09:00 PM - 10:00 PM</option>
+                                        <option value="23" {{ $booking->drop_time == 23 ? 'selected' : '' }}>10:00 PM -  11:00 PM</option>
+                                        <option value="24" {{ $booking->drop_time == 24 ? 'selected' : '' }}>11:00 PM - 12:00 AM</option>
                                     </select>
                                 </div>
                             </div>
