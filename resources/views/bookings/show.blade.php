@@ -264,7 +264,7 @@
 
                      @if($booking->distance > 40)
 
-                       <a href="tel:+911234567890" class="btn btn-success">Call Us @ 1234567890</a>
+                       <a href="tel:+911234567890" class="btn btn-success">Call Us @ (+91) 7291047153</a>
 
                      @else
 
